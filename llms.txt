@@ -9,7 +9,7 @@
 - **Email** : rajaomanjatoventso@gmail.com
 - **Téléphone** : +261 38 58 909 07
 - **GitHub** : https://github.com/ventso00
-- **Portfolio Web** : https://ventso-portfolio.netlify.app/
+- **Portfolio Web** : https://ventso.netlify.app/
 
 ## Profil & Objectifs
 Titulaire d'un Diplôme de Spécialisation Technicien (DST) et actuellement en 3ᵉ année de Licence ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) à l'ISPM Antsobolo.

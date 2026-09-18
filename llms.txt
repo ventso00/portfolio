@@ -1,0 +1,44 @@
+# Portfolio de Rajaomanjato Ventson'Iavo Tsiarovana
+
+> Technicien Support IT & Administrateur Systèmes et Réseaux Junior basé à Antananarivo, Madagascar.
+
+## Identité & Contact
+- **Nom complet** : Rajaomanjato Ventson'Iavo Tsiarovana
+- **Nom d'usage** : Ventson'Iavo Tsiarovana / Ventso Rajaomanjato
+- **Localisation** : Antananarivo, Madagascar
+- **Email** : rajaomanjatoventso@gmail.com
+- **Téléphone** : +261 38 58 909 07
+- **GitHub** : https://github.com/ventso00
+- **Portfolio Web** : https://ventso-portfolio.netlify.app/
+
+## Profil & Objectifs
+Titulaire d'un Diplôme de Spécialisation Technicien (DST) et actuellement en 3ᵉ année de Licence ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) à l'ISPM Antsobolo.
+Recherche activement une opportunité professionnelle ou un stage en tant que :
+- Technicien Support IT (Niveau 1 & 2)
+- Technicien Systèmes et Réseaux
+- Administrateur Systèmes et Réseaux Junior
+
+## Compétences Clés
+- **Systèmes & Serveurs** : Windows Server 2022 (Active Directory AD DS, DNS, DHCP, GPO), Windows 10/11, Linux (Debian, Ubuntu), gestion des utilisateurs et droits d'accès.
+- **Réseaux & Protocoles** : TCP/IP, IPv4/IPv6, Subnetting (VLSM), VLAN, Inter-VLAN routing, STP, NAT/PAT, ACL, OSPF, Wireshark.
+- **Équipements & Simulation** : Cisco (routeurs & commutateurs), Cisco Packet Tracer, GNS3.
+- **Virtualisation** : VMware Workstation, Hyper-V, VirtualBox.
+- **Support IT** : Diagnostic matériel et logiciel, dépannage bureautique, maintenance préventive et curative, assistance utilisateur N1/N2.
+- **Développement & Scripting** : Python, Java, PHP, C/C++, MySQL/MariaDB, Git/GitHub.
+- **IoT & Électronique** : Microcontrôleurs ESP32, capteurs de télémétrie, protocoles IoT (Orange Digital Centre).
+
+## Expérience Professionnelle
+- **Novembre 2024 — Janvier 2025** : Stagiaire en Administration Systèmes et Réseaux — FTM, SaryTany
+  - Déploiement et administration Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation (VMware / Hyper-V).
+  - Support technique N1 et N2 auprès des utilisateurs (incidents matériels/logiciels, maintenance du parc).
+
+## Formations & Diplômes
+- **2025 — présent** : Licence 3 ESIIA — ISPM Antsobolo (Parcours Électronique, Systèmes Informatiques et Intelligence Artificielle).
+- **2025** : Formations Certifiantes — Orange Digital Centre Madagascar (Codage Python/Java, Protocoles IoT).
+- **2023 — 2024** : Baccalauréat Général Scientifique — Lycée Andriamanpoinimerina, Sabotsy Namehana.
+- **Diplôme obtenu** : Diplôme de Spécialisation Technicien (DST).
+
+## Langues
+- **Malagasy** : Langue maternelle
+- **Français** : Excellente maîtrise
+- **Anglais** : Niveau intermédiaire

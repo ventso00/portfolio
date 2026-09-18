@@ -1,0 +1,28 @@
+# Directives pour moteurs de recherche et agents IA
+User-agent: *
+Allow: /
+
+# Moteurs de recherche IA specifiques
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Sitemap
+Sitemap: https://ventso-portfolio.netlify.app/sitemap.xml

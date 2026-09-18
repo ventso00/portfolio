@@ -4,7 +4,7 @@
   # Aucune commande de build necessaire (site statique HTML/CSS/JS pur)
   command = ""
 
-# Redirection de portfolio.html vers la racine
+# Redirections d'anciennes URLs vers la racine
 [[redirects]]
   from = "/portfolio.html"
   to = "/"
@@ -14,3 +14,27 @@
   from = "/portfolio"
   to = "/"
   status = 301
+
+# En-tetes de securite et de referencement
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/llms.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=UTF-8"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/robots.txt"
+  [headers.values]
+    Content-Type = "text/plain; charset=UTF-8"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=UTF-8"

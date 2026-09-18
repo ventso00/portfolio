@@ -1,0 +1,16 @@
+[build]
+  # Dossier racine a publier
+  publish = "."
+  # Aucune commande de build necessaire (site statique HTML/CSS/JS pur)
+  command = ""
+
+# Redirection de portfolio.html vers la racine
+[[redirects]]
+  from = "/portfolio.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/portfolio"
+  to = "/"
+  status = 301

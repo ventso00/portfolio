@@ -1,582 +1,797 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rajaomanjato Ventson'Iavo Tsiarovana | Technicien Support IT & Administrateur Systèmes et Réseaux</title>
-<meta name="description" content="Portfolio de Rajaomanjato Ventson'Iavo Tsiarovana — Technicien Support IT & Administrateur Systèmes et Réseaux junior à Antananarivo, Madagascar. Étudiant en Licence 3 ESIIA à l'ISPM Antsobolo, titulaire du DST. Spécialiste Windows Server, Linux, Cisco, virtualisation et IoT.">
-<meta name="keywords" content="Rajaomanjato Ventson'Iavo Tsiarovana, Ventson'Iavo Tsiarovana, Ventso Rajaomanjato, Technicien Support IT, Administrateur Système et Réseau, Antananarivo, Madagascar, ISPM Antsobolo, ESIIA, Cisco Packet Tracer, Windows Server 2022, Linux Debian Ubuntu, GNS3, Virtualisation VMware, Support N1 N2">
-<meta name="author" content="Rajaomanjato Ventson'Iavo Tsiarovana">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
-<meta name="bingbot" content="index, follow">
-<link rel="canonical" href="https://ventso.netlify.app/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajaomanjato Ventson'Iavo Tsiarovana | Technicien Support IT & Réseaux</title>
+  <meta name="description" content="Portfolio de Rajaomanjato Ventson'Iavo Tsiarovana — Technicien Support IT & Administrateur Systèmes et Réseaux junior à Antananarivo, Madagascar." />
+  
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
 
-<meta property="og:type" content="profile">
-<meta property="og:title" content="Rajaomanjato Ventson'Iavo Tsiarovana | Technicien Support IT & Réseaux">
-<meta property="og:description" content="Portfolio et projets de Rajaomanjato Ventson'Iavo Tsiarovana — Spécialiste Support IT, Windows Server, Linux, Cisco et virtualisation à Antananarivo, Madagascar.">
-<meta property="og:url" content="https://ventso.netlify.app/">
-<meta property="og:site_name" content="Portfolio Ventson'Iavo Tsiarovana">
-<meta property="og:locale" content="fr_FR">
-<meta property="profile:first_name" content="Ventson'Iavo Tsiarovana">
-<meta property="profile:last_name" content="Rajaomanjato">
+  <!-- Tailwind CSS via CDN pour fonctionnement autonome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Rajaomanjato Ventson'Iavo Tsiarovana | Technicien Support IT & Réseaux">
-<meta name="twitter:description" content="Portfolio professionnel en administration systèmes, réseaux et support technique IT.">
-
-<meta name="theme-color" content="#0a0e1a">
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": "https://ventso.netlify.app/#person",
-      "name": "Rajaomanjato Ventson'Iavo Tsiarovana",
-      "alternateName": ["Ventson'Iavo Tsiarovana", "Ventso Rajaomanjato", "Ventso"],
-      "jobTitle": "Technicien Support IT & Administrateur Systèmes et Réseaux",
-      "description": "Technicien Support IT et Administrateur Systèmes et Réseaux junior basé à Antananarivo, Madagascar. Étudiant en Licence 3 ESIIA à l'ISPM Antsobolo et titulaire du Diplôme de Spécialisation Technicien (DST).",
-      "url": "https://ventso.netlify.app/",
-      "email": "mailto:rajaomanjatoventso@gmail.com",
-      "telephone": "+261385890907",
-      "address": {"@type": "PostalAddress", "addressLocality": "Antananarivo", "addressCountry": "MG"},
-      "alumniOf": [
-        {"@type": "CollegeOrUniversity", "name": "ISPM Antsobolo (Institut Supérieur Polytechnique de Madagascar)"},
-        {"@type": "EducationalOrganization", "name": "Orange Digital Centre Madagascar"},
-        {"@type": "HighSchool", "name": "Lycée Andriamanpoinimerina"}
-      ],
-      "hasCredential": [
-        {"@type": "EducationalOccupationalCredential", "name": "Diplôme de Spécialisation Technicien (DST)"},
-        {"@type": "EducationalOccupationalCredential", "name": "Licence 3 ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) en cours"}
-      ],
-      "knowsAbout": [
-        "Administration Systèmes et Réseaux",
-        "Support IT N1/N2",
-        "Windows Server 2022 (AD DS, DNS, DHCP, GPO)",
-        "Linux (Debian, Ubuntu)",
-        "Réseaux Cisco (Routing, Switching, VLAN, OSPF, NAT/PAT, ACL)",
-        "Cisco Packet Tracer & GNS3",
-        "Virtualisation (VMware Workstation, Hyper-V, VirtualBox)",
-        "Python, Java, PHP, C/C++",
-        "IoT & Télémesure ESP32"
-      ],
-      "sameAs": ["https://github.com/ventso00"]
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": "https://ventso.netlify.app/#webpage",
-      "url": "https://ventso.netlify.app/",
-      "name": "Portfolio de Rajaomanjato Ventson'Iavo Tsiarovana",
-      "isPartOf": {
-        "@type": "WebSite",
-        "@id": "https://ventso.netlify.app/#website",
-        "url": "https://ventso.netlify.app/",
-        "name": "Portfolio Ventson'Iavo Tsiarovana",
-        "publisher": {"@id": "https://ventso.netlify.app/#person"}
-      },
-      "about": {"@id": "https://ventso.netlify.app/#person"},
-      "mainEntity": {"@id": "https://ventso.netlify.app/#person"},
-      "inLanguage": "fr"
+  <style>
+    :root {
+      --bg: #0a0e1a;
+      --bg-elev: #121829;
+      --bg-elev-2: #1a2238;
+      --border: #24304f;
+      --text: #e2e8f0;
+      --text-dim: #94a3b8;
+      --cyan: #4fd8e8;
+      --amber: #ffb454;
+      --emerald: #34d399;
     }
-  ]
-}
-</script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{
-    --bg:#0a0e1a; --bg-elev:#0f1526; --bg-elev-2:#141c33; --border:#212c47;
-    --text:#e7edf9; --text-dim:#8b96b4; --cyan:#4fd8e8; --amber:#ffb454;
-    --mono:'JetBrains Mono',monospace; --head:'Space Grotesk',sans-serif; --body:'Inter',sans-serif;
-  }
-  @media (prefers-color-scheme: light){
-    :root:not([data-theme="dark"]){
-      --bg:#f4f6fb; --bg-elev:#ffffff; --bg-elev-2:#eef1f8;
-      --border:#dbe1ee; --text:#101627; --text-dim:#5b6478;
+    [data-theme="light"] {
+      --bg: #f8fafc;
+      --bg-elev: #ffffff;
+      --bg-elev-2: #edf2f7;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-dim: #475569;
+      --cyan: #0284c7;
+      --amber: #d97706;
+      --emerald: #059669;
     }
-  }
-  :root[data-theme="light"]{
-    --bg:#f4f6fb; --bg-elev:#ffffff; --bg-elev-2:#eef1f8;
-    --border:#dbe1ee; --text:#101627; --text-dim:#5b6478;
-  }
 
-  *{box-sizing:border-box; margin:0; padding:0;}
-  html{scroll-behavior:smooth;}
-  body{background:var(--bg); color:var(--text); font-family:var(--body); line-height:1.6; overflow-x:hidden;}
-  a{color:inherit; text-decoration:none;}
-  img{max-width:100%; display:block;}
-  section{padding:5rem 1.5rem; max-width:1080px; margin:0 auto;}
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
-  body::before{
-    content:""; position:fixed; inset:0; z-index:-1;
-    background-image:
-      linear-gradient(var(--border) 1px, transparent 1px),
-      linear-gradient(90deg, var(--border) 1px, transparent 1px);
-    background-size:48px 48px; opacity:.25;
-    mask-image:radial-gradient(ellipse 90% 60% at 50% 0%, black 40%, transparent 90%);
-  }
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
+    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
 
-  header{
-    position:sticky; top:0; z-index:50; backdrop-filter:blur(10px);
-    background:color-mix(in srgb, var(--bg) 78%, transparent);
-    border-bottom:1px solid var(--border);
-  }
-  nav{max-width:1080px; margin:0 auto; padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; gap:1rem;}
-  .logo{font-family:var(--mono); font-size:.95rem; color:var(--cyan); display:flex; align-items:center; gap:.5rem;}
-  .logo .dot{width:8px; height:8px; border-radius:50%; background:var(--amber); box-shadow:0 0 8px var(--amber);}
-  .navlinks{display:flex; gap:1.75rem; font-size:.9rem; color:var(--text-dim); flex-wrap:wrap;}
-  .navlinks a{transition:color .2s;}
-  .navlinks a:hover, .navlinks a:focus-visible{color:var(--cyan);}
+    .bg-grid-pattern {
+      background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
+                        linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+      background-size: 32px 32px;
+      opacity: 0.25;
+    }
 
-  .hero{padding-top:5.5rem; padding-bottom:4rem; display:grid; grid-template-columns:1.15fr .85fr; gap:3rem; align-items:center;}
-  .terminal{background:var(--bg-elev); border:1px solid var(--border); border-radius:10px; overflow:hidden; box-shadow:0 20px 60px -20px rgba(0,0,0,.5);}
-  .term-bar{display:flex; align-items:center; gap:.4rem; padding:.7rem 1rem; border-bottom:1px solid var(--border); background:var(--bg-elev-2);}
-  .term-bar span{width:10px; height:10px; border-radius:50%; display:inline-block;}
-  .term-bar span:nth-child(1){background:#ff5f57;}
-  .term-bar span:nth-child(2){background:#febc2e;}
-  .term-bar span:nth-child(3){background:#28c840;}
-  .term-title{margin-left:.6rem; font-family:var(--mono); font-size:.75rem; color:var(--text-dim);}
-  .term-body{padding:1.4rem 1.5rem; font-family:var(--mono); font-size:.9rem;}
-  .term-body .line{margin-bottom:.55rem;}
-  .prompt{color:var(--amber);}
-  .out{color:var(--text-dim); padding-left:1.2rem; display:block;}
-  .val{color:var(--text);}
-  .accent{color:var(--cyan);}
-  .cursor{display:inline-block; width:8px; height:1em; background:var(--cyan); vertical-align:middle; animation:blink 1s steps(1) infinite;}
-  @keyframes blink{50%{opacity:0;}}
-
-  .hero-photo-wrap{position:relative; justify-self:center;}
-  .hero-photo{
-    width:220px; height:220px; border-radius:16px; object-fit:cover;
-    border:1px solid var(--border);
-    box-shadow:0 0 0 1px var(--border), 0 30px 60px -25px rgba(79,216,232,.25);
-  }
-  .hero-photo-tag{
-    position:absolute; bottom:-14px; left:50%; transform:translateX(-50%);
-    background:var(--bg-elev); border:1px solid var(--border); border-radius:999px;
-    padding:.4rem .9rem; font-family:var(--mono); font-size:.7rem; color:var(--cyan); white-space:nowrap;
-  }
-
-  h1{font-family:var(--head); font-size:2.4rem; font-weight:600; line-height:1.15; margin-bottom:.8rem;}
-  h2{font-family:var(--head); font-size:1.5rem; font-weight:600; margin-bottom:2rem; display:flex; align-items:baseline; gap:.6rem;}
-  h2 .idx{font-family:var(--mono); color:var(--amber); font-size:.85rem;}
-
-  .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:2.5rem;}
-  .about-grid p{color:var(--text-dim); margin-bottom:1rem;}
-  .meta-list{list-style:none; font-family:var(--mono); font-size:.85rem;}
-  .meta-list li{display:flex; justify-content:space-between; padding:.6rem 0; border-bottom:1px solid var(--border); gap:1rem;}
-  .meta-list li span:first-child{color:var(--text-dim);}
-
-  .timeline{position:relative; padding-left:1.6rem; border-left:1px solid var(--border);}
-  .tl-item{position:relative; padding-bottom:2.2rem;}
-  .tl-item:last-child{padding-bottom:0;}
-  .tl-item::before{
-    content:""; position:absolute; left:-1.85rem; top:.3rem; width:10px; height:10px;
-    border-radius:50%; background:var(--bg); border:2px solid var(--cyan);
-  }
-  .tl-date{font-family:var(--mono); font-size:.78rem; color:var(--amber); margin-bottom:.3rem;}
-  .tl-title{font-family:var(--head); font-weight:600; font-size:1.05rem; margin-bottom:.5rem;}
-  .tl-item ul{color:var(--text-dim); padding-left:1.1rem; font-size:.92rem;}
-  .tl-item li{margin-bottom:.3rem;}
-
-  .proj-grid{display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;}
-  .card{background:var(--bg-elev); border:1px solid var(--border); border-radius:10px; padding:1.5rem; transition:border-color .2s, transform .2s;}
-  .card:hover{border-color:var(--cyan);}
-  .card-title{font-family:var(--head); font-weight:600; font-size:1.05rem; margin-bottom:.5rem;}
-  .card p{color:var(--text-dim); font-size:.92rem; margin-bottom:.9rem;}
-  .tags{display:flex; flex-wrap:wrap; gap:.4rem;}
-  .tag{font-family:var(--mono); font-size:.72rem; color:var(--cyan); border:1px solid var(--border); border-radius:999px; padding:.25rem .65rem;}
-
-  .card-links{display:flex; flex-wrap:wrap; gap:.6rem; margin-top:1rem;}
-  .card-links a{
-    font-family:var(--mono); font-size:.78rem; color:var(--cyan);
-    border:1px solid var(--border); border-radius:6px; padding:.3rem .75rem;
-    transition:border-color .2s, background .2s;
-  }
-  .card-links a:hover{border-color:var(--cyan); background:var(--bg-elev-2);}
-
-  .skills-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem;}
-  .skill-cat{background:var(--bg-elev); border:1px solid var(--border); border-radius:10px; padding:1.4rem;}
-  .skill-cat h3{font-family:var(--mono); font-size:.78rem; color:var(--amber); margin-bottom:.9rem; font-weight:500;}
-  .skill-cat ul{list-style:none; font-size:.92rem; color:var(--text-dim);}
-  .skill-cat li{padding:.3rem 0; display:flex; gap:.6rem;}
-  .skill-cat li::before{content:"›"; color:var(--cyan);}
-  .soft-skills{display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.5rem;}
-  .soft-skills span{font-family:var(--mono); font-size:.8rem; padding:.5rem 1rem; border:1px solid var(--border); border-radius:8px; color:var(--text-dim);}
-
-  .edu-item{display:grid; grid-template-columns:120px 1fr; gap:1.2rem; padding:1.2rem 0; border-bottom:1px solid var(--border);}
-  .edu-item:last-child{border-bottom:none;}
-  .edu-date{font-family:var(--mono); font-size:.8rem; color:var(--amber);}
-  .edu-title{font-family:var(--head); font-weight:600; margin-bottom:.25rem;}
-  .edu-sub{color:var(--text-dim); font-size:.9rem;}
-  .langs{display:flex; gap:2rem; flex-wrap:wrap; margin-top:1rem;}
-  .lang-item{font-family:var(--mono); font-size:.85rem;}
-  .lang-item b{display:block; font-family:var(--body); font-weight:600; color:var(--text); margin-bottom:.2rem;}
-
-  footer{border-top:1px solid var(--border); padding:4rem 1.5rem 2.5rem; text-align:center;}
-  .contact-title{font-family:var(--head); font-size:1.8rem; margin-bottom:.6rem;}
-  .contact-sub{color:var(--text-dim); margin-bottom:2rem;}
-  .contact-links{display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; margin-bottom:2.5rem;}
-  .clink{font-family:var(--mono); font-size:.85rem; padding:.7rem 1.3rem; border:1px solid var(--border); border-radius:8px; transition:.2s;}
-  .clink:hover{border-color:var(--cyan); color:var(--cyan);}
-  .foot-note{font-family:var(--mono); font-size:.75rem; color:var(--text-dim);}
-
-  @media (max-width:760px){
-    .hero{grid-template-columns:1fr; padding-top:2.5rem;}
-    .hero-photo-wrap{order:-1;}
-    .about-grid, .proj-grid, .skills-grid{grid-template-columns:1fr;}
-    .navlinks{display:none;}
-    h1{font-size:1.9rem;}
-    .edu-item{grid-template-columns:1fr; gap:.3rem;}
-  }
-  :focus-visible{outline:2px solid var(--cyan); outline-offset:2px;}
-
-  @keyframes fadeUp{from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);}}
-  @keyframes popIn{from{opacity:0; transform:scale(.94);} to{opacity:1; transform:scale(1);}}
-  @keyframes typeLine{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:translateY(0);}}
-  @keyframes dashMove{to{stroke-dashoffset:-200;}}
-
-  .terminal{opacity:0; animation:popIn .6s ease .1s forwards;}
-  .term-body .line{opacity:0; animation:typeLine .35s ease forwards;}
-  .term-body .line:nth-child(1){animation-delay:.5s;}
-  .term-body .line:nth-child(2){animation-delay:.85s;}
-  .term-body .line:nth-child(3){animation-delay:1.2s;}
-  .term-body .line:nth-child(4){animation-delay:1.55s;}
-  .term-body .line:nth-child(5){animation-delay:1.9s;}
-  .term-body .line:nth-child(6){animation-delay:2.25s;}
-  .term-body .line:nth-child(7){animation-delay:2.6s;}
-  .term-body .line:nth-child(8){animation-delay:2.95s;}
-  .hero-photo-wrap{opacity:0; animation:fadeUp .7s ease .3s forwards;}
-
-  .net-lines{position:absolute; inset:0; z-index:-1; opacity:.5; pointer-events:none;}
-  .net-lines path{stroke-dasharray:6 10; animation:dashMove 5s linear infinite;}
-
-  .reveal{opacity:0; transform:translateY(24px); transition:opacity .6s ease, transform .6s ease;}
-  .reveal.is-visible{opacity:1; transform:translateY(0);}
-  .reveal-stagger > *{opacity:0; transform:translateY(18px); transition:opacity .5s ease, transform .5s ease;}
-  .reveal-stagger.is-visible > *{opacity:1; transform:translateY(0);}
-  .reveal-stagger.is-visible > *:nth-child(1){transition-delay:.05s;}
-  .reveal-stagger.is-visible > *:nth-child(2){transition-delay:.12s;}
-  .reveal-stagger.is-visible > *:nth-child(3){transition-delay:.19s;}
-  .reveal-stagger.is-visible > *:nth-child(4){transition-delay:.26s;}
-  .reveal-stagger.is-visible > *:nth-child(5){transition-delay:.33s;}
-  .reveal-stagger.is-visible > *:nth-child(6){transition-delay:.4s;}
-
-  .card{transform:translateY(0);}
-  .card:hover{transform:translateY(-4px);}
-
-  .navlinks a{position:relative; padding-bottom:.2rem;}
-  .navlinks a::after{content:""; position:absolute; left:0; bottom:-2px; height:1px; width:0; background:var(--cyan); transition:width .25s ease;}
-  .navlinks a:hover::after{width:100%;}
-  .navlinks a.active{color:var(--cyan);}
-  .navlinks a.active::after{width:100%;}
-
-  .theme-btn{
-    width:36px; height:36px; border-radius:8px; border:1px solid var(--border);
-    background:var(--bg-elev); color:var(--text); cursor:pointer;
-    display:flex; align-items:center; justify-content:center; font-size:1rem;
-    transition:border-color .2s, transform .2s; flex-shrink:0;
-  }
-  .theme-btn:hover{border-color:var(--cyan); transform:rotate(15deg);}
-
-  @media (prefers-reduced-motion: reduce){
-    .cursor{animation:none;}
-    html{scroll-behavior:auto;}
-    .terminal, .term-body .line, .hero-photo-wrap{animation:none; opacity:1;}
-    .reveal, .reveal-stagger > *{opacity:1; transform:none; transition:none;}
-    .card:hover{transform:none;}
-    .net-lines path{animation:none;}
-  }
-</style>
+    /* Animation pulse ping */
+    @keyframes pulseGlow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+    .animate-glow { animation: pulseGlow 3s infinite ease-in-out; }
+  </style>
 </head>
-<body>
+<body class="relative min-h-screen selection:bg-[var(--cyan)] selection:text-[#0a0e1a]">
 
-<header>
-  <nav>
-    <div class="logo"><span class="dot"></span>ventso@portfolio:~$</div>
-    <div class="navlinks">
-      <a href="#about">à propos</a>
-      <a href="#experience">expérience</a>
-      <a href="#projets">projets</a>
-      <a href="#competences">compétences</a>
-      <a href="#formation">formation</a>
-      <a href="#contact">contact</a>
-    </div>
-    <button id="theme-toggle" class="theme-btn" type="button" aria-label="Basculer le thème clair/sombre" title="Basculer le thème">
-      <span class="theme-icon" aria-hidden="true">🌙</span>
-    </button>
-  </nav>
-</header>
+  <!-- Grille de fond subtile -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0" aria-hidden="true"></div>
 
-<section class="hero" style="position:relative;">
-  <svg class="net-lines" viewBox="0 0 1080 400" preserveAspectRatio="none" aria-hidden="true">
-    <path d="M0,60 C 250,140 400,10 1080,90" fill="none" stroke="#4fd8e8" stroke-width="1"></path>
-    <path d="M0,320 C 300,240 700,380 1080,300" fill="none" stroke="#ffb454" stroke-width="1"></path>
-  </svg>
-  <div class="terminal">
-    <div class="term-bar">
-      <span></span><span></span><span></span>
-      <span class="term-title">bash — ~/ventso</span>
-    </div>
-    <div class="term-body">
-      <div class="line"><span class="prompt">$</span> whoami</div>
-      <h1 class="line out" style="font-size:inherit; font-weight:normal; margin:0; display:block;"><span class="val">Rajaomanjato Ventson'Iavo Tsiarovana</span></h1>
-      <div class="line"><span class="prompt">$</span> role --current</div>
-      <div class="line out"><span class="val accent">Technicien Support IT & Administrateur Système/Réseau</span></div>
-      <div class="line"><span class="prompt">$</span> status</div>
-      <div class="line out"><span class="val">En Licence 3 ESIIA — ISPM Antsobolo · Diplômé DST</span></div>
-      <div class="line"><span class="prompt">$</span> stack --show</div>
-      <div class="line out"><span class="val">Windows Server · Linux · Cisco · GNS3 · Python</span><span class="cursor"></span></div>
-    </div>
-  </div>
-  <div class="hero-photo-wrap">
-    <img class="hero-photo" src="photo.jpg" width="220" height="220" alt="Photo de Ventson'Iavo Tsiarovana">
-    <div class="hero-photo-tag"> — ~/ventso;</div>
-  </div>
-</section>
+  <!-- Contenu Principal -->
+  <div class="relative z-10 flex flex-col min-h-screen">
 
-<section id="about" class="reveal">
-  <h2><span class="idx">01</span> À propos</h2>
-  <div class="about-grid">
-    <div>
-      <p>Titulaire d'un Diplôme de Spécialisation Technicien (DST) et actuellement en 3ᵉ année de Licence ESIIA à l'ISPM Antsobolo, je me spécialise en administration systèmes, réseaux et infrastructures IT.</p>
-      <p>Formé chez FTM sur l'administration Windows/Linux et le support technique N1/N2, j'aime concevoir, simuler et déployer des infrastructures réseau fiables — de la maquette Cisco Packet Tracer jusqu'au serveur en production.</p>
-      <p>Je recherche une opportunité en tant que Technicien Support IT, Technicien Systèmes et Réseaux, ou Administrateur Systèmes et Réseaux Junior.</p>
-    </div>
-    <ul class="meta-list">
-      <li><span>Localisation</span><span>Antananarivo, Madagascar</span></li>
-      <li><span>Email</span><span>rajaomanjatoventso@gmail.com</span></li>
-      <li><span>Téléphone</span><span>038 58 909 07</span></li>
-      <li><span>Diplôme</span><span>DST + Licence 3 ESIIA (en cours)</span></li>
-      <li><span>Langues</span><span>Malagasy, Français, Anglais</span></li>
-      <li><span>Disponibilité</span><span>Ouvert aux opportunités</span></li>
-    </ul>
-  </div>
-</section>
+    <!-- En-tête / Barre de Navigation -->
+    <header class="sticky top-0 z-40 backdrop-blur-md bg-[var(--bg)]/85 border-b border-[var(--border)] transition-colors">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+        <a href="#hero" class="flex items-center gap-2 group">
+          <span class="w-2.5 h-2.5 rounded-full bg-[var(--cyan)] animate-pulse"></span>
+          <span class="font-mono-code font-bold text-sm sm:text-base tracking-wider text-[var(--text)] group-hover:text-[var(--cyan)] transition-colors">
+            ventso<span class="text-[var(--amber)]">@sysadmin</span>:~#
+          </span>
+        </a>
 
-<section id="experience" class="reveal">
-  <h2><span class="idx">02</span> Expérience</h2>
-  <div class="timeline reveal-stagger">
-    <div class="tl-item">
-      <div class="tl-date">Novembre 2024 — Janvier 2025</div>
-      <div class="tl-title">Stagiaire en Administration Systèmes et Réseaux — FTM, SaryTany</div>
-      <ul>
-        <li>Déploiement et administration de Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation sous VMware / Hyper-V.</li>
-        <li>Support technique de niveau 1 et 2 auprès des utilisateurs : diagnostic, résolution d'incidents matériels/logiciels et maintenance du parc informatique.</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Juillet 2025</div>
-      <div class="tl-title">Formation Codage — Orange Digital Centre Madagascar</div>
-      <ul>
-        <li>Codage en langages Python et Java.</li>
-      </ul>
-    </div>
-    <div class="tl-item">
-      <div class="tl-date">Février 2025</div>
-      <div class="tl-title">Formation Protocoles IoT — Orange Digital Centre Madagascar</div>
-      <ul>
-        <li>Protocoles de communication pour les systèmes IoT.</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <!-- Liens Desktop -->
+        <nav class="hidden md:flex items-center gap-6 font-mono-code text-xs">
+          <a href="#about" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">01.</span> À propos</a>
+          <a href="#experience" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">02.</span> Parcours</a>
+          <a href="#projets" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">03.</span> Projets</a>
+          <a href="#competences" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">04.</span> Compétences</a>
+          <a href="#formation" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">05.</span> Formation</a>
+          <a href="#contact" class="px-3.5 py-1.5 rounded-lg border border-[var(--cyan)] text-[var(--cyan)] hover:bg-[var(--cyan)] hover:text-[#0a0e1a] transition-all font-semibold">
+            Contact
+          </a>
+          <!-- Bouton Thème -->
+          <button id="themeToggle" class="p-2 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:text-[var(--cyan)] transition-colors">
+            <i data-lucide="sun" class="w-4 h-4 hidden dark-icon"></i>
+            <i data-lucide="moon" class="w-4 h-4 light-icon"></i>
+          </button>
+        </nav>
 
-<section id="projets" class="reveal">
-  <h2><span class="idx">03</span> Projets</h2>
-  <div class="proj-grid reveal-stagger">
-    <div class="card">
-      <div class="card-title">Boîte noire automobile</div>
-      <p>Système conçu pour l'enregistrement de télémétrie et de données de conduite en temps réel, depuis 2023.</p>
-      <div class="tags"><span class="tag">ESP32</span><span class="tag">SD Card</span><span class="tag">Capteurs</span></div>
-    </div>
-    <div class="card">
-      <div class="card-title">WIFIKO</div>
-      <p>Plateforme de gestion d'accès Wi-Fi, avec authentification et suivi des connexions.</p>
-      <div class="tags"><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Apache</span></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Simulation réseau SaryTany</div>
-      <p>Maquette de l'infrastructure réseau de l'entreprise SaryTany, conçue sur Cisco Packet Tracer.</p>
-      <div class="tags"><span class="tag">Cisco Packet Tracer</span><span class="tag">VLAN</span><span class="tag">Routing</span></div>
-    </div>
-    <div class="card">
-      <div class="card-title">Système Gaz</div>
-      <p>Supervision et commande de gaz à distance : les mesures sont envoyées au serveur, affichées avec l'état du gaz, et une commande permet d'agir à distance. Connexion sécurisée et gestion des utilisateurs (liste, ajout, suppression).</p>
-      <div class="tags"><span class="tag">IoT</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Dashboard</span></div>
-      <div class="card-links">
-        <a href="http://gazsystem.getenjoyment.net/index.php" target="_blank" rel="noopener noreferrer">Démo en ligne ↗</a>
-        <a href="https://github.com/ventso00/systeme-gaz" target="_blank" rel="noopener noreferrer">Code GitHub ↗</a>
+        <!-- Menu Mobile Button -->
+        <div class="flex items-center gap-2 md:hidden">
+          <button id="mobileThemeToggle" class="p-2 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)]">
+            <i data-lucide="moon" class="w-4 h-4"></i>
+          </button>
+          <button id="mobileMenuBtn" class="p-2 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)]">
+            <i data-lucide="menu" class="w-5 h-5"></i>
+          </button>
+        </div>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Smart Water MDG</div>
-      <p>Supervision de l'eau en temps réel : réception des mesures, suivi de l'état du système, historique des relevés et statistiques d'utilisation sur un tableau de bord web.</p>
-      <div class="tags"><span class="tag">IoT</span><span class="tag">PHP</span><span class="tag">MySQL</span><span class="tag">Statistiques</span></div>
-      <div class="card-links">
-        <a href="http://smartwatermdg.getenjoyment.net/" target="_blank" rel="noopener noreferrer">Démo en ligne ↗</a>
-        <a href="https://github.com/ventso00/SmartWater_project" target="_blank" rel="noopener noreferrer">Code GitHub ↗</a>
+
+      <!-- Menu Déroulant Mobile -->
+      <div id="mobileMenu" class="hidden md:hidden border-b border-[var(--border)] bg-[var(--bg-elev)] px-4 py-4 space-y-3 font-mono-code text-sm">
+        <a href="#about" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]">01. À propos</a>
+        <a href="#experience" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]">02. Parcours & Stages</a>
+        <a href="#projets" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]">03. Projets</a>
+        <a href="#competences" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]">04. Compétences IT</a>
+        <a href="#formation" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]">05. Formation</a>
+        <a href="#contact" class="block py-2 text-center rounded-lg bg-[var(--cyan)] text-[#0a0e1a] font-semibold">Prendre Contact</a>
       </div>
-    </div>
-    <div class="card">
-      <div class="card-title">Prochain projet</div>
-      <p>Envie de collaborer sur un projet réseau, infra ou IoT ? Discutons-en.</p>
-      <div class="tags"><span class="tag">Disponible</span></div>
-    </div>
+    </header>
+
+    <main class="flex-1">
+
+      <!-- SECTION HERO -->
+      <section id="hero" class="pt-12 pb-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Colonne Gauche : Présentation -->
+          <div class="lg:col-span-7 space-y-5 text-left">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code bg-[var(--bg-elev)] border border-[var(--border)] text-[var(--cyan)]">
+              <span class="w-2 h-2 rounded-full bg-[var(--emerald)] animate-ping"></span>
+              <span>ISPM Antsobolo (L3 ESIIA) · Titulaire du DST</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[var(--text)] tracking-tight leading-tight">
+              Rajaomanjato <br />
+              <span class="text-[var(--cyan)]">Ventson'Iavo</span> Tsiarovana
+            </h1>
+
+            <p class="font-mono-code text-sm sm:text-base text-[var(--amber)]">
+              &gt; Technicien Support IT & Administrateur Systèmes et Réseaux Junior
+            </p>
+
+            <p class="text-sm sm:text-base text-[var(--text-dim)] leading-relaxed max-w-xl">
+              Spécialisé en administration <strong>Windows Server 2022 (AD, DNS, DHCP, GPO)</strong>, environnements <strong>Linux</strong>, maquettage réseau sous <strong>Cisco Packet Tracer</strong>, virtualisation VMware, et support technique N1/N2.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-3 pt-2 font-mono-code text-xs sm:text-sm">
+              <a href="#projets" class="px-5 py-2.5 rounded-lg bg-[var(--cyan)] text-[#0a0e1a] font-semibold hover:bg-[#3ec4d4] transition-all shadow-lg flex items-center gap-2">
+                <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+                <span>Voir les réalisations</span>
+              </a>
+              <button onclick="copyEmail()" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-all flex items-center gap-2">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+                <span id="emailText">rajaomanjatoventso@gmail.com</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Colonne Droite : Terminal Shell Interactif -->
+          <div class="lg:col-span-5">
+            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] shadow-2xl overflow-hidden">
+              <div class="flex items-center justify-between px-4 py-2.5 bg-[var(--bg-elev-2)] border-b border-[var(--border)]">
+                <div class="flex items-center gap-2">
+                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
+                  <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+                </div>
+                <span class="font-mono-code text-[11px] text-[var(--text-dim)]">bash - sysadmin@ispm:~</span>
+                <i data-lucide="terminal" class="w-3.5 h-3.5 text-[var(--cyan)]"></i>
+              </div>
+
+              <!-- Sortie du terminal -->
+              <div id="terminalBody" class="p-4 font-mono-code text-xs space-y-2 h-64 overflow-y-auto bg-[var(--bg)]/90">
+                <div class="text-[var(--emerald)]">Connexion établie au terminal de Ventson'Iavo.</div>
+                <div class="text-[var(--text-dim)]">Tapez <span class="text-[var(--cyan)] font-semibold">whoami</span>, <span class="text-[var(--cyan)] font-semibold">projets</span>, <span class="text-[var(--cyan)] font-semibold">contact</span> ou <span class="text-[var(--cyan)] font-semibold">clear</span>.</div>
+                <div class="text-[var(--text)] pt-1"><span class="text-[var(--amber)]">guest@portfolio:~$</span> whoami</div>
+                <div class="text-[var(--text-dim)] pl-2 border-l border-[var(--border)]">
+                  Nom : Rajaomanjato Ventson'Iavo Tsiarovana<br/>
+                  Formation : Licence 3 ESIIA (ISPM Antsobolo)<br/>
+                  Statut : Disponible pour opportunités IT
+                </div>
+              </div>
+
+              <!-- Ligne de saisie interactive du terminal -->
+              <form id="terminalForm" class="flex items-center gap-2 px-4 py-2.5 border-t border-[var(--border)] bg-[var(--bg-elev-2)] font-mono-code text-xs">
+                <span class="text-[var(--amber)]">guest@portfolio:~$</span>
+                <input id="terminalInput" type="text" placeholder="Entrez une commande..." class="flex-1 bg-transparent border-none text-[var(--cyan)] focus:outline-none placeholder:text-[var(--text-dim)]/50" />
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 01: À PROPOS -->
+      <section id="about" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
+          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">01.</span>
+          <span>Profil Professionnel</span>
+          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-8 space-y-4 text-sm sm:text-base text-[var(--text-dim)] leading-relaxed">
+            <p>
+              Titulaire d'un <strong>Diplôme de Spécialisation Technicien (DST)</strong> et actuellement en 3ᵉ année de Licence ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) à l'<strong>ISPM Antsobolo</strong>, je me consacre à la mise en œuvre et au maintien en conditions opérationnelles des infrastructures informatiques d'entreprise.
+            </p>
+            <p>
+              Mon stage au sein de <strong>FTM / SaryTany</strong> m'a permis d'acquérir une solide rigueur d'intervention en environnement de production : gestion de serveurs Windows Server 2022 (Active Directory, annuaires LDAP, politiques GPO, services DHCP/DNS), support utilisateur N1/N2 et virtualisation.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 font-mono-code text-xs">
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
+                <span class="text-[var(--cyan)] font-semibold">› Localisation :</span> Antananarivo, Madagascar
+              </div>
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
+                <span class="text-[var(--cyan)] font-semibold">› Diplômes :</span> DST + Licence 3 ESIIA (en cours)
+              </div>
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
+                <span class="text-[var(--cyan)] font-semibold">› Langues :</span> Français, Anglais, Malagasy
+              </div>
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
+                <span class="text-[var(--cyan)] font-semibold">› Contact rapide :</span> 038 58 909 07
+              </div>
+            </div>
+          </div>
+
+          <!-- Carte Profil Latérale -->
+          <div class="lg:col-span-4 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] p-5 text-center shadow-lg">
+            <div class="w-32 h-32 mx-auto rounded-full p-1 border-2 border-[var(--cyan)] mb-4 overflow-hidden shadow-inner">
+              <div id="avatarPlaceholder" class="w-full h-full rounded-full bg-[var(--bg-elev-2)] flex items-center justify-center text-3xl font-heading font-bold text-[var(--cyan)]">
+                VT
+              </div>
+            </div>
+            <h3 class="font-heading font-semibold text-lg text-[var(--text)]">Ventson'Iavo Tsiarovana</h3>
+            <p class="font-mono-code text-xs text-[var(--amber)] mb-4">Technicien Support & Systèmes</p>
+            <div class="border-t border-[var(--border)] pt-3 flex justify-center gap-4 font-mono-code text-xs text-[var(--text-dim)]">
+              <a href="https://github.com/ventso00" target="_blank" class="hover:text-[var(--cyan)] flex items-center gap-1">
+                <i data-lucide="github" class="w-4 h-4"></i> GitHub
+              </a>
+              <a href="mailto:rajaomanjatoventso@gmail.com" class="hover:text-[var(--cyan)] flex items-center gap-1">
+                <i data-lucide="mail" class="w-4 h-4"></i> Email
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 02: PARCOURS & EXPÉRIENCE -->
+      <section id="experience" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
+          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">02.</span>
+          <span>Parcours & Expérience Pratique</span>
+          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
+        </h2>
+
+        <div class="space-y-6">
+          <!-- Stage FTM / SaryTany -->
+          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] hover:border-[var(--cyan)] transition-colors shadow-md">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div>
+                <h3 class="font-heading font-semibold text-lg text-[var(--text)]">
+                  Stagiaire en Administration Systèmes et Réseaux
+                </h3>
+                <div class="font-mono-code text-xs text-[var(--cyan)]">FTM, SaryTany — Antananarivo</div>
+              </div>
+              <span class="font-mono-code text-xs text-[var(--amber)] bg-[var(--bg-elev-2)] px-3 py-1 rounded-md border border-[var(--border)] self-start sm:self-auto">
+                Novembre 2024 — Janvier 2025
+              </span>
+            </div>
+            <ul class="space-y-2 text-xs sm:text-sm text-[var(--text-dim)] list-disc list-inside">
+              <li>Déploiement et administration de Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation sous VMware / Hyper-V.</li>
+              <li>Support technique de niveau 1 et 2 auprès des utilisateurs : diagnostic, résolution d'incidents matériels/logiciels et maintenance du parc informatique.</li>
+              <li>Gestion et segmentation des accès réseaux locaux pour les équipes de travail.</li>
+            </ul>
+          </div>
+
+          <!-- Formations Orange Digital Centre -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-heading font-semibold text-base text-[var(--text)]">Formation Codage (Python & Java)</h4>
+                <span class="font-mono-code text-xs text-[var(--amber)]">Juillet 2025</span>
+              </div>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-2">Orange Digital Centre Madagascar</p>
+              <p class="text-xs text-[var(--text-dim)]">Pratique approfondie du codage orienté objet et création d'algorithmes et scripts d'automatisation.</p>
+            </div>
+
+            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+              <div class="flex items-center justify-between mb-2">
+                <h4 class="font-heading font-semibold text-base text-[var(--text)]">Formation Protocoles IoT</h4>
+                <span class="font-mono-code text-xs text-[var(--amber)]">Février 2025</span>
+              </div>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-2">Orange Digital Centre Madagascar</p>
+              <p class="text-xs text-[var(--text-dim)]">Protocoles de communication pour objets connectés (IoT), interfaçage capteurs et sécurisation des flux de données.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 03: PROJETS & RÉALISATIONS -->
+      <section id="projets" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-8">
+          <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] flex items-baseline gap-3">
+            <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">03.</span>
+            <span>Projets & Réalisations</span>
+            <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
+          </h2>
+          <span class="font-mono-code text-xs text-[var(--text-dim)]">6 projets répertoriés</span>
+        </div>
+
+        <!-- Grille des Projets -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- 1. Système Gaz -->
+          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
+            <div>
+              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--amber)]">
+                <span>IoT & Électronique</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--amber)]/10 text-[var(--amber)] text-[10px]">Clé</span>
+              </div>
+              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Système Gaz</h3>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Supervision et commande à distance</p>
+              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
+                Supervision et commande de gaz à distance : les mesures sont transmises au serveur, affichées en temps réel avec gestion sécurisée des utilisateurs.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">IoT</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">PHP</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">MySQL</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">ESP32</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between font-mono-code text-xs">
+              <a href="http://gazsystem.getenjoyment.net/index.php" target="_blank" class="text-[var(--cyan)] hover:underline flex items-center gap-1 font-medium">
+                Démo <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+              <a href="https://github.com/ventso00/systeme-gaz" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+              </a>
+            </div>
+          </div>
+
+          <!-- 2. Smart Water MDG -->
+          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
+            <div>
+              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--amber)]">
+                <span>IoT & Télémesure</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--amber)]/10 text-[var(--amber)] text-[10px]">Clé</span>
+              </div>
+              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Smart Water MDG</h3>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Supervision de l'eau en temps réel</p>
+              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
+                Réception des mesures télémétriques, suivi d'état du niveau d'eau, historique des consommations et alertes via un tableau de bord web.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">IoT</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">PHP</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Statistiques</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between font-mono-code text-xs">
+              <a href="http://smartwatermdg.getenjoyment.net/" target="_blank" class="text-[var(--cyan)] hover:underline flex items-center gap-1 font-medium">
+                Démo <i data-lucide="external-link" class="w-3 h-3"></i>
+              </a>
+              <a href="https://github.com/ventso00/SmartWater_project" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
+              </a>
+            </div>
+          </div>
+
+          <!-- 3. Simulation réseau SaryTany -->
+          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
+            <div>
+              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--emerald)]">
+                <span>Réseaux Cisco</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--emerald)]/10 text-[var(--emerald)] text-[10px]">Infra</span>
+              </div>
+              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Réseau SaryTany</h3>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Maquette Cisco Packet Tracer</p>
+              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
+                Modélisation et validation complète de l'architecture réseau de l'entreprise : découpage en VLANs, routage OSPF inter-VLAN, NAT/PAT et règles ACL.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Packet Tracer</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">VLAN</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">OSPF</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">NAT/ACL</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-end font-mono-code text-xs">
+              <a href="https://github.com/ventso00" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> Profil GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- 4. WIFIKO -->
+          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
+            <div>
+              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--emerald)]">
+                <span>Réseaux & Systèmes</span>
+              </div>
+              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">WIFIKO</h3>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Gestion d'accès Wi-Fi & portail</p>
+              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
+                Plateforme de contrôle d'accès Wi-Fi avec authentification des usagers, suivi des sessions réseau actives et régulation des accès.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">PHP</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Portail Captif</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Apache</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-end font-mono-code text-xs">
+              <a href="https://github.com/ventso00" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- 5. Boîte noire automobile -->
+          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
+            <div>
+              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--amber)]">
+                <span>IoT & Embarqué</span>
+              </div>
+              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Boîte Noire Automobile</h3>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Télémétrie automobile embarquée</p>
+              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
+                Système conçu pour l'enregistrement de paramètres de conduite en continu, stockage sécurisé sur carte SD et détection d'incidents.
+              </p>
+              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">ESP32</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Carte SD</span>
+                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">C/C++</span>
+              </div>
+            </div>
+            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-end font-mono-code text-xs">
+              <a href="https://github.com/ventso00" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
+                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
+              </a>
+            </div>
+          </div>
+
+          <!-- 6. Prochain projet -->
+          <div class="p-6 rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg-elev)]/50 flex flex-col justify-between hover:border-[var(--cyan)] transition-all">
+            <div>
+              <div class="mb-2 font-mono-code text-xs text-[var(--cyan)]">Collaboration Ouverte</div>
+              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Votre Projet Réseau / IT</h3>
+              <p class="font-mono-code text-xs text-[var(--amber)] mb-3">Prêt pour de nouveaux défis</p>
+              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
+                Disponible pour participer à la conception, au déploiement ou à la maintenance de votre infrastructure informatique.
+              </p>
+            </div>
+            <a href="#contact" class="pt-3 border-t border-[var(--border)] text-[var(--cyan)] hover:underline font-mono-code text-xs flex items-center gap-1">
+              <span>Discutons-en ensemble</span> →
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION 04: COMPÉTENCES IT -->
+      <section id="competences" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
+          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">04.</span>
+          <span>Compétences & Outils IT</span>
+          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
+          
+          <!-- Systèmes -->
+          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+            <h3 class="font-mono-code text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider mb-3">Systèmes & Serveurs</h3>
+            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
+              <li>› Windows Server 2022 (AD, DNS, GPO)</li>
+              <li>› Linux (Debian, Ubuntu)</li>
+              <li>› Windows 10/11 Entreprise</li>
+              <li>› Bash Scripting & Services</li>
+            </ul>
+          </div>
+
+          <!-- Réseaux -->
+          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+            <h3 class="font-mono-code text-xs font-semibold text-[var(--amber)] uppercase tracking-wider mb-3">Réseaux & Sécurité</h3>
+            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
+              <li>› TCP/IP, IPv4, Subnetting (VLSM)</li>
+              <li>› Routage & Commutation Cisco</li>
+              <li>› VLAN, OSPF, NAT/PAT, ACL</li>
+              <li>› Wireshark & Analyse de trames</li>
+            </ul>
+          </div>
+
+          <!-- Virtualisation -->
+          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+            <h3 class="font-mono-code text-xs font-semibold text-[var(--emerald)] uppercase tracking-wider mb-3">Virtualisation & Lab</h3>
+            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
+              <li>› VMware Workstation & ESXi</li>
+              <li>› Microsoft Hyper-V & VirtualBox</li>
+              <li>› Cisco Packet Tracer (Avancé)</li>
+              <li>› GNS3 (Émulation réseau)</li>
+            </ul>
+          </div>
+
+          <!-- Dev & Outils -->
+          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+            <h3 class="font-mono-code text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider mb-3">Outils & Dév</h3>
+            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
+              <li>› Git, GitHub & VS Code</li>
+              <li>› Python & Java (ODC)</li>
+              <li>› PHP, MySQL & Apache</li>
+              <li>› IoT ESP32 & Capteurs</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Simulateur de Ping Réseau -->
+        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] p-5 sm:p-6 shadow-lg">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border)]">
+            <div class="flex items-center gap-2 font-mono-code text-xs sm:text-sm font-semibold text-[var(--text)]">
+              <i data-lucide="activity" class="w-4 h-4 text-[var(--cyan)]"></i>
+              <span>Diagnostic Réseau Interactif (ICMP Ping)</span>
+            </div>
+            <span class="text-xs font-mono-code text-[var(--emerald)] flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-[var(--emerald)] animate-pulse"></span>
+              Interface Active
+            </span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center font-mono-code text-xs">
+            <div class="md:col-span-5 space-y-3">
+              <label class="text-[var(--text-dim)]">Sélectionnez la cible :</label>
+              <select id="pingTarget" class="w-full p-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg)] text-[var(--text)] focus:outline-none focus:border-[var(--cyan)]">
+                <option value="192.168.1.10">Windows Server 2022 (AD/DNS) - 192.168.1.10</option>
+                <option value="192.168.1.1">Passerelle LAN - 192.168.1.1</option>
+                <option value="196.192.32.10">Serveur ISPM Antsobolo - 196.192.32.10</option>
+              </select>
+              <button onclick="runPing()" class="w-full py-2.5 rounded-lg bg-[var(--cyan)] text-[#0a0e1a] font-semibold flex items-center justify-center gap-2 hover:bg-[#3ec4d4] transition-all">
+                <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
+                <span>Lancer le test de connectivité</span>
+              </button>
+            </div>
+
+            <div id="pingLog" class="md:col-span-7 bg-[var(--bg)] border border-[var(--border)] rounded-lg p-3.5 min-h-[120px] space-y-1 text-[var(--text-dim)]">
+              <div>Prêt pour le diagnostic réseau. Cliquez pour tester le ping.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 05: FORMATION & LANGUES -->
+      <section id="formation" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
+          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">05.</span>
+          <span>Formation & Diplômes</span>
+          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-8 space-y-4">
+            
+            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Licence 3 ESIIA (en cours)</h3>
+                <span class="font-mono-code text-xs text-[var(--amber)]">2025 — présent</span>
+              </div>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">ISPM Antsobolo</p>
+              <p class="text-xs text-[var(--text-dim)]">Électronique, Systèmes Informatiques et Intelligence Artificielle.</p>
+            </div>
+
+            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Diplôme de Spécialisation Technicien (DST)</h3>
+                <span class="font-mono-code text-xs text-[var(--amber)]">2024</span>
+              </div>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">ISPM Antsobolo</p>
+              <p class="text-xs text-[var(--text-dim)]">Spécialisation en Systèmes & Réseaux Informatiques.</p>
+            </div>
+
+            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Formations Certifiantes ODC Madagascar</h3>
+                <span class="font-mono-code text-xs text-[var(--amber)]">2025</span>
+              </div>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">Orange Digital Centre</p>
+              <p class="text-xs text-[var(--text-dim)]">Codage Python / Java & Protocoles IoT.</p>
+            </div>
+
+            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
+              <div class="flex justify-between items-start mb-1">
+                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Baccalauréat Scientifique</h3>
+                <span class="font-mono-code text-xs text-[var(--amber)]">2023 — 2024</span>
+              </div>
+              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">Lycée Andriamanpoinimerina, Sabotsy Namehana</p>
+              <p class="text-xs text-[var(--text-dim)]">Série Scientifique avec mention.</p>
+            </div>
+
+          </div>
+
+          <!-- Bloc Langues -->
+          <div class="lg:col-span-4 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] p-5">
+            <h3 class="font-mono-code text-xs uppercase tracking-wider text-[var(--amber)] font-semibold mb-4 pb-2 border-b border-[var(--border)]">
+              Langues Maîtrisées
+            </h3>
+            <div class="space-y-3 font-mono-code text-xs">
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev-2)]">
+                <div class="font-semibold text-[var(--text)]">Français</div>
+                <div class="text-[var(--text-dim)]">Excellente maîtrise professionnelle</div>
+              </div>
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev-2)]">
+                <div class="font-semibold text-[var(--text)]">Anglais</div>
+                <div class="text-[var(--text-dim)]">Niveau technique et intermédiaire</div>
+              </div>
+              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev-2)]">
+                <div class="font-semibold text-[var(--text)]">Malagasy</div>
+                <div class="text-[var(--text-dim)]">Langue maternelle</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 06: CONTACT -->
+      <footer id="contact" class="border-t border-[var(--border)] pt-16 pb-12 bg-[var(--bg-elev)]/50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code bg-[var(--bg-elev-2)] border border-[var(--border)] text-[var(--cyan)] mb-4">
+            <span class="w-2 h-2 rounded-full bg-[var(--amber)] animate-pulse"></span>
+            <span>06. Prise de contact</span>
+          </div>
+
+          <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-3">
+            Échangeons sur vos besoins IT & Réseaux
+          </h2>
+
+          <p class="text-sm sm:text-base text-[var(--text-dim)] max-w-xl mx-auto mb-8">
+            Disponible pour un poste de <strong>Technicien Support IT</strong> ou <strong>Administrateur Systèmes et Réseaux Junior</strong> à Antananarivo.
+          </p>
+
+          <!-- Boutons de Contact Direct -->
+          <div class="flex flex-wrap justify-center gap-4 mb-10 font-mono-code text-xs sm:text-sm">
+            <a href="mailto:rajaomanjatoventso@gmail.com" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-colors flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-[var(--cyan)]"></i>
+              <span>rajaomanjatoventso@gmail.com</span>
+            </a>
+
+            <a href="tel:0385890907" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-colors flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-[var(--amber)]"></i>
+              <span>038 58 909 07</span>
+            </a>
+
+            <a href="https://github.com/ventso00" target="_blank" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-colors flex items-center gap-2">
+              <i data-lucide="github" class="w-4 h-4 text-[var(--cyan)]"></i>
+              <span>github.com/ventso00</span>
+            </a>
+          </div>
+
+          <div class="border-t border-[var(--border)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono-code text-[var(--text-dim)]">
+            <div>Antananarivo, Madagascar</div>
+            <div>© 2026 Rajaomanjato Ventson'Iavo Tsiarovana</div>
+            <a href="https://ventso.netlify.app/" target="_blank" class="text-[var(--cyan)] hover:underline">ventso.netlify.app</a>
+          </div>
+        </div>
+      </footer>
+
+    </main>
+
   </div>
-</section>
 
-<section id="competences" class="reveal">
-  <h2><span class="idx">04</span> Compétences</h2>
-  <div class="skills-grid reveal-stagger">
-    <div class="skill-cat">
-      <h3>SYSTÈMES & SERVEURS</h3>
-      <ul>
-        <li>Linux (Debian, Ubuntu)</li>
-        <li>Windows 10/11</li>
-        <li>Windows Server 2022 (AD DS, DNS, DHCP, GPO)</li>
-      </ul>
-    </div>
-    <div class="skill-cat">
-      <h3>RÉSEAUX & SÉCURITÉ</h3>
-      <ul>
-        <li>TCP/IP, IPv4/IPv6, Subnetting (VLSM)</li>
-        <li>NAT/PAT, VLAN, STP, ACL, OSPF</li>
-        <li>Routing Cisco</li>
-      </ul>
-    </div>
-    <div class="skill-cat">
-      <h3>VIRTUALISATION & ÉMULATION</h3>
-      <ul>
-        <li>VMware Workstation, Hyper-V, VirtualBox</li>
-        <li>Cisco Packet Tracer, GNS3</li>
-      </ul>
-    </div>
-    <div class="skill-cat">
-      <h3>ADMINISTRATION & OUTILS</h3>
-      <ul>
-        <li>SSH, systemd, Apache</li>
-        <li>MariaDB/MySQL, Wireshark</li>
-        <li>Git/GitHub, VS Code</li>
-      </ul>
-    </div>
+  <!-- Toast de notification -->
+  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none px-4 py-2.5 rounded-lg border border-[var(--cyan)] bg-[var(--bg-elev)] text-xs font-mono-code text-[var(--cyan)] shadow-2xl flex items-center gap-2">
+    <i data-lucide="check-circle" class="w-4 h-4"></i>
+    <span id="toastMsg">Copié dans le presse-papier !</span>
   </div>
-  <div class="soft-skills">
-    <span>Capacité d'adaptation et esprit d'équipe</span>
-    <span>Rigueur et professionnalisme</span>
-    <span>Python · C/C++ · PHP</span>
-  </div>
-</section>
 
-<section id="formation" class="reveal">
-  <h2><span class="idx">05</span> Formation</h2>
-  <div>
-    <div class="edu-item">
-      <div class="edu-date">2025 — présent</div>
-      <div>
-        <div class="edu-title">Licence 3 ESIIA — ISPM Antsobolo</div>
-        <div class="edu-sub">Parcours Électronique, Systèmes Informatiques et Intelligence Artificielle</div>
-      </div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-date">2025</div>
-      <div>
-        <div class="edu-title">Formation ODC Madagascar</div>
-        <div class="edu-sub">Orange Digital Centre — Codage Python/Java, protocoles IoT</div>
-      </div>
-    </div>
-    <div class="edu-item">
-      <div class="edu-date">2023 — 2024</div>
-      <div>
-        <div class="edu-title">Baccalauréat Général Scientifique</div>
-        <div class="edu-sub">Lycée Andriamanpoinimerina, Sabotsy Namehana</div>
-      </div>
-    </div>
-  </div>
-  <div class="langs">
-    <div class="lang-item"><b>Français</b>Excellente maîtrise</div>
-    <div class="lang-item"><b>Anglais</b>Niveau intermédiaire</div>
-    <div class="lang-item"><b>Malagasy</b>Langue maternelle</div>
-  </div>
-</section>
+  <!-- SCRIPTS D'INTERACTION -->
+  <script>
+    // Initialiser les icônes Lucide
+    lucide.createIcons();
 
-<footer id="contact" class="reveal">
-  <div class="contact-title">Parlons de votre prochain projet réseau</div>
-  <p class="contact-sub">Disponible pour un poste de Technicien Support IT ou Administrateur Systèmes et Réseaux Junior.</p>
-  <div class="contact-links">
-    <a class="clink" href="mailto:rajaomanjatoventso@gmail.com">rajaomanjatoventso@gmail.com</a>
-    <a class="clink" href="tel:0385890907">038 58 909 07</a>
-    <a class="clink" href="https://github.com/ventso00" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-    <a class="clink" href="#">LinkedIn ↗</a>
-  </div>
-  <div class="foot-note">© 2026 Ventson'Iavo Tsiarovana — Antananarivo, Madagascar</div>
-</footer>
+    // Gestion du Thème Sombre / Clair
+    const themeToggle = document.getElementById('themeToggle');
+    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+    
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio-theme', next);
+    }
 
-<script>
-(function(){
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
+    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
 
-  var root = document.documentElement;
-  var toggleBtn = document.getElementById('theme-toggle');
-  var iconEl = toggleBtn ? toggleBtn.querySelector('.theme-icon') : null;
+    // Restaurer le thème précédent
+    const savedTheme = localStorage.getItem('portfolio-theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
 
-  function systemPrefersLight(){
-    return window.matchMedia('(prefers-color-scheme: light)').matches;
-  }
-  function applyTheme(theme){
-    root.setAttribute('data-theme', theme);
-    if(iconEl) iconEl.textContent = theme === 'light' ? '☀️' : '🌙';
-  }
-  var savedTheme = null;
-  try { savedTheme = localStorage.getItem('portfolio-theme'); } catch(e){}
-  applyTheme(savedTheme || (systemPrefersLight() ? 'light' : 'dark'));
-
-  if(toggleBtn){
-    toggleBtn.addEventListener('click', function(){
-      var current = root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
-      var next = current === 'light' ? 'dark' : 'light';
-      applyTheme(next);
-      try { localStorage.setItem('portfolio-theme', next); } catch(e){}
-    });
-  }
-
-  if(!reduceMotion && 'IntersectionObserver' in window){
-    var revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
-        }
+    // Menu Mobile
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (mobileMenuBtn && mobileMenu) {
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
       });
-    }, {threshold:.15, rootMargin:'0px 0px -60px 0px'});
-    revealEls.forEach(function(el){ io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el){
-      el.classList.add('is-visible');
-    });
-  }
-
-  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.navlinks a'));
-  var targets = navLinks.map(function(a){ return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-  if('IntersectionObserver' in window && targets.length){
-    var spy = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        var link = navLinks.find(function(a){ return a.getAttribute('href') === '#' + entry.target.id; });
-        if(!link) return;
-        if(entry.isIntersecting){
-          navLinks.forEach(function(a){ a.classList.remove('active'); });
-          link.classList.add('active');
-        }
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
       });
-    }, {rootMargin:'-45% 0px -50% 0px'});
-    targets.forEach(function(t){ spy.observe(t); });
-  }
-})();
-</script>
+    }
+
+    // Copie de l'email avec notification toast
+    function copyEmail() {
+      navigator.clipboard.writeText('rajaomanjatoventso@gmail.com');
+      showToast('Adresse email copiée dans le presse-papier !');
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.textContent = msg;
+      toast.classList.remove('translate-y-20', 'opacity-0');
+      setTimeout(() => {
+        toast.classList.add('translate-y-20', 'opacity-0');
+      }, 3000);
+    }
+
+    // Terminal Interactif
+    const terminalForm = document.getElementById('terminalForm');
+    const terminalInput = document.getElementById('terminalInput');
+    const terminalBody = document.getElementById('terminalBody');
+
+    if (terminalForm) {
+      terminalForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const cmd = terminalInput.value.trim().toLowerCase();
+        if (!cmd) return;
+
+        const cmdLine = document.createElement('div');
+        cmdLine.className = 'text-[var(--text)] pt-1';
+        cmdLine.innerHTML = `<span class="text-[var(--amber)]">guest@portfolio:~$</span> ${cmd}`;
+        terminalBody.appendChild(cmdLine);
+
+        let response = '';
+        if (cmd === 'whoami') {
+          response = 'Rajaomanjato Ventson\'Iavo Tsiarovana — Technicien Support IT & Réseaux (L3 ESIIA / DST).';
+        } else if (cmd === 'projets') {
+          response = 'Projets : Système Gaz (IoT/PHP), Smart Water MDG, WIFIKO, Simulation SaryTany (Cisco), Boîte Noire.';
+        } else if (cmd === 'contact') {
+          response = 'Email : rajaomanjatoventso@gmail.com | Tél : 038 58 909 07 | GitHub : ventso00';
+        } else if (cmd === 'clear') {
+          terminalBody.innerHTML = '';
+          terminalInput.value = '';
+          return;
+        } else {
+          response = `Commande non reconnue : "${cmd}". Essayez 'whoami', 'projets', 'contact' ou 'clear'.`;
+        }
+
+        const respLine = document.createElement('div');
+        respLine.className = 'text-[var(--text-dim)] pl-2 border-l border-[var(--border)]';
+        respLine.textContent = response;
+        terminalBody.appendChild(respLine);
+
+        terminalInput.value = '';
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      });
+    }
+
+    // Simulateur de Ping
+    function runPing() {
+      const target = document.getElementById('pingTarget').value;
+      const log = document.getElementById('pingLog');
+      log.innerHTML = `<div class="text-[var(--amber)]">Envoi des paquets ICMP vers ${target}...</div>`;
+      
+      setTimeout(() => {
+        log.innerHTML += `<div>64 octets reçus de ${target}: icmp_seq=1 ttl=64 temps=2.3 ms</div>`;
+      }, 350);
+
+      setTimeout(() => {
+        log.innerHTML += `<div>64 octets reçus de ${target}: icmp_seq=2 ttl=64 temps=1.9 ms</div>`;
+      }, 700);
+
+      setTimeout(() => {
+        log.innerHTML += `<div class="text-[var(--emerald)] font-semibold">Succès : 2 paquets transmis, 2 reçus, 0% perte de paquet. Connexion nominale.</div>`;
+      }, 1050);
+    }
+  </script>
 </body>
 </html>

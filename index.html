@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" data-bs-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rajaomanjato Ventso | IT & CLOUD CONSULTANT</title>
   <meta name="description" content="Portfolio de Rajaomanjato Ventson'Iavo Tsiarovana — Technicien Support IT & Administrateur Systèmes et Réseaux junior à Antananarivo, Madagascar." />
-  
-  <!-- Polices Google Fonts -->
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <!-- AOS - Animate On Scroll -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <!-- Polices -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-
-  <!-- Tailwind CSS via CDN pour fonctionnement autonome -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
@@ -27,9 +28,11 @@
       --cyan: #4fd8e8;
       --amber: #ffb454;
       --emerald: #34d399;
+      --purple: #a78bfa;
+      --pink: #f472b6;
     }
 
-    [data-theme="light"] {
+    [data-bs-theme="light"] {
       --bg: #f8fafc;
       --bg-elev: #ffffff;
       --bg-elev-2: #edf2f7;
@@ -39,759 +42,1427 @@
       --cyan: #0284c7;
       --amber: #d97706;
       --emerald: #059669;
+      --purple: #7c3aed;
+      --pink: #db2777;
     }
 
+    * { scroll-behavior: smooth; }
+
     body {
-      background-color: var(--bg);
-      color: var(--text);
+      background-color: var(--bg) !important;
+      color: var(--text) !important;
       font-family: 'Inter', sans-serif;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: background-color 0.4s ease, color 0.4s ease;
+      overflow-x: hidden;
     }
 
     .font-heading { font-family: 'Space Grotesk', sans-serif; }
     .font-mono-code { font-family: 'JetBrains Mono', monospace; }
 
+    .text-cyan { color: var(--cyan) !important; }
+    .text-amber { color: var(--amber) !important; }
+    .text-emerald { color: var(--emerald) !important; }
+    .text-dim { color: var(--text-dim) !important; }
+
+    /* Grille de fond animée */
     .bg-grid-pattern {
-      background-image: linear-gradient(to right, var(--border) 1px, transparent 1px),
-                        linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-      background-size: 32px 32px;
-      opacity: 0.25;
+      position: fixed;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, var(--border) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--border) 1px, transparent 1px);
+      background-size: 40px 40px;
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      animation: gridMove 20s linear infinite;
     }
 
-    /* Animation pulse ping */
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 0.8; }
+    @keyframes gridMove {
+      0% { background-position: 0 0, 0 0; }
+      100% { background-position: 40px 40px, 40px 40px; }
     }
-    .animate-glow { animation: pulseGlow 3s infinite ease-in-out; }
+
+    /* Blobs lumineux d'arrière-plan */
+    .bg-blob {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+      animation: floatBlob 15s ease-in-out infinite;
+    }
+    .blob-1 { width: 400px; height: 400px; background: var(--cyan); top: -100px; left: -100px; }
+    .blob-2 { width: 350px; height: 350px; background: var(--purple); bottom: 10%; right: -100px; animation-delay: 3s; }
+    .blob-3 { width: 300px; height: 300px; background: var(--amber); top: 50%; left: 40%; animation-delay: 6s; }
+
+    @keyframes floatBlob {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -30px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    /* Navbar */
+    .navbar-custom {
+      background: rgba(10, 14, 26, 0.85) !important;
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.3s ease;
+    }
+    [data-bs-theme="light"] .navbar-custom {
+      background: rgba(248, 250, 252, 0.85) !important;
+    }
+    .navbar-custom.scrolled {
+      background: rgba(10, 14, 26, 0.95) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    }
+    [data-bs-theme="light"] .navbar-custom.scrolled {
+      background: rgba(248, 250, 252, 0.98) !important;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    }
+
+    .nav-link {
+      color: var(--text-dim) !important;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    .nav-link:hover {
+      color: var(--cyan) !important;
+      transform: translateY(-1px);
+    }
+    .nav-link .num { color: var(--amber); }
+
+    /* Terminal */
+    .terminal-window {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .terminal-window:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 30px 80px rgba(79, 216, 232, 0.15);
+    }
+    .terminal-header {
+      background: var(--bg-elev-2);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+    }
+    .terminal-body {
+      height: 280px;
+      overflow-y: auto;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      background: rgba(10, 14, 26, 0.6);
+      scrollbar-width: thin;
+      scrollbar-color: var(--border) transparent;
+    }
+    .terminal-body::-webkit-scrollbar { width: 6px; }
+    .terminal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    /* Curseur clignotant */
+    .blink-cursor::after {
+      content: '▋';
+      color: var(--cyan);
+      animation: blink 1s step-end infinite;
+      margin-left: 2px;
+    }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    /* Boutons personnalisés */
+    .btn-cyan {
+      background: var(--cyan);
+      color: #0a0e1a;
+      font-weight: 600;
+      border: none;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-cyan:hover {
+      background: var(--cyan);
+      color: #0a0e1a;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4);
+    }
+    .btn-cyan::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 0; height: 0;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+    .btn-cyan:hover::before { width: 300px; height: 300px; }
+
+    .btn-outline-cyan {
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      background: transparent;
+      transition: all 0.3s ease;
+    }
+    .btn-outline-cyan:hover {
+      background: var(--cyan);
+      color: #0a0e1a;
+      transform: translateY(-2px);
+    }
+
+    /* Cards avec effet tilt et glow */
+    .card-custom {
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+    }
+    .card-custom::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(79, 216, 232, 0.08), transparent);
+      transition: left 0.6s ease;
+    }
+    .card-custom:hover::before { left: 100%; }
+    .card-custom:hover {
+      transform: translateY(-8px);
+      border-color: var(--cyan);
+      box-shadow: 0 20px 50px rgba(79, 216, 232, 0.15);
+    }
+
+    /* Badge pulsant */
+    .badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: var(--bg-elev);
+      border: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: var(--cyan);
+    }
+    .pulse-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--emerald);
+      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
+      animation: pulseDot 2s infinite;
+    }
+    @keyframes pulseDot {
+      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
+      70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
+    }
+
+    /* Titres de section */
+    .section-title {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 2rem;
+    }
+    .section-title .num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--amber);
+      font-size: 1.1rem;
+    }
+    .section-title h2 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.75rem;
+      margin: 0;
+    }
+    .section-title .line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* Timeline */
+    .timeline-item {
+      position: relative;
+      padding-left: 32px;
+      padding-bottom: 24px;
+      border-left: 2px solid var(--border);
+    }
+    .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -9px; top: 0;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 2px solid var(--cyan);
+      transition: all 0.3s ease;
+    }
+    .timeline-item:hover::before {
+      background: var(--cyan);
+      box-shadow: 0 0 20px var(--cyan);
+      transform: scale(1.2);
+    }
+
+    /* Barres de compétences */
+    .skill-bar {
+      height: 6px;
+      background: var(--bg-elev-2);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .skill-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      border-radius: 3px;
+      width: 0;
+      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+    }
+    .skill-fill::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      animation: shimmer 2s infinite;
+    }
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Avatar */
+    .avatar-circle {
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      padding: 3px;
+      background: conic-gradient(from 0deg, var(--cyan), var(--purple), var(--amber), var(--cyan));
+      animation: rotateGradient 6s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes rotateGradient {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .avatar-inner {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      background: var(--bg-elev-2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      color: var(--cyan);
+      animation: rotateGradient 6s linear infinite reverse;
+    }
+
+    /* Formulaires */
+    .form-control-custom {
+      background: var(--bg-elev) !important;
+      border: 1px solid var(--border) !important;
+      color: var(--text) !important;
+      border-radius: 10px;
+      padding: 12px 16px;
+      transition: all 0.3s ease;
+    }
+    .form-control-custom:focus {
+      border-color: var(--cyan) !important;
+      box-shadow: 0 0 0 3px rgba(79, 216, 232, 0.15) !important;
+    }
+    .form-control-custom::placeholder { color: var(--text-dim); opacity: 0.6; }
+
+    /* Floating labels custom */
+    .form-floating > label { color: var(--text-dim); }
+    .form-floating > .form-control-custom:focus ~ label,
+    .form-floating > .form-control-custom:not(:placeholder-shown) ~ label {
+      color: var(--cyan);
+    }
+
+    /* Scroll to top */
+    #scrollTop {
+      position: fixed;
+      bottom: 24px; right: 24px;
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--cyan);
+      color: #0a0e1a;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+      z-index: 999;
+      box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4);
+    }
+    #scrollTop.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    #scrollTop:hover {
+      transform: translateY(-4px) scale(1.1);
+    }
+
+    /* Toast */
+    .toast-custom {
+      position: fixed;
+      bottom: 24px; left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: var(--bg-elev);
+      border: 1px solid var(--cyan);
+      color: var(--text);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      z-index: 9999;
+      box-shadow: 0 10px 40px rgba(79, 216, 232, 0.3);
+    }
+    .toast-custom.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* Typewriter cursor */
+    .typewriter {
+      overflow: hidden;
+      border-right: 2px solid var(--cyan);
+      white-space: nowrap;
+      animation: typing 3.5s steps(30) 1s forwards, blinkCursor 0.75s step-end infinite;
+      max-width: fit-content;
+    }
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    @keyframes blinkCursor {
+      50% { border-color: transparent; }
+    }
+
+    /* Icon boxes */
+    .icon-box {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-elev-2);
+      border: 1px solid var(--border);
+      color: var(--cyan);
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    .card-custom:hover .icon-box {
+      background: var(--cyan);
+      color: #0a0e1a;
+      transform: rotate(-6deg) scale(1.1);
+    }
+
+    /* Tag tech */
+    .tech-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg-elev-2);
+      border: 1px solid var(--border);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      color: var(--text-dim);
+      transition: all 0.3s ease;
+    }
+    .tech-tag:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    /* Effet de particules JS */
+    .particle {
+      position: absolute;
+      pointer-events: none;
+      background: var(--cyan);
+      border-radius: 50%;
+      opacity: 0.6;
+    }
+
+    /* Progress overlay */
+    #pageLoader {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+    }
+    #pageLoader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+    .loader-ring {
+      width: 60px; height: 60px;
+      border: 3px solid var(--border);
+      border-top-color: var(--cyan);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Responsive : garder les animations */
+    @media (max-width: 768px) {
+      .bg-blob { opacity: 0.15; filter: blur(80px); }
+      .bg-blob.blob-1 { width: 250px; height: 250px; }
+      .bg-blob.blob-2 { width: 220px; height: 220px; }
+      .bg-blob.blob-3 { display: none; }
+      .section-title h2 { font-size: 1.4rem; }
+      .terminal-body { height: 240px; }
+      .card-custom { padding: 20px; }
+      .card-custom:hover { transform: translateY(-4px); }
+      .avatar-circle { width: 110px; height: 110px; }
+      .avatar-inner { font-size: 2rem; }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Scrollbar globale */
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
+
+    /* Sélection */
+    ::selection { background: var(--cyan); color: #0a0e1a; }
+
+    /* Navbar toggler custom */
+    .navbar-toggler {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(79, 216, 232, 0.2); }
   </style>
 </head>
-<body class="relative min-h-screen selection:bg-[var(--cyan)] selection:text-[#0a0e1a]">
+<body>
 
-  <!-- Grille de fond subtile -->
-  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0" aria-hidden="true"></div>
+  <!-- Loader -->
+  <div id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
 
-  <!-- Contenu Principal -->
-  <div class="relative z-10 flex flex-col min-h-screen">
+  <!-- Fonds décoratifs -->
+  <div class="bg-grid-pattern"></div>
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+  <div class="bg-blob blob-3"></div>
 
-    <!-- En-tête / Barre de Navigation -->
-    <header class="sticky top-0 z-40 backdrop-blur-md bg-[var(--bg)]/85 border-b border-[var(--border)] transition-colors">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-        <a href="#hero" class="flex items-center gap-2 group">
-          <span class="w-2.5 h-2.5 rounded-full bg-[var(--cyan)] animate-pulse"></span>
-          <span class="font-mono-code font-bold text-sm sm:text-base tracking-wider text-[var(--text)] group-hover:text-[var(--cyan)] transition-colors">
-            ventso<span class="text-[var(--amber)]">@sysadmin</span>:~#
-          </span>
-        </a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-custom fixed-top py-3" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#hero">
+        <span class="rounded-circle bg-info d-inline-block" style="width:10px;height:10px;animation:pulseDot 2s infinite;background:var(--cyan)!important;"></span>
+        <span class="font-mono-code fw-bold text-white" style="font-size:0.9rem;">
+          ventso<span style="color:var(--amber)">@sysadmin</span>:~#
+        </span>
+      </a>
 
-        <!-- Liens Desktop -->
-        <nav class="hidden md:flex items-center gap-6 font-mono-code text-xs">
-          <a href="#about" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">01.</span> À propos</a>
-          <a href="#experience" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">02.</span> Parcours</a>
-          <a href="#projets" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">03.</span> Projets</a>
-          <a href="#competences" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">04.</span> Compétences</a>
-          <a href="#formation" class="text-[var(--text-dim)] hover:text-[var(--cyan)] transition-colors"><span class="text-[var(--amber)]">05.</span> Formation</a>
-          <a href="#contact" class="px-3.5 py-1.5 rounded-lg border border-[var(--cyan)] text-[var(--cyan)] hover:bg-[var(--cyan)] hover:text-[#0a0e1a] transition-all font-semibold">
-            Contact
-          </a>
-          <!-- Bouton Thème -->
-          <button id="themeToggle" class="p-2 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:text-[var(--cyan)] transition-colors">
-            <i data-lucide="sun" class="w-4 h-4 hidden dark-icon"></i>
-            <i data-lucide="moon" class="w-4 h-4 light-icon"></i>
-          </button>
-        </nav>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <i class="bi bi-list text-white fs-4"></i>
+      </button>
 
-        <!-- Menu Mobile Button -->
-        <div class="flex items-center gap-2 md:hidden">
-          <button id="mobileThemeToggle" class="p-2 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)]">
-            <i data-lucide="moon" class="w-4 h-4"></i>
-          </button>
-          <button id="mobileMenuBtn" class="p-2 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)]">
-            <i data-lucide="menu" class="w-5 h-5"></i>
-          </button>
-        </div>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 font-mono-code">
+          <li class="nav-item"><a class="nav-link" href="#about"><span class="num">01.</span> À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience"><span class="num">02.</span> Parcours</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets"><span class="num">03.</span> Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#competences"><span class="num">04.</span> Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formation"><span class="num">05.</span> Formation</a></li>
+          <li class="nav-item mt-3 mt-lg-0"><a class="btn btn-outline-cyan btn-sm px-3 rounded-3" href="#contact">Contact</a></li>
+          <li class="nav-item mt-2 mt-lg-0">
+            <button id="themeToggle" class="btn btn-outline-cyan btn-sm rounded-3">
+              <i class="bi bi-sun-fill d-none" id="iconSun"></i>
+              <i class="bi bi-moon-stars-fill" id="iconMoon"></i>
+            </button>
+          </li>
+        </ul>
       </div>
+    </div>
+  </nav>
 
-      <!-- Menu Déroulant Mobile -->
-      <div id="mobileMenu" class="hidden md:hidden border-b border-[var(--border)] bg-[var(--bg-elev)] px-4 py-4 space-y-3 font-mono-code text-sm">
-        <a href="#about" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]"> À propos</a>
-        <a href="#experience" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]"> Parcours & Stages</a>
-        <a href="#projets" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]"> Projets</a>
-        <a href="#competences" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]"> Compétences IT</a>
-        <a href="#formation" class="block py-1.5 text-[var(--text-dim)] hover:text-[var(--cyan)]"> Formation</a>
-        <a href="#contact" class="block py-2 text-center rounded-lg bg-[var(--cyan)] text-[#0a0e1a] font-semibold">Prendre Contact</a>
-      </div>
-    </header>
+  <main class="position-relative" style="z-index:1;">
 
-    <main class="flex-1">
+    <!-- HERO -->
+    <section id="hero" class="d-flex align-items-center" style="min-height:100vh;padding-top:90px;">
+      <div class="container py-5">
+        <div class="row align-items-center g-5">
 
-      <!-- SECTION HERO -->
-      <section id="hero" class="pt-12 pb-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
-          <!-- Colonne Gauche : Présentation -->
-          <div class="lg:col-span-7 space-y-5 text-left">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code bg-[var(--bg-elev)] border border-[var(--border)] text-[var(--cyan)]">
-              <span class="w-2 h-2 rounded-full bg-[var(--emerald)] animate-ping"></span>
+          <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+            <div class="badge-status mb-4">
+              <span class="pulse-dot"></span>
               <span>Titulaire de LICENCE 3</span>
             </div>
 
-            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-heading font-bold text-[var(--text)] tracking-tight leading-tight">
+            <h1 class="font-heading fw-bold mb-3 lh-1" style="font-size:clamp(2rem,5vw,3.5rem);">
               Rajaomanjato <br />
-              <span class="text-[var(--cyan)]">Ventson'Iavo</span> Tsiarovana
+              <span style="color:var(--cyan);">Ventson'Iavo</span> Tsiarovana
             </h1>
 
-            <p class="font-mono-code text-sm sm:text-base text-[var(--amber)]">
-              &gt; IT & CLOUD CONSULTANT
+            <p class="font-mono-code mb-4 typewriter" style="color:var(--amber);font-size:clamp(0.85rem,2vw,1rem);">
+              &gt; IT &amp; CLOUD CONSULTANT
             </p>
 
-            <p class="text-sm sm:text-base text-[var(--text-dim)] leading-relaxed max-w-xl">
-              Spécialisé en administration <strong>Windows Server 2022 (AD, DNS, DHCP, GPO)</strong>, environnements <strong>Linux</strong>, maquettage réseau sous <strong>Cisco Packet Tracer</strong>, virtualisation VMware, et support technique N1/N2.
+            <p class="text-dim mb-4 lh-lg" style="max-width:600px;font-size:clamp(0.9rem,1.5vw,1rem);">
+              Spécialisé en administration <strong style="color:var(--text);">Windows Server 2022 (AD, DNS, DHCP, GPO)</strong>, environnements <strong style="color:var(--text);">Linux</strong>, maquettage réseau sous <strong style="color:var(--text);">Cisco Packet Tracer</strong>, virtualisation VMware, et support technique N1/N2.
             </p>
 
-            <div class="flex flex-wrap items-center gap-3 pt-2 font-mono-code text-xs sm:text-sm">
-              <a href="#projets" class="px-5 py-2.5 rounded-lg bg-[var(--cyan)] text-[#0a0e1a] font-semibold hover:bg-[#3ec4d4] transition-all shadow-lg flex items-center gap-2">
-                <i data-lucide="folder-git-2" class="w-4 h-4"></i>
-                <span>Voir les réalisations</span>
+            <div class="d-flex flex-wrap gap-3 font-mono-code" style="font-size:0.85rem;">
+              <a href="#projets" class="btn btn-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2">
+                <i class="bi bi-folder-symlink"></i> Voir les réalisations
               </a>
-              <button onclick="copyEmail()" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-all flex items-center gap-2">
-                <i data-lucide="copy" class="w-4 h-4"></i>
-                <span id="emailText">rajaomanjatoventso@gmail.com</span>
+              <button onclick="copyEmail()" class="btn btn-outline-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2">
+                <i class="bi bi-clipboard"></i> <span id="emailText">rajaomanjatoventso@gmail.com</span>
               </button>
             </div>
           </div>
 
-          <!-- Colonne Droite : Terminal Shell Interactif -->
-          <div class="lg:col-span-5">
-            <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] shadow-2xl overflow-hidden">
-              <div class="flex items-center justify-between px-4 py-2.5 bg-[var(--bg-elev-2)] border-b border-[var(--border)]">
-                <div class="flex items-center gap-2">
-                  <span class="w-3 h-3 rounded-full bg-red-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-yellow-500/80 inline-block"></span>
-                  <span class="w-3 h-3 rounded-full bg-green-500/80 inline-block"></span>
+          <div class="col-lg-5" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class="terminal-window">
+              <div class="terminal-header d-flex align-items-center justify-content-between">
+                <div class="d-flex gap-2">
+                  <span class="rounded-circle d-inline-block" style="width:12px;height:12px;background:rgba(239,68,68,0.8);"></span>
+                  <span class="rounded-circle d-inline-block" style="width:12px;height:12px;background:rgba(234,179,8,0.8);"></span>
+                  <span class="rounded-circle d-inline-block" style="width:12px;height:12px;background:rgba(34,197,94,0.8);"></span>
                 </div>
-                <span class="font-mono-code text-[11px] text-[var(--text-dim)]">bash - sysadmin@ispm:~</span>
-                <i data-lucide="terminal" class="w-3.5 h-3.5 text-[var(--cyan)]"></i>
+                <span class="font-mono-code text-dim" style="font-size:11px;">bash — sysadmin@ispm:~</span>
+                <i class="bi bi-terminal text-cyan"></i>
               </div>
-
-              <!-- Sortie du terminal -->
-              <div id="terminalBody" class="p-4 font-mono-code text-xs space-y-2 h-64 overflow-y-auto bg-[var(--bg)]/90">
-                <div class="text-[var(--emerald)]">Connexion établie au terminal de Ventson'Iavo.</div>
-                <div class="text-[var(--text-dim)]">Tapez <span class="text-[var(--cyan)] font-semibold">whoami</span>, <span class="text-[var(--cyan)] font-semibold">projets</span>, <span class="text-[var(--cyan)] font-semibold">contact</span> ou <span class="text-[var(--cyan)] font-semibold">clear</span>.</div>
-                <div class="text-[var(--text)] pt-1"><span class="text-[var(--amber)]">guest@portfolio:~$</span> whoami</div>
-                <div class="text-[var(--text-dim)] pl-2 border-l border-[var(--border)]">
+              <div class="terminal-body" id="terminalBody">
+                <div style="color:var(--emerald);">Connexion établie au terminal de Ventson'Iavo.</div>
+                <div class="text-dim">Tapez <span class="text-cyan fw-bold">help</span> pour la liste des commandes.</div>
+                <div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span class="blink-cursor" style="color:var(--text);">whoami</span></div>
+                <div class="text-dim ps-3 mt-1" style="border-left:2px solid var(--border);">
                   Nom : Rajaomanjato Ventson'Iavo Tsiarovana<br/>
                   Formation : Licence 3 ESIIA (ISPM Antsobolo)<br/>
                   Statut : Disponible pour opportunités IT
                 </div>
               </div>
-
-              <!-- Ligne de saisie interactive du terminal -->
-              <form id="terminalForm" class="flex items-center gap-2 px-4 py-2.5 border-t border-[var(--border)] bg-[var(--bg-elev-2)] font-mono-code text-xs">
-                <span class="text-[var(--amber)]">guest@portfolio:~$</span>
-                <input id="terminalInput" type="text" placeholder="Entrez une commande..." class="flex-1 bg-transparent border-none text-[var(--cyan)] focus:outline-none placeholder:text-[var(--text-dim)]/50" />
+              <form id="terminalForm" class="d-flex align-items-center gap-2 px-3 py-2" style="border-top:1px solid var(--border);background:var(--bg-elev-2);font-family:'JetBrains Mono',monospace;font-size:0.75rem;">
+                <span style="color:var(--amber);">guest@portfolio:~$</span>
+                <input id="terminalInput" type="text" placeholder="Entrez une commande..." autocomplete="off"
+                  class="flex-grow-1 bg-transparent border-0 text-cyan"
+                  style="outline:none;color:var(--cyan);" />
               </form>
             </div>
           </div>
 
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SECTION 01: À PROPOS -->
-      <section id="about" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
-          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">01.</span>
-          <span>Profil Professionnel</span>
-          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-8 space-y-4 text-sm sm:text-base text-[var(--text-dim)] leading-relaxed">
-            <p>
-              Titulaire d'un <strong>Diplôme de lICENCE</strong> et actuellement en 3ᵉ année de Licence ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) à l'<strong>ISPM Antsobolo</strong>, je me consacre à la mise en œuvre et au maintien en conditions opérationnelles des infrastructures informatiques d'entreprise.
-            </p>
-            <p>
-              Mon stage au sein de <strong>FTM / SaryTany</strong> m'a permis d'acquérir une solide rigueur d'intervention en environnement de production : gestion de serveurs Windows Server 2022 (Active Directory, annuaires LDAP, politiques GPO, services DHCP/DNS), support utilisateur N1/N2 et virtualisation.
-            </p>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3 font-mono-code text-xs">
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
-                <span class="text-[var(--cyan)] font-semibold">› Localisation :</span> Antananarivo, Madagascar
-              </div>
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
-                <span class="text-[var(--cyan)] font-semibold">› Diplômes :</span> Licence 3 ESIIA
-              </div>
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
-                <span class="text-[var(--cyan)] font-semibold">› Langues :</span> Français, Anglais, Malagasy
-              </div>
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)]">
-                <span class="text-[var(--cyan)] font-semibold">› Contact rapide :</span> 038 58 909 07
-              </div>
-            </div>
-          </div>
-
-          <!-- Carte Profil Latérale -->
-          <div class="lg:col-span-4 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] p-5 text-center shadow-lg">
-            <div class="w-32 h-32 mx-auto rounded-full p-1 border-2 border-[var(--cyan)] mb-4 overflow-hidden shadow-inner">
-              <div id="avatarPlaceholder" class="w-full h-full rounded-full bg-[var(--bg-elev-2)] flex items-center justify-center text-3xl font-heading font-bold text-[var(--cyan)]">
-                VT
-              </div>
-            </div>
-            <h3 class="font-heading font-semibold text-lg text-[var(--text)]">Ventso</h3>
-            <p class="font-mono-code text-xs text-[var(--amber)] mb-4">IT SUPPORT & CLOUD CONSULTANT</p>
-            <div class="border-t border-[var(--border)] pt-3 flex justify-center gap-4 font-mono-code text-xs text-[var(--text-dim)]">
-              <a href="https://github.com/ventso00" target="_blank" class="hover:text-[var(--cyan)] flex items-center gap-1">
-                <i data-lucide="github" class="w-4 h-4"></i> GitHub
-              </a>
-              <a href="mailto:rajaomanjatoventso@gmail.com" class="hover:text-[var(--cyan)] flex items-center gap-1">
-                <i data-lucide="mail" class="w-4 h-4"></i> Email
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 02: PARCOURS & EXPÉRIENCE -->
-      <section id="experience" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
-          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">02.</span>
-          <span>Parcours & Expérience Pratique</span>
-          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
-        </h2>
-
-        <div class="space-y-6">
-          <!-- Stage FTM / SaryTany -->
-          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] hover:border-[var(--cyan)] transition-colors shadow-md">
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-              <div>
-                <h3 class="font-heading font-semibold text-lg text-[var(--text)]">
-                  Stagiaire en Administration Systèmes et Réseaux
-                </h3>
-                <div class="font-mono-code text-xs text-[var(--cyan)]">FTM, SaryTany — Antananarivo</div>
-              </div>
-              <span class="font-mono-code text-xs text-[var(--amber)] bg-[var(--bg-elev-2)] px-3 py-1 rounded-md border border-[var(--border)] self-start sm:self-auto">
-                Novembre 2024 — Janvier 2025
-              </span>
-            </div>
-            <ul class="space-y-2 text-xs sm:text-sm text-[var(--text-dim)] list-disc list-inside">
-              <li>Déploiement et administration de Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation sous VMware / Hyper-V.</li>
-              <li>Support technique de niveau 1 et 2 auprès des utilisateurs : diagnostic, résolution d'incidents matériels/logiciels et maintenance du parc informatique.</li>
-              <li>Gestion et segmentation des accès réseaux locaux pour les équipes de travail.</li>
-            </ul>
-          </div>
-
-          <!-- Formations Orange Digital Centre -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-              <div class="flex items-center justify-between mb-2">
-                <h4 class="font-heading font-semibold text-base text-[var(--text)]">Formation Codage (Python & Java)</h4>
-                <span class="font-mono-code text-xs text-[var(--amber)]">Juillet 2025</span>
-              </div>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-2">Orange Digital Centre Madagascar</p>
-              <p class="text-xs text-[var(--text-dim)]">Pratique approfondie du codage orienté objet et création d'algorithmes et scripts d'automatisation.</p>
-            </div>
-
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-              <div class="flex items-center justify-between mb-2">
-                <h4 class="font-heading font-semibold text-base text-[var(--text)]">Formation Protocoles IoT</h4>
-                <span class="font-mono-code text-xs text-[var(--amber)]">Février 2025</span>
-              </div>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-2">Orange Digital Centre Madagascar</p>
-              <p class="text-xs text-[var(--text-dim)]">Protocoles de communication pour objets connectés (IoT), interfaçage capteurs et sécurisation des flux de données.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 03: PROJETS & RÉALISATIONS -->
-      <section id="projets" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-4 mb-8">
-          <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] flex items-baseline gap-3">
-            <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">03.</span>
-            <span>Projets & Réalisations</span>
-            <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
-          </h2>
-          <span class="font-mono-code text-xs text-[var(--text-dim)]">6 projets répertoriés</span>
+    <!-- À PROPOS -->
+    <section id="about" class="py-5">
+      <div class="container py-5">
+        <div class="section-title" data-aos="fade-up">
+          <span class="num">01.</span>
+          <h2>Profil Professionnel</h2>
+          <span class="line d-none d-sm-block"></span>
         </div>
 
-        <!-- Grille des Projets -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-          <!-- 1. Système Gaz -->
-          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
-            <div>
-              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--amber)]">
-                <span>IoT & Électronique</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--amber)]/10 text-[var(--amber)] text-[10px]">Clé</span>
-              </div>
-              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Système Gaz</h3>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Supervision et commande à distance</p>
-              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
-                Supervision et commande de gaz à distance : les mesures sont transmises au serveur, affichées en temps réel avec gestion sécurisée des utilisateurs.
+        <div class="row g-4">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="text-dim lh-lg mb-4" style="font-size:clamp(0.9rem,1.5vw,1rem);">
+              <p>
+                Titulaire d'un <strong style="color:var(--text);">Diplôme de LICENCE</strong> et actuellement en 3ᵉ année de Licence ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) à l'<strong style="color:var(--text);">ISPM Antsobolo</strong>, je me consacre à la mise en œuvre et au maintien en conditions opérationnelles des infrastructures informatiques d'entreprise.
               </p>
-              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">IoT</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">PHP</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">MySQL</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">ESP32</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between font-mono-code text-xs">
-              <a href="http://gazsystem.getenjoyment.net/index.php" target="_blank" class="text-[var(--cyan)] hover:underline flex items-center gap-1 font-medium">
-                Démo <i data-lucide="external-link" class="w-3 h-3"></i>
-              </a>
-              <a href="https://github.com/ventso00/systeme-gaz" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <!-- 2. Smart Water MDG -->
-          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
-            <div>
-              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--amber)]">
-                <span>IoT & Télémesure</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--amber)]/10 text-[var(--amber)] text-[10px]">Clé</span>
-              </div>
-              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Smart Water MDG</h3>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Supervision de l'eau en temps réel</p>
-              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
-                Réception des mesures télémétriques, suivi d'état du niveau d'eau, historique des consommations et alertes via un tableau de bord web.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">IoT</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">PHP</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Statistiques</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-between font-mono-code text-xs">
-              <a href="http://smartwatermdg.getenjoyment.net/" target="_blank" class="text-[var(--cyan)] hover:underline flex items-center gap-1 font-medium">
-                Démo <i data-lucide="external-link" class="w-3 h-3"></i>
-              </a>
-              <a href="https://github.com/ventso00/SmartWater_project" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> Code
-              </a>
-            </div>
-          </div>
-
-          <!-- 3. Simulation réseau SaryTany -->
-          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
-            <div>
-              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--emerald)]">
-                <span>Réseaux Cisco</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--emerald)]/10 text-[var(--emerald)] text-[10px]">Infra</span>
-              </div>
-              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Réseau SaryTany</h3>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Maquette Cisco Packet Tracer</p>
-              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
-                Modélisation et validation complète de l'architecture réseau de l'entreprise : découpage en VLANs, routage OSPF inter-VLAN, NAT/PAT et règles ACL.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Packet Tracer</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">VLAN</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">OSPF</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">NAT/ACL</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-end font-mono-code text-xs">
-              <a href="https://github.com/ventso00" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> Profil GitHub
-              </a>
-            </div>
-          </div>
-
-          <!-- 4. WIFIKO -->
-          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
-            <div>
-              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--emerald)]">
-                <span>Réseaux & Systèmes</span>
-              </div>
-              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">WIFIKO</h3>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Gestion d'accès Wi-Fi & portail</p>
-              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
-                Plateforme de contrôle d'accès Wi-Fi avec authentification des usagers, suivi des sessions réseau actives et régulation des accès.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">PHP</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Portail Captif</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Apache</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-end font-mono-code text-xs">
-              <a href="https://github.com/ventso00" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
-              </a>
-            </div>
-          </div>
-
-          <!-- 5. Boîte noire automobile -->
-          <div class="p-6 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] flex flex-col justify-between hover:border-[var(--cyan)] transition-all shadow-md">
-            <div>
-              <div class="flex items-center justify-between mb-2 font-mono-code text-xs text-[var(--amber)]">
-                <span>IoT & Embarqué</span>
-              </div>
-              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Boîte Noire Automobile</h3>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-3">Télémétrie automobile embarquée</p>
-              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
-                Système conçu pour l'enregistrement de paramètres de conduite en continu, stockage sécurisé sur carte SD et détection d'incidents.
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-4 font-mono-code text-[11px]">
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">ESP32</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">Carte SD</span>
-                <span class="px-2 py-0.5 rounded bg-[var(--bg-elev-2)] text-[var(--cyan)] border border-[var(--border)]">C/C++</span>
-              </div>
-            </div>
-            <div class="pt-3 border-t border-[var(--border)] flex items-center justify-end font-mono-code text-xs">
-              <a href="https://github.com/ventso00" target="_blank" class="text-[var(--text-dim)] hover:text-[var(--text)] flex items-center gap-1">
-                <i data-lucide="github" class="w-3.5 h-3.5"></i> GitHub
-              </a>
-            </div>
-          </div>
-
-          <!-- 6. Prochain projet -->
-          <div class="p-6 rounded-xl border border-dashed border-[var(--border)] bg-[var(--bg-elev)]/50 flex flex-col justify-between hover:border-[var(--cyan)] transition-all">
-            <div>
-              <div class="mb-2 font-mono-code text-xs text-[var(--cyan)]">Collaboration Ouverte</div>
-              <h3 class="font-heading font-semibold text-lg text-[var(--text)] mb-1">Votre Projet Réseau / IT</h3>
-              <p class="font-mono-code text-xs text-[var(--amber)] mb-3">Prêt pour de nouveaux défis</p>
-              <p class="text-xs text-[var(--text-dim)] leading-relaxed mb-4">
-                Disponible pour participer à la conception, au déploiement ou à la maintenance de votre infrastructure informatique.
+              <p>
+                Mon stage au sein de <strong style="color:var(--text);">FTM / SaryTany</strong> m'a permis d'acquérir une solide rigueur d'intervention en environnement de production : gestion de serveurs Windows Server 2022 (Active Directory, annuaires LDAP, politiques GPO, services DHCP/DNS), support utilisateur N1/N2 et virtualisation.
               </p>
             </div>
-            <a href="#contact" class="pt-3 border-t border-[var(--border)] text-[var(--cyan)] hover:underline font-mono-code text-xs flex items-center gap-1">
-              <span>Discutons-en ensemble</span> →
-            </a>
-          </div>
 
-        </div>
-      </section>
-
-      <!-- SECTION 04: COMPÉTENCES IT -->
-      <section id="competences" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
-          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">04.</span>
-          <span>Compétences & Outils IT</span>
-          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
-        </h2>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-10">
-          
-          <!-- Systèmes -->
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-            <h3 class="font-mono-code text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider mb-3">Systèmes & Serveurs</h3>
-            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
-              <li>› Windows Server 2022 (AD, DNS, GPO)</li>
-              <li>› Linux (Debian, Ubuntu)</li>
-              <li>› Windows 10/11 Entreprise</li>
-              <li>› Bash Scripting & Services</li>
-            </ul>
-          </div>
-
-          <!-- Réseaux -->
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-            <h3 class="font-mono-code text-xs font-semibold text-[var(--amber)] uppercase tracking-wider mb-3">Réseaux & Sécurité</h3>
-            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
-              <li>› TCP/IP, IPv4, Subnetting (VLSM)</li>
-              <li>› Routage & Commutation Cisco</li>
-              <li>› VLAN, OSPF, NAT/PAT, ACL</li>
-              <li>› Wireshark & Analyse de trames</li>
-            </ul>
-          </div>
-
-          <!-- Virtualisation -->
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-            <h3 class="font-mono-code text-xs font-semibold text-[var(--emerald)] uppercase tracking-wider mb-3">Virtualisation & Lab</h3>
-            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
-              <li>› VMware Workstation & ESXi</li>
-              <li>› Microsoft Hyper-V & VirtualBox</li>
-              <li>› Cisco Packet Tracer (Avancé)</li>
-              <li>› GNS3 (Émulation réseau)</li>
-            </ul>
-          </div>
-
-          <!-- Dev & Outils -->
-          <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-            <h3 class="font-mono-code text-xs font-semibold text-[var(--cyan)] uppercase tracking-wider mb-3">Outils & Dév</h3>
-            <ul class="space-y-2 font-mono-code text-xs text-[var(--text)]">
-              <li>› Git, GitHub & VS Code</li>
-              <li>› Python & Java (ODC)</li>
-              <li>› PHP, MySQL & Apache</li>
-              <li>› IoT ESP32 & Capteurs</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <!-- Simulateur de Ping Réseau -->
-        <div class="rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] p-5 sm:p-6 shadow-lg">
-          <div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border)]">
-            <div class="flex items-center gap-2 font-mono-code text-xs sm:text-sm font-semibold text-[var(--text)]">
-              <i data-lucide="activity" class="w-4 h-4 text-[var(--cyan)]"></i>
-              <span>Diagnostic Réseau Interactif (ICMP Ping)</span>
-            </div>
-            <span class="text-xs font-mono-code text-[var(--emerald)] flex items-center gap-1.5">
-              <span class="w-2 h-2 rounded-full bg-[var(--emerald)] animate-pulse"></span>
-              Interface Active
-            </span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-5 items-center font-mono-code text-xs">
-            <div class="md:col-span-5 space-y-3">
-              <label class="text-[var(--text-dim)]">Sélectionnez la cible :</label>
-              <select id="pingTarget" class="w-full p-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg)] text-[var(--text)] focus:outline-none focus:border-[var(--cyan)]">
-                <option value="192.168.1.10">Windows Server 2022 (AD/DNS) - 192.168.1.10</option>
-                <option value="192.168.1.1">Passerelle LAN - 192.168.1.1</option>
-                <option value="196.192.32.10">Serveur ISPM Antsobolo - 196.192.32.10</option>
-              </select>
-              <button onclick="runPing()" class="w-full py-2.5 rounded-lg bg-[var(--cyan)] text-[#0a0e1a] font-semibold flex items-center justify-center gap-2 hover:bg-[#3ec4d4] transition-all">
-                <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
-                <span>Lancer le test de connectivité</span>
-              </button>
-            </div>
-
-            <div id="pingLog" class="md:col-span-7 bg-[var(--bg)] border border-[var(--border)] rounded-lg p-3.5 min-h-[120px] space-y-1 text-[var(--text-dim)]">
-              <div>Prêt pour le diagnostic réseau. Cliquez pour tester le ping.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SECTION 05: FORMATION & LANGUES -->
-      <section id="formation" class="py-16 md:py-20 max-w-6xl mx-auto px-4 sm:px-6">
-        <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-8 flex items-baseline gap-3">
-          <span class="font-mono-code text-[var(--amber)] text-base sm:text-lg">05.</span>
-          <span>Formation & Diplômes</span>
-          <span class="h-[1px] flex-1 bg-[var(--border)] ml-2 hidden sm:inline-block"></span>
-        </h2>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-8 space-y-4">
-            
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-              <div class="flex justify-between items-start mb-1">
-                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Licence 3 ESIIA (en cours)</h3>
-                <span class="font-mono-code text-xs text-[var(--amber)]">2025 — présent</span>
+            <div class="row g-3 font-mono-code" style="font-size:0.8rem;">
+              <div class="col-sm-6">
+                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
+                  <span class="text-cyan fw-semibold">› Localisation :</span> Antananarivo, Madagascar
+                </div>
               </div>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">ISPM Antsobolo</p>
-              <p class="text-xs text-[var(--text-dim)]">Électronique, Systèmes Informatiques et Intelligence Artificielle.</p>
-            </div>
-
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-              <div class="flex justify-between items-start mb-1">
-                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Diplôme de Spécialisation Technicien (DST)</h3>
-                <span class="font-mono-code text-xs text-[var(--amber)]">2024</span>
+              <div class="col-sm-6">
+                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
+                  <span class="text-cyan fw-semibold">› Diplômes :</span> Licence 3 ESIIA
+                </div>
               </div>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">ISPM Antsobolo</p>
-              <p class="text-xs text-[var(--text-dim)]">Spécialisation en Systèmes & Réseaux Informatiques.</p>
-            </div>
-
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-              <div class="flex justify-between items-start mb-1">
-                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Formations Certifiantes ODC Madagascar</h3>
-                <span class="font-mono-code text-xs text-[var(--amber)]">2025</span>
+              <div class="col-sm-6">
+                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
+                  <span class="text-cyan fw-semibold">› Langues :</span> FR, EN, Malagasy
+                </div>
               </div>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">Orange Digital Centre</p>
-              <p class="text-xs text-[var(--text-dim)]">Codage Python / Java & Protocoles IoT.</p>
-            </div>
-
-            <div class="p-5 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)]">
-              <div class="flex justify-between items-start mb-1">
-                <h3 class="font-heading font-semibold text-base text-[var(--text)]">Baccalauréat Scientifique</h3>
-                <span class="font-mono-code text-xs text-[var(--amber)]">2023 — 2024</span>
+              <div class="col-sm-6">
+                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
+                  <span class="text-cyan fw-semibold">› Contact :</span> 038 58 909 07
+                </div>
               </div>
-              <p class="font-mono-code text-xs text-[var(--cyan)] mb-1">Lycée Andriamanpoinimerina, Sabotsy Namehana</p>
-              <p class="text-xs text-[var(--text-dim)]">Série Scientifique avec mention.</p>
             </div>
-
           </div>
 
-          <!-- Bloc Langues -->
-          <div class="lg:col-span-4 rounded-xl border border-[var(--border)] bg-[var(--bg-elev)] p-5">
-            <h3 class="font-mono-code text-xs uppercase tracking-wider text-[var(--amber)] font-semibold mb-4 pb-2 border-b border-[var(--border)]">
-              Langues Maîtrisées
-            </h3>
-            <div class="space-y-3 font-mono-code text-xs">
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev-2)]">
-                <div class="font-semibold text-[var(--text)]">Français</div>
-                <div class="text-[var(--text-dim)]">Excellente maîtrise professionnelle</div>
+          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-custom text-center">
+              <div class="avatar-circle">
+                <div class="avatar-inner">VT</div>
               </div>
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev-2)]">
-                <div class="font-semibold text-[var(--text)]">Anglais</div>
-                <div class="text-[var(--text-dim)]">Niveau technique et intermédiaire</div>
-              </div>
-              <div class="p-3 rounded-lg border border-[var(--border)] bg-[var(--bg-elev-2)]">
-                <div class="font-semibold text-[var(--text)]">Malagasy</div>
-                <div class="text-[var(--text-dim)]">Langue maternelle</div>
+              <h3 class="font-heading fw-semibold mb-1">Ventso</h3>
+              <p class="font-mono-code mb-4" style="color:var(--amber);font-size:0.75rem;">IT SUPPORT &amp; CLOUD CONSULTANT</p>
+              <div class="d-flex justify-content-center gap-3 font-mono-code" style="border-top:1px solid var(--border);padding-top:14px;font-size:0.75rem;">
+                <a href="https://github.com/ventso00" target="_blank" class="text-dim text-decoration-none d-flex align-items-center gap-1" style="transition:color 0.3s;">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+                <a href="mailto:rajaomanjatoventso@gmail.com" class="text-dim text-decoration-none d-flex align-items-center gap-1" style="transition:color 0.3s;">
+                  <i class="bi bi-envelope"></i> Email
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SECTION 06: CONTACT -->
-      <footer id="contact" class="border-t border-[var(--border)] pt-16 pb-12 bg-[var(--bg-elev)]/50">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono-code bg-[var(--bg-elev-2)] border border-[var(--border)] text-[var(--cyan)] mb-4">
-            <span class="w-2 h-2 rounded-full bg-[var(--amber)] animate-pulse"></span>
-            <span>06. Prise de contact</span>
+    <!-- EXPÉRIENCE -->
+    <section id="experience" class="py-5">
+      <div class="container py-5">
+        <div class="section-title" data-aos="fade-up">
+          <span class="num">02.</span>
+          <h2>Parcours &amp; Expérience</h2>
+          <span class="line d-none d-sm-block"></span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="timeline-item">
+              <div class="card-custom">
+                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
+                  <div>
+                    <h3 class="font-heading fw-semibold h5 mb-1">Stagiaire Admin Systèmes &amp; Réseaux</h3>
+                    <div class="font-mono-code text-cyan" style="font-size:0.75rem;">FTM, SaryTany — Antananarivo</div>
+                  </div>
+                  <span class="font-mono-code px-3 py-1 rounded-2" style="color:var(--amber);background:var(--bg-elev-2);border:1px solid var(--border);font-size:0.7rem;">
+                    Nov 2024 — Jan 2025
+                  </span>
+                </div>
+                <ul class="text-dim ps-3 mb-0" style="font-size:0.85rem;line-height:1.8;">
+                  <li>Déploiement et administration Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation VMware / Hyper-V.</li>
+                  <li>Support technique N1/N2 : diagnostic, résolution d'incidents matériels/logiciels et maintenance du parc.</li>
+                  <li>Gestion et segmentation des accès réseaux locaux.</li>
+                </ul>
+              </div>
+            </div>
           </div>
 
-          <h2 class="text-2xl sm:text-3xl font-heading font-semibold text-[var(--text)] mb-3">
-            Échangeons sur vos besoins IT & Réseaux
-          </h2>
+          <div class="col-lg-6">
+            <div class="d-flex flex-column gap-4">
+              <div data-aos="fade-up" data-aos-delay="200">
+                <div class="card-custom">
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="icon-box"><i class="bi bi-code-slash"></i></div>
+                    <div class="flex-grow-1">
+                      <h4 class="font-heading fw-semibold h6 mb-1">Formation Codage (Python &amp; Java)</h4>
+                      <div class="font-mono-code text-cyan" style="font-size:0.7rem;">Orange Digital Centre Madagascar</div>
+                    </div>
+                    <span class="font-mono-code" style="color:var(--amber);font-size:0.7rem;">Juil 2025</span>
+                  </div>
+                  <p class="text-dim mb-0" style="font-size:0.82rem;">Pratique approfondie du codage orienté objet, algorithmes et scripts d'automatisation.</p>
+                </div>
+              </div>
 
-          <p class="text-sm sm:text-base text-[var(--text-dim)] max-w-xl mx-auto mb-8">
-            Disponible pour un poste de <strong>Technicien Support IT</strong> ou <strong>Administrateur Systèmes et Réseaux Junior</strong> à Antananarivo.
-          </p>
-
-          <!-- Boutons de Contact Direct -->
-          <div class="flex flex-wrap justify-center gap-4 mb-10 font-mono-code text-xs sm:text-sm">
-            <a href="mailto:rajaomanjatoventso@gmail.com" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-colors flex items-center gap-2">
-              <i data-lucide="mail" class="w-4 h-4 text-[var(--cyan)]"></i>
-              <span>rajaomanjatoventso@gmail.com</span>
-            </a>
-
-            <a href="tel:0385890907" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-colors flex items-center gap-2">
-              <i data-lucide="phone" class="w-4 h-4 text-[var(--amber)]"></i>
-              <span>038 58 909 07</span>
-            </a>
-
-            <a href="https://github.com/ventso00" target="_blank" class="px-4 py-2.5 rounded-lg border border-[var(--border)] bg-[var(--bg-elev)] text-[var(--text)] hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-colors flex items-center gap-2">
-              <i data-lucide="github" class="w-4 h-4 text-[var(--cyan)]"></i>
-              <span>github.com/ventso00</span>
-            </a>
-          </div>
-
-          <div class="border-t border-[var(--border)] pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono-code text-[var(--text-dim)]">
-            <div>Antananarivo, Madagascar</div>
-            <div>© 2026 Rajaomanjato Ventson'Iavo Tsiarovana</div>
-            <a href="https://ventso.netlify.app/" target="_blank" class="text-[var(--cyan)] hover:underline">ventso.netlify.app</a>
+              <div data-aos="fade-up" data-aos-delay="300">
+                <div class="card-custom">
+                  <div class="d-flex align-items-center gap-3 mb-3">
+                    <div class="icon-box"><i class="bi bi-cpu"></i></div>
+                    <div class="flex-grow-1">
+                      <h4 class="font-heading fw-semibold h6 mb-1">Formation Protocoles IoT</h4>
+                      <div class="font-mono-code text-cyan" style="font-size:0.7rem;">Orange Digital Centre Madagascar</div>
+                    </div>
+                    <span class="font-mono-code" style="color:var(--amber);font-size:0.7rem;">Fév 2025</span>
+                  </div>
+                  <p class="text-dim mb-0" style="font-size:0.82rem;">Protocoles IoT, interfaçage capteurs et sécurisation des flux de données.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
+      </div>
+    </section>
 
-    </main>
+    <!-- PROJETS -->
+    <section id="projets" class="py-5">
+      <div class="container py-5">
+        <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-4" data-aos="fade-up">
+          <div class="section-title mb-0">
+            <span class="num">03.</span>
+            <h2>Projets &amp; Réalisations</h2>
+            <span class="line d-none d-sm-block"></span>
+          </div>
+          <span class="font-mono-code text-dim" style="font-size:0.75rem;">6 projets répertoriés</span>
+        </div>
 
-  </div>
+        <div class="row g-4">
+          <!-- Projet 1 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.7rem;">
+                <span style="color:var(--amber);">IoT &amp; Électronique</span>
+                <span class="px-2 py-1 rounded-2" style="background:rgba(255,180,84,0.12);color:var(--amber);">Clé</span>
+              </div>
+              <h3 class="font-heading fw-semibold h5 mb-1">Système Gaz</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.72rem;">Supervision &amp; commande à distance</p>
+              <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
+                Supervision et commande de gaz à distance : mesures transmises au serveur, affichage temps réel et alertes automatiques.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-tag">IoT</span>
+                <span class="tech-tag">Capteurs</span>
+                <span class="tech-tag">Serveur</span>
+              </div>
+            </div>
+          </div>
 
-  <!-- Toast de notification -->
-  <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none px-4 py-2.5 rounded-lg border border-[var(--cyan)] bg-[var(--bg-elev)] text-xs font-mono-code text-[var(--cyan)] shadow-2xl flex items-center gap-2">
-    <i data-lucide="check-circle" class="w-4 h-4"></i>
-    <span id="toastMsg">Copié dans le presse-papier !</span>
-  </div>
+          <!-- Projet 2 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-custom h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.7rem;">
+                <span style="color:var(--amber);">Réseaux</span>
+              </div>
+              <h3 class="font-heading fw-semibold h5 mb-1">Maquettage Réseau Cisco</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.72rem;">Packet Tracer &amp; VLANs</p>
+              <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
+                Conception et simulation d'architectures réseau segmentées avec VLANs, routage inter-VLAN et ACL.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-tag">Cisco</span>
+                <span class="tech-tag">VLAN</span>
+                <span class="tech-tag">Routing</span>
+              </div>
+            </div>
+          </div>
 
-  <!-- SCRIPTS D'INTERACTION -->
+          <!-- Projet 3 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-custom h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.7rem;">
+                <span style="color:var(--amber);">Windows Server</span>
+              </div>
+              <h3 class="font-heading fw-semibold h5 mb-1">Infrastructure AD DS</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.72rem;">Domaine &amp; GPO</p>
+              <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
+                Déploiement complet d'un Active Directory : DNS, DHCP, utilisateurs, groupes et stratégies GPO.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-tag">AD DS</span>
+                <span class="tech-tag">GPO</span>
+                <span class="tech-tag">DNS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 4 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.7rem;">
+                <span style="color:var(--amber);">Virtualisation</span>
+              </div>
+              <h3 class="font-heading fw-semibold h5 mb-1">Lab VMware / Hyper-V</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.72rem;">Environnement virtualisé</p>
+              <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
+                Création d'un lab virtualisé multi-VM pour tests serveurs et scénarios de sécurité.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-tag">VMware</span>
+                <span class="tech-tag">Hyper-V</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 5 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-custom h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.7rem;">
+                <span style="color:var(--amber);">Python</span>
+              </div>
+              <h3 class="font-heading fw-semibold h5 mb-1">Scripts d'automatisation</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.72rem;">Tâches système</p>
+              <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
+                Scripts Python pour automatiser la maintenance, les sauvegardes et la supervision basique.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Bash</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Projet 6 -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-custom h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.7rem;">
+                <span style="color:var(--amber);">Support IT</span>
+              </div>
+              <h3 class="font-heading fw-semibold h5 mb-1">Gestion de Parc</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.72rem;">Maintenance N1/N2</p>
+              <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
+                Suivi d'incidents, inventaire matériel, et procédures de maintenance préventive.
+              </p>
+              <div class="d-flex flex-wrap gap-2">
+                <span class="tech-tag">Support</span>
+                <span class="tech-tag">Ticketing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPÉTENCES -->
+    <section id="competences" class="py-5">
+      <div class="container py-5">
+        <div class="section-title" data-aos="fade-up">
+          <span class="num">04.</span>
+          <h2>Compétences Techniques</h2>
+          <span class="line d-none d-sm-block"></span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="bi bi-hdd-network"></i></div>
+                <h3 class="font-heading fw-semibold h6 mb-0">Systèmes &amp; Réseaux</h3>
+              </div>
+
+              <div class="mb-3">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Windows Server 2022</span><span class="text-cyan">90%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Linux (Debian/Ubuntu)</span><span class="text-cyan">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Cisco Packet Tracer</span><span class="text-cyan">85%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+              </div>
+              <div class="mb-0">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>VMware / Hyper-V</span><span class="text-cyan">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-custom">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="bi bi-code-square"></i></div>
+                <h3 class="font-heading fw-semibold h6 mb-0">Développement &amp; Outils</h3>
+              </div>
+
+              <div class="mb-3">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Python</span><span class="text-cyan">80%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Bash / PowerShell</span><span class="text-cyan">75%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+              </div>
+              <div class="mb-3">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Java</span><span class="text-cyan">65%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+              </div>
+              <div class="mb-0">
+                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.78rem;">
+                  <span>Git / GitHub</span><span class="text-cyan">70%</span>
+                </div>
+                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMATION -->
+    <section id="formation" class="py-5">
+      <div class="container py-5">
+        <div class="section-title" data-aos="fade-up">
+          <span class="num">05.</span>
+          <h2>Formation &amp; Diplômes</h2>
+          <span class="line d-none d-sm-block"></span>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="bi bi-mortarboard"></i></div>
+                <div>
+                  <h3 class="font-heading fw-semibold h6 mb-0">Licence 3 ESIIA</h3>
+                  <div class="font-mono-code text-cyan" style="font-size:0.7rem;">ISPM Antsobolo</div>
+                </div>
+              </div>
+              <p class="text-dim mb-0" style="font-size:0.85rem;line-height:1.7;">
+                Électronique, Systèmes Informatiques et Intelligence Artificielle — 3ᵉ année en cours.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-custom h-100">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-box"><i class="bi bi-award"></i></div>
+                <div>
+                  <h3 class="font-heading fw-semibold h6 mb-0">Certificats Orange Digital</h3>
+                  <div class="font-mono-code text-cyan" style="font-size:0.7rem;">ODC Madagascar</div>
+                </div>
+              </div>
+              <p class="text-dim mb-0" style="font-size:0.85rem;line-height:1.7;">
+                Codage (Python &amp; Java) — Juillet 2025 · Protocoles IoT — Février 2025.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-5">
+      <div class="container py-5">
+        <div class="section-title" data-aos="fade-up">
+          <span class="num">06.</span>
+          <h2>Prendre Contact</h2>
+          <span class="line d-none d-sm-block"></span>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom">
+              <p class="text-dim mb-4 text-center" style="font-size:0.9rem;">
+                Disponible pour des opportunités IT, stages ou collaborations. N'hésitez pas à me contacter.
+              </p>
+
+              <form id="contactForm" class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control form-control-custom" placeholder="Votre nom" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control form-control-custom" placeholder="Votre email" required />
+                </div>
+                <div class="col-12">
+                  <input type="text" class="form-control form-control-custom" placeholder="Sujet" required />
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control form-control-custom" rows="5" placeholder="Votre message..." required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit" class="btn btn-cyan px-5 py-2 rounded-3 font-mono-code d-inline-flex align-items-center gap-2">
+                    <i class="bi bi-send"></i> Envoyer le message
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-center gap-4 mt-4 font-mono-code" style="font-size:0.8rem;">
+              <a href="mailto:rajaomanjatoventso@gmail.com" class="text-dim text-decoration-none d-flex align-items-center gap-2">
+                <i class="bi bi-envelope text-cyan"></i> rajaomanjatoventso@gmail.com
+              </a>
+              <a href="tel:0385890907" class="text-dim text-decoration-none d-flex align-items-center gap-2">
+                <i class="bi bi-telephone text-cyan"></i> 038 58 909 07
+              </a>
+              <a href="https://github.com/ventso00" target="_blank" class="text-dim text-decoration-none d-flex align-items-center gap-2">
+                <i class="bi bi-github text-cyan"></i> github.com/ventso00
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center font-mono-code" style="border-top:1px solid var(--border);font-size:0.75rem;">
+      <div class="container">
+        <span class="text-dim">
+          © 2025 <span class="text-cyan">Rajaomanjato Ventson'Iavo</span> — Built with 
+          <i class="bi bi-heart-fill" style="color:var(--pink);"></i> 
+          &amp; <i class="bi bi-bootstrap-fill text-purple" style="color:var(--purple);"></i>
+        </span>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- Scroll to top -->
+  <button id="scrollTop" aria-label="Scroll to top">
+    <i class="bi bi-arrow-up fs-5"></i>
+  </button>
+
+  <!-- Toast -->
+  <div id="toast" class="toast-custom"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
   <script>
-    // Initialiser les icônes Lucide
-    lucide.createIcons();
+    // ============ INITIALISATION ============
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 60,
+      disable: false // animations actives même en mobile
+    });
 
-    // Gestion du Thème Sombre / Clair
-    const themeToggle = document.getElementById('themeToggle');
-    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-    
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('portfolio-theme', next);
-    }
-
-    if (themeToggle) themeToggle.addEventListener('click', toggleTheme);
-    if (mobileThemeToggle) mobileThemeToggle.addEventListener('click', toggleTheme);
-
-    // Restaurer le thème précédent
-    const savedTheme = localStorage.getItem('portfolio-theme');
-    if (savedTheme) {
-      document.documentElement.setAttribute('data-theme', savedTheme);
-    }
-
-    // Menu Mobile
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('hidden');
-      });
-      mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-      });
-    }
-
-    // Copie de l'email avec notification toast
-    function copyEmail() {
-      navigator.clipboard.writeText('rajaomanjatoventso@gmail.com');
-      showToast('Adresse email copiée dans le presse-papier !');
-    }
-
-    function showToast(msg) {
-      const toast = document.getElementById('toast');
-      const toastMsg = document.getElementById('toastMsg');
-      toastMsg.textContent = msg;
-      toast.classList.remove('translate-y-20', 'opacity-0');
+    // ============ LOADER ============
+    window.addEventListener('load', () => {
       setTimeout(() => {
-        toast.classList.add('translate-y-20', 'opacity-0');
-      }, 3000);
+        document.getElementById('pageLoader').classList.add('hidden');
+      }, 400);
+    });
+
+    // ============ NAVBAR SCROLL ============
+    const nav = document.getElementById('mainNav');
+    const scrollTopBtn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+
+      if (window.scrollY > 400) scrollTopBtn.classList.add('visible');
+      else scrollTopBtn.classList.remove('visible');
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ============ FERMER MENU MOBILE AU CLIC ============
+    document.querySelectorAll('#navMenu .nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.getElementById('navMenu');
+        if (menu.classList.contains('show')) {
+          new bootstrap.Collapse(menu).hide();
+        }
+      });
+    });
+
+    // ============ THEME TOGGLE ============
+    const themeToggle = document.getElementById('themeToggle');
+    const iconSun = document.getElementById('iconSun');
+    const iconMoon = document.getElementById('iconMoon');
+
+    function applyTheme(theme) {
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('theme', theme);
+      if (theme === 'light') {
+        iconSun.classList.remove('d-none');
+        iconMoon.classList.add('d-none');
+      } else {
+        iconSun.classList.add('d-none');
+        iconMoon.classList.remove('d-none');
+      }
     }
 
-    // Terminal Interactif
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-bs-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+
+    // Charger le thème sauvegardé
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    applyTheme(savedTheme);
+
+    // ============ TERMINAL INTERACTIF ============
+    const terminalBody = document.getElementById('terminalBody');
     const terminalForm = document.getElementById('terminalForm');
     const terminalInput = document.getElementById('terminalInput');
-    const terminalBody = document.getElementById('terminalBody');
 
-    if (terminalForm) {
-      terminalForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const cmd = terminalInput.value.trim().toLowerCase();
-        if (!cmd) return;
+    const commands = {
+      help: () => `
+        <div class="text-cyan fw-bold">Commandes disponibles :</div>
+        <div class="text-dim ps-3">
+          • <span class="text-cyan">whoami</span> — Informations personnelles<br/>
+          • <span class="text-cyan">projets</span> — Liste des projets<br/>
+          • <span class="text-cyan">contact</span> — Coordonnées<br/>
+          • <span class="text-cyan">skills</span> — Compétences techniques<br/>
+          • <span class="text-cyan">clear</span> — Effacer le terminal
+        </div>
+      `,
+      whoami: () => `
+        <div class="text-dim ps-3" style="border-left:2px solid var(--border);">
+          Nom : Rajaomanjato Ventson'Iavo Tsiarovana<br/>
+          Formation : Licence 3 ESIIA (ISPM Antsobolo)<br/>
+          Statut : Disponible pour opportunités IT
+        </div>
+      `,
+      projets: () => `
+        <div class="text-dim ps-3">
+          [1] Système Gaz (IoT)<br/>
+          [2] Maquettage Réseau Cisco<br/>
+          [3] Infrastructure AD DS<br/>
+          [4] Lab VMware / Hyper-V<br/>
+          [5] Scripts Python<br/>
+          [6] Gestion de Parc IT
+        </div>
+      `,
+      contact: () => `
+        <div class="text-dim ps-3">
+          Email : rajaomanjatoventso@gmail.com<br/>
+          Tel : 038 58 909 07<br/>
+          GitHub : github.com/ventso00<br/>
+          Localisation : Antananarivo, Madagascar
+        </div>
+      `,
+      skills: () => `
+        <div class="text-dim ps-3">
+          Windows Server 2022 · Linux · Cisco · VMware<br/>
+          Python · Bash · PowerShell · Java · Git
+        </div>
+      `,
+      clear: () => { terminalBody.innerHTML = ''; return ''; }
+    };
 
-        const cmdLine = document.createElement('div');
-        cmdLine.className = 'text-[var(--text)] pt-1';
-        cmdLine.innerHTML = `<span class="text-[var(--amber)]">guest@portfolio:~$</span> ${cmd}`;
-        terminalBody.appendChild(cmdLine);
+    terminalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const cmd = terminalInput.value.trim().toLowerCase();
+      if (!cmd) return;
 
-        let response = '';
-        if (cmd === 'whoami') {
-          response = 'Rajaomanjato Ventson\'Iavo Tsiarovana — Technicien Support IT & Réseaux (L3 ESIIA / DST).';
-        } else if (cmd === 'projets') {
-          response = 'Projets : Système Gaz (IoT/PHP), Smart Water MDG, WIFIKO, Simulation SaryTany (Cisco), Boîte Noire.';
-        } else if (cmd === 'contact') {
-          response = 'Email : rajaomanjatoventso@gmail.com | Tél : 038 58 909 07 | GitHub : ventso00';
-        } else if (cmd === 'clear') {
-          terminalBody.innerHTML = '';
-          terminalInput.value = '';
-          return;
-        } else {
-          response = `Commande non reconnue : "${cmd}". Essayez 'whoami', 'projets', 'contact' ou 'clear'.`;
-        }
+      // Echo commande
+      terminalBody.insertAdjacentHTML('beforeend',
+        `<div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span style="color:var(--text);">${escapeHtml(cmd)}</span></div>`
+      );
 
-        const respLine = document.createElement('div');
-        respLine.className = 'text-[var(--text-dim)] pl-2 border-l border-[var(--border)]';
-        respLine.textContent = response;
-        terminalBody.appendChild(respLine);
+      // Exécution
+      if (commands[cmd]) {
+        const output = commands[cmd]();
+        if (output) terminalBody.insertAdjacentHTML('beforeend', output);
+      } else {
+        terminalBody.insertAdjacentHTML('beforeend',
+          `<div style="color:#ef4444;">Commande non trouvée : ${escapeHtml(cmd)}. Tapez <span class="text-cyan">help</span>.</div>`
+        );
+      }
 
-        terminalInput.value = '';
-        terminalBody.scrollTop = terminalBody.scrollHeight;
+      terminalInput.value = '';
+      terminalBody.scrollTop = terminalBody.scrollHeight;
+    });
+
+    function escapeHtml(str) {
+      return str.replace(/[&<>"']/g, c => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[c]));
+    }
+
+    // ============ COPIER EMAIL ============
+    function copyEmail() {
+      const email = 'rajaomanjatoventso@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('📋 Email copié : ' + email);
+      }).catch(() => {
+        // Fallback
+        const ta = document.createElement('textarea');
+        ta.value = email;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('📋 Email copié !');
       });
     }
 
-    // Simulateur de Ping
-    function runPing() {
-      const target = document.getElementById('pingTarget').value;
-      const log = document.getElementById('pingLog');
-      log.innerHTML = `<div class="text-[var(--amber)]">Envoi des paquets ICMP vers ${target}...</div>`;
+    // ============ TOAST ============
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(toast._timeout);
+      toast._timeout = setTimeout(() => toast.classList.remove('show'), 3000);
+    }
+
+    // ============ FORMULAIRE CONTACT ============
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      showToast('✅ Message envoyé ! Je vous répondrai bientôt.');
+      e.target.reset();
+    });
+
+    // ============ ANIMATION DES BARRES DE COMPÉTENCES ============
+    const skillObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fills = entry.target.querySelectorAll('.skill-fill');
+          fills.forEach((fill, i) => {
+            const width = fill.dataset.width;
+            setTimeout(() => {
+              fill.style.width = width + '%';
+            }, i * 150);
+          });
+          skillObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    document.querySelectorAll('#competences .card-custom').forEach(card => {
+      skillObserver.observe(card);
+    });
+
+    // ============ EFFET PARTICULES AU CLIC ============
+    document.addEventListener('click', (e) => {
+      // Ne pas déclencher sur les liens/boutons
+      if (e.target.closest('a, button, input, textarea, .navbar, form')) return;
+
+      for (let i = 0; i < 8; i++) {
+        createParticle(e.clientX, e.clientY);
+      }
+    });
+
+    function createParticle(x, y) {
+      const p = document.createElement('div');
+      p.className = 'particle';
+      const size = Math.random() * 6 + 3;
+      const colors = ['#4fd8e8', '#ffb454', '#a78bfa', '#34d399'];
+      p.style.width = size + 'px';
+      p.style.height = size + 'px';
+      p.style.left = x + 'px';
+      p.style.top = y + 'px';
+      p.style.background = colors[Math.floor(Math.random() * colors.length)];
+      p.style.position = 'fixed';
+      p.style.zIndex = '9999';
+      p.style.transition = 'all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+      document.body.appendChild(p);
+
+      const angle = Math.random() * Math.PI * 2;
+      const dist = Math.random() * 80 + 30;
+      requestAnimationFrame(() => {
+        p.style.transform = `translate(${Math.cos(angle) * dist}px, ${Math.sin(angle) * dist}px) scale(0)`;
+        p.style.opacity = '0';
+      });
+
+      setTimeout(() => p.remove(), 850);
+    }
+
+    // ============ TILT 3D SUR CARTES (desktop uniquement) ============
+    if (window.matchMedia('(hover: hover)').matches) {
+      document.querySelectorAll('.card-custom').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = ((y - centerY) / centerY) * -3;
+          const rotateY = ((x - centerX) / centerX) * 3;
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+
+    // ============ EFFET MACHINE À ÉCRIRE DYNAMIQUE ============
+    const heroSubtitle = document.querySelector('.typewriter');
+    if (heroSubtitle) {
+      // Retirer l'animation CSS, faire en JS pour plus de contrôle
+      heroSubtitle.style.animation = 'none';
+      heroSubtitle.style.borderRight = 'none';
+      const text = heroSubtitle.textContent.trim();
+      heroSubtitle.textContent = '';
+      
+      let i = 0;
+      const cursor = document.createElement('span');
+      cursor.style.borderRight = '2px solid var(--cyan)';
+      cursor.style.animation = 'blink 1s step-end infinite';
+      cursor.textContent = '\u00A0';
       
       setTimeout(() => {
-        log.innerHTML += `<div>64 octets reçus de ${target}: icmp_seq=1 ttl=64 temps=2.3 ms</div>`;
-      }, 350);
-
-      setTimeout(() => {
-        log.innerHTML += `<div>64 octets reçus de ${target}: icmp_seq=2 ttl=64 temps=1.9 ms</div>`;
-      }, 700);
-
-      setTimeout(() => {
-        log.innerHTML += `<div class="text-[var(--emerald)] font-semibold">Succès : 2 paquets transmis, 2 reçus, 0% perte de paquet. Connexion nominale.</div>`;
-      }, 1050);
+        const typeInterval = setInterval(() => {
+          if (i < text.length) {
+            heroSubtitle.textContent = text.substring(0, i + 1);
+            i++;
+          } else {
+            clearInterval(typeInterval);
+            heroSubtitle.appendChild(cursor);
+          }
+        }, 60);
+      }, 800);
     }
+
+    // ============ PARALLAX SUBTIL SUR LES BLOBS ============
+    let mouseX = 0, mouseY = 0;
+    document.addEventListener('mousemove', (e) => {
+      mouseX = (e.clientX / window.innerWidth - 0.5) * 20;
+      mouseY = (e.clientY / window.innerHeight - 0.5) * 20;
+    });
+
+    function animateBlobs() {
+      const blobs = document.querySelectorAll('.bg-blob');
+      blobs.forEach((blob, i) => {
+        const factor = (i + 1) * 0.5;
+        blob.style.marginLeft = (mouseX * factor) + 'px';
+        blob.style.marginTop = (mouseY * factor) + 'px';
+      });
+      requestAnimationFrame(animateBlobs);
+    }
+    // Activer uniquement sur desktop pour perf
+    if (window.matchMedia('(hover: hover)').matches) {
+      animateBlobs();
+    }
+
+    // ============ SMOOTH SCROLL POUR ANCRES ============
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = 80;
+          const targetPos = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: targetPos, behavior: 'smooth' });
+        }
+      });
+    });
   </script>
 </body>
 </html>

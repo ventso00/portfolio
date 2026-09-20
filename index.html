@@ -6,794 +6,217 @@
   <title>RAJAOMANJATO VENTSO | IT Support & Cloud Consultant</title>
   <meta name="description" content="Portfolio de RAJAOMANJATO VENTSO — Technicien Support IT & Administrateur Systèmes et Réseaux à Antananarivo, Madagascar." />
   <meta name="theme-color" content="#0a0e1a" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="RAJAOMANJATO VENTSO | IT Support & Cloud Consultant" />
   <meta property="og:description" content="Technicien Support IT & Administrateur Systèmes et Réseaux — Antananarivo, Madagascar." />
   <meta property="og:type" content="website" />
 
-  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
-  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- AOS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
   <style>
-    /* ============================================
-       VARIABLES GLOBALES
-       ============================================ */
     :root {
-      --bg: #0a0e1a;
-      --bg-elev: #121829;
-      --bg-elev-2: #1a2238;
-      --border: #24304f;
-      --text: #e2e8f0;
-      --text-dim: #94a3b8;
-      --cyan: #4fd8e8;
-      --amber: #ffb454;
-      --emerald: #34d399;
-      --purple: #a78bfa;
-      --pink: #f472b6;
-      --shadow: rgba(0, 0, 0, 0.4);
+      --bg: #0a0e1a; --bg-elev: #121829; --bg-elev-2: #1a2238;
+      --border: #24304f; --text: #e2e8f0; --text-dim: #94a3b8;
+      --cyan: #4fd8e8; --amber: #ffb454; --emerald: #34d399;
+      --purple: #a78bfa; --pink: #f472b6; --shadow: rgba(0, 0, 0, 0.4);
     }
-
     [data-bs-theme="light"] {
-      --bg: #f8fafc;
-      --bg-elev: #ffffff;
-      --bg-elev-2: #edf2f7;
-      --border: #cbd5e1;
-      --text: #0f172a;
-      --text-dim: #475569;
-      --cyan: #0284c7;
-      --amber: #d97706;
-      --emerald: #059669;
-      --purple: #7c3aed;
-      --pink: #db2777;
-      --shadow: rgba(0, 0, 0, 0.08);
+      --bg: #f8fafc; --bg-elev: #ffffff; --bg-elev-2: #edf2f7;
+      --border: #cbd5e1; --text: #0f172a; --text-dim: #475569;
+      --cyan: #0284c7; --amber: #d97706; --emerald: #059669;
+      --purple: #7c3aed; --pink: #db2777; --shadow: rgba(0, 0, 0, 0.08);
     }
-
     * { scroll-behavior: smooth; }
-
     html, body { overflow-x: hidden; }
-
-    body {
-      background-color: var(--bg) !important;
-      color: var(--text) !important;
-      font-family: 'Inter', sans-serif;
-      transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
+    body { background-color: var(--bg) !important; color: var(--text) !important; font-family: 'Inter', sans-serif; transition: background-color 0.4s ease, color 0.4s ease; }
     .font-heading { font-family: 'Space Grotesk', sans-serif; }
     .font-mono-code { font-family: 'JetBrains Mono', monospace; }
-
     .text-cyan { color: var(--cyan) !important; }
     .text-amber { color: var(--amber) !important; }
     .text-emerald { color: var(--emerald) !important; }
     .text-purple { color: var(--purple) !important; }
     .text-dim { color: var(--text-dim) !important; }
 
-    /* ============================================
-       DÉCOR DE FOND (adouci)
-       ============================================ */
-    .bg-grid-pattern {
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(to right, var(--border) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--border) 1px, transparent 1px);
-      background-size: 48px 48px;
-      opacity: 0.10;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    .bg-blob {
-      position: fixed;
-      border-radius: 50%;
-      filter: blur(140px);
-      opacity: 0.15;
-      pointer-events: none;
-      z-index: 0;
-      animation: floatBlob 18s ease-in-out infinite;
-    }
+    .bg-grid-pattern { position: fixed; inset: 0; background-image: linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px); background-size: 48px 48px; opacity: 0.10; pointer-events: none; z-index: 0; }
+    .bg-blob { position: fixed; border-radius: 50%; filter: blur(140px); opacity: 0.15; pointer-events: none; z-index: 0; animation: floatBlob 18s ease-in-out infinite; }
     .blob-1 { width: 380px; height: 380px; background: var(--cyan); top: -120px; left: -120px; }
     .blob-2 { width: 320px; height: 320px; background: var(--purple); bottom: 8%; right: -120px; animation-delay: 4s; }
+    @keyframes floatBlob { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -20px) scale(1.08); } }
 
-    @keyframes floatBlob {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(30px, -20px) scale(1.08); }
-    }
-
-    /* ============================================
-       NAVBAR
-       ============================================ */
-    .navbar-custom {
-      background: rgba(10, 14, 26, 0.75) !important;
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-      transition: all 0.3s ease;
-    }
+    .navbar-custom { background: rgba(10, 14, 26, 0.75) !important; backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
     [data-bs-theme="light"] .navbar-custom { background: rgba(248, 250, 252, 0.85) !important; }
     .navbar-custom.scrolled { background: rgba(10, 14, 26, 0.95) !important; box-shadow: 0 4px 24px var(--shadow); }
     [data-bs-theme="light"] .navbar-custom.scrolled { background: rgba(248, 250, 252, 0.98) !important; }
-
-    .nav-link {
-      color: var(--text-dim) !important;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-      transition: all 0.3s ease;
-      position: relative;
-      padding: 6px 4px !important;
-    }
+    .nav-link { color: var(--text-dim) !important; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; transition: all 0.3s ease; padding: 6px 4px !important; }
     .nav-link:hover { color: var(--cyan) !important; transform: translateY(-1px); }
     .nav-link .num { color: var(--amber); }
-
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
-
-    /* Monogramme RV */
-    .monogram {
-      width: 38px; height: 38px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
-      color: #0a0e1a;
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 14px rgba(79, 216, 232, 0.3);
-      transition: transform 0.3s ease;
-    }
+    .navbar-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .monogram { width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, var(--cyan), var(--purple)); color: #0a0e1a; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(79, 216, 232, 0.3); transition: transform 0.3s ease; }
     .navbar-brand:hover .monogram { transform: rotate(-6deg) scale(1.05); }
+    .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--text); white-space: nowrap; }
 
-    .brand-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      white-space: nowrap;
-    }
+    .btn-cyan { background: var(--cyan); color: #0a0e1a; font-weight: 600; border: none; transition: all 0.3s ease; }
+    .btn-cyan:hover { background: var(--cyan); color: #0a0e1a; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4); }
+    .btn-outline-cyan { border: 1px solid var(--cyan); color: var(--cyan); background: transparent; transition: all 0.3s ease; }
+    .btn-outline-cyan:hover { background: var(--cyan); color: #0a0e1a; transform: translateY(-2px); }
+    .btn-whatsapp { background: #25D366; color: #fff; font-weight: 600; border: none; transition: all 0.3s ease; }
+    .btn-whatsapp:hover { background: #20ba5a; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
 
-    /* ============================================
-       BOUTONS
-       ============================================ */
-    .btn-cyan {
-      background: var(--cyan);
-      color: #0a0e1a;
-      font-weight: 600;
-      border: none;
-      transition: all 0.3s ease;
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-cyan:hover {
-      background: var(--cyan);
-      color: #0a0e1a;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4);
-    }
+    .social-dock { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 12px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 999px; padding: 12px 8px; box-shadow: 0 8px 30px var(--shadow); transition: all 0.3s ease; }
+    .social-dock a { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-dim); background: var(--bg-elev-2); transition: all 0.3s ease; font-size: 1rem; position: relative; }
+    .social-dock a:hover { color: #0a0e1a; background: var(--cyan); transform: translateY(-3px) scale(1.1); box-shadow: 0 8px 20px rgba(79, 216, 232, 0.4); }
+    .social-dock a[data-tip]:hover::after { content: attr(data-tip); position: absolute; left: 52px; top: 50%; transform: translateY(-50%); background: var(--bg-elev-2); color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); white-space: nowrap; pointer-events: none; }
+    @media (max-width: 900px) { .social-dock { left: 50%; top: auto; bottom: 12px; transform: translateX(-50%); flex-direction: row; padding: 8px 12px; gap: 8px; } .social-dock a[data-tip]:hover::after { display: none; } }
 
-    .btn-outline-cyan {
-      border: 1px solid var(--cyan);
-      color: var(--cyan);
-      background: transparent;
-      transition: all 0.3s ease;
-    }
-    .btn-outline-cyan:hover {
-      background: var(--cyan);
-      color: #0a0e1a;
-      transform: translateY(-2px);
-    }
+    .badge-status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: var(--bg-elev); border: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--cyan); }
+    .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); animation: pulseDot 2s infinite; }
+    @keyframes pulseDot { 0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
 
-    .btn-whatsapp {
-      background: #25D366;
-      color: #fff;
-      font-weight: 600;
-      border: none;
-      transition: all 0.3s ease;
-    }
-    .btn-whatsapp:hover {
-      background: #20ba5a;
-      color: #fff;
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
-    }
-
-    /* ============================================
-       SOCIAL DOCK (barre flottante)
-       ============================================ */
-    .social-dock {
-      position: fixed;
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 40;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      background: var(--bg-elev);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 12px 8px;
-      box-shadow: 0 8px 30px var(--shadow);
-      transition: all 0.3s ease;
-    }
-    .social-dock a {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-dim);
-      background: var(--bg-elev-2);
-      transition: all 0.3s ease;
-      font-size: 1rem;
-      position: relative;
-    }
-    .social-dock a:hover {
-      color: #0a0e1a;
-      background: var(--cyan);
-      transform: translateY(-3px) scale(1.1);
-      box-shadow: 0 8px 20px rgba(79, 216, 232, 0.4);
-    }
-    .social-dock a[data-tip]:hover::after {
-      content: attr(data-tip);
-      position: absolute;
-      left: 52px;
-      top: 50%;
-      transform: translateY(-50%);
-      background: var(--bg-elev-2);
-      color: var(--text);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      padding: 4px 10px;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      white-space: nowrap;
-      pointer-events: none;
-    }
-    @media (max-width: 900px) {
-      .social-dock {
-        left: 50%;
-        top: auto;
-        bottom: 12px;
-        transform: translateX(-50%);
-        flex-direction: row;
-        padding: 8px 12px;
-        gap: 8px;
-      }
-      .social-dock a[data-tip]:hover::after { display: none; }
-    }
-
-    /* ============================================
-       HERO
-       ============================================ */
-    .badge-status {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 14px;
-      border-radius: 999px;
-      background: var(--bg-elev);
-      border: 1px solid var(--border);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--cyan);
-    }
-    .pulse-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--emerald);
-      box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7);
-      animation: pulseDot 2s infinite;
-    }
-    @keyframes pulseDot {
-      0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); }
-      70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); }
-    }
-
-    .hero-title {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      line-height: 1.05;
-      font-size: clamp(1.9rem, 5vw, 3.4rem);
-    }
-
-    .typewriter-wrap {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--amber);
-      font-size: clamp(0.85rem, 2vw, 1rem);
-      min-height: 1.5em;
-    }
-    .typewriter-cursor {
-      border-right: 2px solid var(--cyan);
-      animation: blink 0.9s step-end infinite;
-      padding-right: 2px;
-    }
+    .hero-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; line-height: 1.05; font-size: clamp(1.9rem, 5vw, 3.4rem); }
+    .typewriter-wrap { font-family: 'JetBrains Mono', monospace; color: var(--amber); font-size: clamp(0.85rem, 2vw, 1rem); min-height: 1.5em; }
+    .typewriter-cursor { border-right: 2px solid var(--cyan); animation: blink 0.9s step-end infinite; padding-right: 2px; }
     @keyframes blink { 50% { border-color: transparent; } }
 
-    /* ============================================
-       TERMINAL
-       ============================================ */
-    .terminal-window {
-      background: var(--bg-elev);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px var(--shadow);
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-    .terminal-window:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 30px 80px rgba(79, 216, 232, 0.15);
-    }
-    .terminal-header {
-      background: var(--bg-elev-2);
-      border-bottom: 1px solid var(--border);
-      padding: 10px 16px;
-    }
-    .terminal-body {
-      height: 280px;
-      overflow-y: auto;
-      padding: 16px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.73rem;
-      background: rgba(10, 14, 26, 0.5);
-      scrollbar-width: thin;
-      scrollbar-color: var(--border) transparent;
-    }
+    .terminal-window { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease; }
+    .terminal-window:hover { transform: translateY(-4px); box-shadow: 0 30px 80px rgba(79, 216, 232, 0.15); }
+    .terminal-header { background: var(--bg-elev-2); border-bottom: 1px solid var(--border); padding: 10px 16px; }
+    .terminal-body { height: 280px; overflow-y: auto; padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; background: rgba(10, 14, 26, 0.5); scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
     [data-bs-theme="light"] .terminal-body { background: rgba(237, 242, 247, 0.5); }
     .terminal-body::-webkit-scrollbar { width: 5px; }
     .terminal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-    .terminal-body .cursor-blink::after { content: '▋'; color: var(--cyan); animation: blink 1s step-end infinite; margin-left: 2px; }
 
-    /* ============================================
-       CARDS
-       ============================================ */
-    .card-custom {
-      background: var(--bg-elev);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 24px;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      position: relative;
-      overflow: hidden;
-      height: 100%;
-    }
-    .card-custom::before {
-      content: '';
-      position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(79, 216, 232, 0.06), transparent);
-      transition: left 0.7s ease;
-      pointer-events: none;
-    }
+    .card-custom { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; height: 100%; }
+    .card-custom::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(79, 216, 232, 0.06), transparent); transition: left 0.7s ease; pointer-events: none; }
     .card-custom:hover::before { left: 100%; }
-    .card-custom:hover {
-      transform: translateY(-6px);
-      border-color: var(--cyan);
-      box-shadow: 0 20px 50px rgba(79, 216, 232, 0.12);
-    }
+    .card-custom:hover { transform: translateY(-6px); border-color: var(--cyan); box-shadow: 0 20px 50px rgba(79, 216, 232, 0.12); }
 
-    .card-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-      height: 100%;
-    }
-    .card-link:focus { outline: 2px solid var(--cyan); outline-offset: 3px; }
+    /* Carte projet (plus riche) */
+    .project-card { position: relative; padding-top: 30px; }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .project-actions .action-link { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-decoration: none; transition: all 0.25s ease; border: 1px solid var(--border); background: var(--bg-elev-2); color: var(--text-dim); }
+    .project-actions .action-link:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+    .project-actions .action-link.live { border-color: var(--emerald); color: var(--emerald); }
+    .project-actions .action-link.live:hover { background: var(--emerald); color: #0a0e1a; }
+    .project-actions .action-link.demo { border-color: var(--amber); color: var(--amber); }
+    .project-actions .action-link.demo:hover { background: var(--amber); color: #0a0e1a; }
+    .project-actions .action-link.read { border-color: var(--cyan); color: var(--cyan); cursor: pointer; }
+    .project-actions .action-link.read:hover { background: var(--cyan); color: #0a0e1a; }
 
-    .icon-box {
-      width: 44px; height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg-elev-2);
-      border: 1px solid var(--border);
-      color: var(--cyan);
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-    .card-custom:hover .icon-box {
-      background: var(--cyan);
-      color: #0a0e1a;
-      transform: rotate(-6deg) scale(1.08);
-    }
+    .icon-box { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--bg-elev-2); border: 1px solid var(--border); color: var(--cyan); font-size: 1.2rem; transition: all 0.3s ease; flex-shrink: 0; }
+    .card-custom:hover .icon-box { background: var(--cyan); color: #0a0e1a; transform: rotate(-6deg) scale(1.08); }
 
-    /* ============================================
-       TITRES DE SECTION
-       ============================================ */
-    .section-title {
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 2rem;
-    }
-    .section-title .num {
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--amber);
-      font-size: 1.1rem;
-    }
-    .section-title h2 {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 600;
-      font-size: clamp(1.3rem, 3vw, 1.75rem);
-      margin: 0;
-    }
-    .section-title .line {
-      flex: 1;
-      height: 1px;
-      background: var(--border);
-    }
+    .section-title { display: flex; align-items: baseline; gap: 12px; margin-bottom: 2rem; }
+    .section-title .num { font-family: 'JetBrains Mono', monospace; color: var(--amber); font-size: 1.1rem; }
+    .section-title h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 3vw, 1.75rem); margin: 0; }
+    .section-title .line { flex: 1; height: 1px; background: var(--border); }
 
-    /* ============================================
-       TIMELINE
-       ============================================ */
-    .timeline-item {
-      position: relative;
-      padding-left: 32px;
-      padding-bottom: 24px;
-      border-left: 2px solid var(--border);
-    }
+    .timeline-item { position: relative; padding-left: 32px; padding-bottom: 24px; border-left: 2px solid var(--border); }
     .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -9px; top: 0;
-      width: 16px; height: 16px;
-      border-radius: 50%;
-      background: var(--bg);
-      border: 2px solid var(--cyan);
-      transition: all 0.3s ease;
-    }
-    .timeline-item:hover::before {
-      background: var(--cyan);
-      box-shadow: 0 0 20px var(--cyan);
-      transform: scale(1.15);
-    }
+    .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--cyan); transition: all 0.3s ease; }
+    .timeline-item:hover::before { background: var(--cyan); box-shadow: 0 0 20px var(--cyan); transform: scale(1.15); }
 
-    /* ============================================
-       SKILL BARS
-       ============================================ */
-    .skill-bar {
-      height: 6px;
-      background: var(--bg-elev-2);
-      border-radius: 3px;
-      overflow: hidden;
-      margin-top: 6px;
-    }
-    .skill-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--cyan), var(--purple));
-      border-radius: 3px;
-      width: 0;
-      transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-    }
-    .skill-fill::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-      animation: shimmer 2.4s infinite;
-    }
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
-    }
+    .skill-bar { height: 6px; background: var(--bg-elev-2); border-radius: 3px; overflow: hidden; margin-top: 6px; }
+    .skill-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--purple)); border-radius: 3px; width: 0; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
+    .skill-fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer 2.4s infinite; }
+    @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
 
-    /* ============================================
-       TECH TAGS
-       ============================================ */
-    .tech-tag {
-      display: inline-block;
-      padding: 4px 10px;
-      border-radius: 6px;
-      background: var(--bg-elev-2);
-      border: 1px solid var(--border);
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--text-dim);
-      transition: all 0.3s ease;
-    }
-    .tech-tag:hover {
-      border-color: var(--cyan);
-      color: var(--cyan);
-      transform: translateY(-2px);
-    }
+    .tech-tag { display: inline-block; padding: 4px 10px; border-radius: 6px; background: var(--bg-elev-2); border: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-dim); transition: all 0.3s ease; }
+    .tech-tag:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
 
-    /* ============================================
-       STATS
-       ============================================ */
-    .stat-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-weight: 700;
-      font-size: 2.2rem;
-      background: linear-gradient(135deg, var(--cyan), var(--purple));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1;
-    }
+    .stat-number { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.2rem; background: linear-gradient(135deg, var(--cyan), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
 
-    /* ============================================
-       LANGUE SELECTOR
-       ============================================ */
-    .lang-switch {
-      display: inline-flex;
-      background: var(--bg-elev-2);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      overflow: hidden;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-    }
-    .lang-switch button {
-      background: transparent;
-      border: none;
-      color: var(--text-dim);
-      padding: 5px 10px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-    .lang-switch button.active {
-      background: var(--cyan);
-      color: #0a0e1a;
-      font-weight: 600;
-    }
+    .lang-switch { display: inline-flex; background: var(--bg-elev-2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; }
+    .lang-switch button { background: transparent; border: none; color: var(--text-dim); padding: 5px 10px; cursor: pointer; transition: all 0.2s ease; }
+    .lang-switch button.active { background: var(--cyan); color: #0a0e1a; font-weight: 600; }
 
-    /* ============================================
-       FORMULAIRES
-       ============================================ */
-    .form-control-custom {
-      background: var(--bg-elev) !important;
-      border: 1px solid var(--border) !important;
-      color: var(--text) !important;
-      border-radius: 10px;
-      padding: 12px 16px;
-      transition: all 0.3s ease;
-    }
-    .form-control-custom:focus {
-      border-color: var(--cyan) !important;
-      box-shadow: 0 0 0 3px rgba(79, 216, 232, 0.15) !important;
-    }
+    .form-control-custom { background: var(--bg-elev) !important; border: 1px solid var(--border) !important; color: var(--text) !important; border-radius: 10px; padding: 12px 16px; transition: all 0.3s ease; }
+    .form-control-custom:focus { border-color: var(--cyan) !important; box-shadow: 0 0 0 3px rgba(79, 216, 232, 0.15) !important; }
     .form-control-custom::placeholder { color: var(--text-dim); opacity: 0.6; }
 
-    /* ============================================
-       SCROLL TOP
-       ============================================ */
-    #scrollTop {
-      position: fixed;
-      bottom: 24px; right: 24px;
-      width: 46px; height: 46px;
-      border-radius: 50%;
-      background: var(--cyan);
-      color: #0a0e1a;
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      transition: all 0.3s ease;
-      z-index: 999;
-      box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4);
-    }
+    #scrollTop { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--cyan); color: #0a0e1a; border: none; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; z-index: 999; box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4); }
     #scrollTop.visible { opacity: 1; visibility: visible; transform: translateY(0); }
     #scrollTop:hover { transform: translateY(-4px) scale(1.08); }
     @media (max-width: 900px) { #scrollTop { bottom: 80px; } }
 
-    /* ============================================
-       TOAST
-       ============================================ */
-    .toast-custom {
-      position: fixed;
-      bottom: 24px; left: 50%;
-      transform: translateX(-50%) translateY(120px);
-      background: var(--bg-elev);
-      border: 1px solid var(--cyan);
-      color: var(--text);
-      padding: 12px 24px;
-      border-radius: 12px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.82rem;
-      opacity: 0;
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      z-index: 9999;
-      box-shadow: 0 10px 40px rgba(79, 216, 232, 0.3);
-      max-width: 90vw;
-      text-align: center;
-    }
+    .toast-custom { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(120px); background: var(--bg-elev); border: 1px solid var(--cyan); color: var(--text); padding: 12px 24px; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 9999; box-shadow: 0 10px 40px rgba(79, 216, 232, 0.3); max-width: 90vw; text-align: center; }
     .toast-custom.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    /* ============================================
-       QR CODE MODAL
-       ============================================ */
-    .qr-modal-content {
-      background: var(--bg-elev);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      color: var(--text);
-    }
-    .qr-modal-content .modal-header { border-color: var(--border); }
-    .qr-modal-content .modal-footer { border-color: var(--border); }
+    .qr-modal-content, .project-modal-content { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 16px; color: var(--text); }
+    .qr-modal-content .modal-header, .qr-modal-content .modal-footer,
+    .project-modal-content .modal-header, .project-modal-content .modal-footer { border-color: var(--border); }
+    .project-modal-content .modal-body h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.2rem; margin-top: 1.2rem; margin-bottom: 0.6rem; color: var(--cyan); }
+    .project-modal-content .modal-body p, .project-modal-content .modal-body li { color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; }
+    .project-modal-content .modal-body ul { padding-left: 20px; }
 
-    /* ============================================
-       LOADER
-       ============================================ */
-    #pageLoader {
-      position: fixed;
-      inset: 0;
-      background: var(--bg);
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: opacity 0.5s ease, visibility 0.5s ease;
-    }
+    #pageLoader { position: fixed; inset: 0; background: var(--bg); z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s ease, visibility 0.5s ease; }
     #pageLoader.hidden { opacity: 0; visibility: hidden; }
-    .loader-ring {
-      width: 56px; height: 56px;
-      border: 3px solid var(--border);
-      border-top-color: var(--cyan);
-      border-radius: 50%;
-      animation: spin 1s linear infinite;
-    }
+    .loader-ring { width: 56px; height: 56px; border: 3px solid var(--border); border-top-color: var(--cyan); border-radius: 50%; animation: spin 1s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
 
-    /* ============================================
-       MOBILE OVERLAY MENU
-       ============================================ */
     @media (max-width: 991px) {
-      .mobile-menu-overlay {
-        position: fixed;
-        inset: 0;
-        background: var(--bg);
-        z-index: 1050;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        padding: 40px 20px;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.35s ease;
-      }
+      .mobile-menu-overlay { position: fixed; inset: 0; background: var(--bg); z-index: 1050; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 40px 20px; opacity: 0; visibility: hidden; transition: all 0.35s ease; }
       .mobile-menu-overlay.show { opacity: 1; visibility: visible; }
-      .mobile-menu-overlay .close-btn {
-        position: absolute;
-        top: 20px; right: 20px;
-        width: 44px; height: 44px;
-        border-radius: 50%;
-        background: var(--bg-elev);
-        border: 1px solid var(--border);
-        color: var(--text);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.3rem;
-      }
-      .mobile-menu-overlay a {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 1.05rem;
-        color: var(--text-dim);
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
+      .mobile-menu-overlay .close-btn { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-elev); border: 1px solid var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+      .mobile-menu-overlay a { font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s ease; }
       .mobile-menu-overlay a:hover { color: var(--cyan); }
       .mobile-menu-overlay a .num { color: var(--amber); margin-right: 8px; }
     }
 
-    /* ============================================
-       PRINT (pour CV imprimable)
-       ============================================ */
     @media print {
-      .navbar-custom, .social-dock, #scrollTop, .toast-custom,
-      .bg-blob, .bg-grid-pattern, #pageLoader,
-      .btn, .mobile-menu-overlay, footer .no-print { display: none !important; }
+      .navbar-custom, .social-dock, #scrollTop, .toast-custom, .bg-blob, .bg-grid-pattern, #pageLoader, .btn, .mobile-menu-overlay, footer .no-print { display: none !important; }
       body { background: #fff !important; color: #000 !important; }
       .card-custom { border: 1px solid #ccc !important; box-shadow: none !important; page-break-inside: avoid; }
       section { page-break-inside: avoid; }
       a { color: #000 !important; text-decoration: underline; }
       .section-title h2 { color: #000 !important; }
     }
-
-    /* ============================================
-       ACCESSIBILITÉ & REDUCED MOTION
-       ============================================ */
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-      }
-    }
-
-    /* Scrollbar */
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
     ::-webkit-scrollbar { width: 8px; }
     ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
-
     ::selection { background: var(--cyan); color: #0a0e1a; }
   </style>
 </head>
 <body>
 
-  <!-- Loader -->
   <div id="pageLoader"><div class="loader-ring"></div></div>
-
-  <!-- Fonds décoratifs -->
   <div class="bg-grid-pattern"></div>
   <div class="bg-blob blob-1"></div>
   <div class="bg-blob blob-2"></div>
 
-  <!-- Social Dock (barre flottante gauche / bottom mobile) -->
   <aside class="social-dock" aria-label="Liens rapides">
-    <a href="https://wa.me/261385890907" target="_blank" rel="noopener" data-tip="WhatsApp" aria-label="WhatsApp">
-      <i class="bi bi-whatsapp"></i>
-    </a>
-    <a href="tel:+261385890907" data-tip="Appeler" aria-label="Téléphone">
-      <i class="bi bi-telephone"></i>
-    </a>
-    <a href="mailto:rajaomanjatoventso@gmail.com" data-tip="Email" aria-label="Email">
-      <i class="bi bi-envelope"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" data-tip="LinkedIn" aria-label="LinkedIn">
-      <i class="bi bi-linkedin"></i>
-    </a>
-    <a href="https://github.com/ventso00" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub">
-      <i class="bi bi-github"></i>
-    </a>
-    <a href="#" data-bs-toggle="modal" data-bs-target="#qrModal" data-tip="QR Code vCard" aria-label="QR Code">
-      <i class="bi bi-qr-code"></i>
-    </a>
-    <a href="/cv/RAJAOMANJATO_VENTSO_CV.pdf" download data-tip="CV PDF" aria-label="CV PDF">
-      <i class="bi bi-file-earmark-pdf"></i>
-    </a>
+    <a href="https://wa.me/261385890907" target="_blank" rel="noopener" data-tip="WhatsApp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+    <a href="tel:+261385890907" data-tip="Appeler" aria-label="Téléphone"><i class="bi bi-telephone"></i></a>
+    <a href="mailto:rajaomanjatoventso@gmail.com" data-tip="Email" aria-label="Email"><i class="bi bi-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" data-tip="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a href="https://github.com/ventso00" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub"><i class="bi bi-github"></i></a>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#qrModal" data-tip="QR Code vCard" aria-label="QR Code"><i class="bi bi-qr-code"></i></a>
+    <a href="/cv/RAJAOMANJATO_VENTSO_CV.pdf" download data-tip="CV PDF" aria-label="CV PDF"><i class="bi bi-file-earmark-pdf"></i></a>
   </aside>
 
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-custom fixed-top py-3" id="mainNav">
     <div class="container">
       <a class="navbar-brand" href="#hero">
-        <span class="monogram">RV</span>
+        <span class="monogram">V</span>
         <span class="brand-name">RAJAOMANJATO VENTSO</span>
       </a>
-
       <button class="navbar-toggler border-0 d-lg-none" type="button" id="menuToggle" aria-label="Menu">
         <i class="bi bi-list text-white fs-3"></i>
       </button>
-
       <div class="collapse navbar-collapse d-none d-lg-flex" id="navMenu">
         <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 font-mono-code">
-          <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about"><span class="num">01.</span> <span>À propos</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#services" data-i18n="nav.services"><span class="num">02.</span> <span>Services</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience" data-i18n="nav.exp"><span class="num">03.</span> <span>Parcours</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#projets" data-i18n="nav.projects"><span class="num">04.</span> <span>Projets</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#competences" data-i18n="nav.skills"><span class="num">05.</span> <span>Compétences</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#formation" data-i18n="nav.edu"><span class="num">06.</span> <span>Formation</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact" data-i18n="nav.contact"><span class="num">07.</span> <span>Contact</span></a></li>
-
+          <li class="nav-item"><a class="nav-link" href="#about"><span class="num">01.</span> <span data-i18n="nav.about">À propos</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#services"><span class="num">02.</span> <span data-i18n="nav.services">Services</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#experience"><span class="num">03.</span> <span data-i18n="nav.exp">Parcours</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets"><span class="num">04.</span> <span data-i18n="nav.projects">Projets</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#competences"><span class="num">05.</span> <span data-i18n="nav.skills">Compétences</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#formation"><span class="num">06.</span> <span data-i18n="nav.edu">Formation</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact"><span class="num">07.</span> <span data-i18n="nav.contact">Contact</span></a></li>
           <li class="nav-item">
             <div class="lang-switch" role="group" aria-label="Langue">
               <button data-lang="fr" class="active">FR</button>
@@ -801,7 +224,6 @@
               <button data-lang="mg">MG</button>
             </div>
           </li>
-
           <li class="nav-item">
             <button id="themeToggle" class="btn btn-outline-cyan btn-sm rounded-3" aria-label="Thème">
               <i class="bi bi-sun-fill d-none" id="iconSun"></i>
@@ -813,16 +235,15 @@
     </div>
   </nav>
 
-  <!-- Menu mobile overlay -->
   <div class="mobile-menu-overlay" id="mobileMenu">
     <button class="close-btn" id="closeMenu" aria-label="Fermer"><i class="bi bi-x-lg"></i></button>
-    <a href="#about" data-i18n="nav.about"><span class="num">01.</span> À propos</a>
-    <a href="#services" data-i18n="nav.services"><span class="num">02.</span> Services</a>
-    <a href="#experience" data-i18n="nav.exp"><span class="num">03.</span> Parcours</a>
-    <a href="#projets" data-i18n="nav.projects"><span class="num">04.</span> Projets</a>
-    <a href="#competences" data-i18n="nav.skills"><span class="num">05.</span> Compétences</a>
-    <a href="#formation" data-i18n="nav.edu"><span class="num">06.</span> Formation</a>
-    <a href="#contact" data-i18n="nav.contact"><span class="num">07.</span> Contact</a>
+    <a href="#about"><span class="num">01.</span> <span data-i18n="nav.about">À propos</span></a>
+    <a href="#services"><span class="num">02.</span> <span data-i18n="nav.services">Services</span></a>
+    <a href="#experience"><span class="num">03.</span> <span data-i18n="nav.exp">Parcours</span></a>
+    <a href="#projets"><span class="num">04.</span> <span data-i18n="nav.projects">Projets</span></a>
+    <a href="#competences"><span class="num">05.</span> <span data-i18n="nav.skills">Compétences</span></a>
+    <a href="#formation"><span class="num">06.</span> <span data-i18n="nav.edu">Formation</span></a>
+    <a href="#contact"><span class="num">07.</span> <span data-i18n="nav.contact">Contact</span></a>
     <div class="lang-switch mt-3" role="group">
       <button data-lang="fr" class="active">FR</button>
       <button data-lang="en">EN</button>
@@ -832,43 +253,23 @@
 
   <main class="position-relative" style="z-index:1;">
 
-    <!-- ============ HERO ============ -->
+    <!-- HERO -->
     <section id="hero" class="d-flex align-items-center" style="min-height:100vh;padding-top:100px;">
       <div class="container py-5">
         <div class="row align-items-center g-5">
-
           <div class="col-lg-7" data-aos="fade-right">
-            <div class="badge-status mb-4">
-              <span class="pulse-dot"></span>
-              <span data-i18n="hero.badge">DISPONIBLE — Opportunités IT</span>
-            </div>
-
-            <h1 class="hero-title mb-3">
-              RAJAOMANJATO<br />
-              <span class="text-cyan">VENTSO</span>
-            </h1>
-
-            <p class="typewriter-wrap mb-4" aria-live="polite">
-              <span id="typewriter"></span><span class="typewriter-cursor"></span>
-            </p>
-
+            <div class="badge-status mb-4"><span class="pulse-dot"></span><span data-i18n="hero.badge">DISPONIBLE — Opportunités IT</span></div>
+            <h1 class="hero-title mb-3">RAJAOMANJATO<br /><span class="text-cyan">VENTSO</span></h1>
+            <p class="typewriter-wrap mb-4" aria-live="polite"><span id="typewriter"></span><span class="typewriter-cursor"></span></p>
             <p class="text-dim mb-4 lh-lg" style="max-width:600px;font-size:clamp(0.9rem,1.5vw,1rem);" data-i18n="hero.desc">
-              Technicien Support IT &amp; Administrateur Systèmes et Réseaux. Spécialisé en <strong style="color:var(--text);">Windows Server 2022</strong>, environnements <strong style="color:var(--text);">Linux</strong>, maquettage réseau <strong style="color:var(--text);">Cisco / GNS3</strong>, virtualisation et support N1/N2.
+              Technicien Support IT &amp; Administrateur Systèmes et Réseaux. Spécialisé en Windows Server 2022, environnements Linux, maquettage réseau Cisco / GNS3, virtualisation et support N1/N2.
             </p>
-
             <div class="d-flex flex-wrap gap-3 font-mono-code" style="font-size:0.83rem;">
-              <a href="#projets" class="btn btn-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2">
-                <i class="bi bi-folder-symlink"></i> <span data-i18n="hero.cta1">Voir les projets</span>
-              </a>
-              <a href="/cv/RAJAOMANJATO_VENTSO_CV.pdf" download class="btn btn-outline-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2">
-                <i class="bi bi-download"></i> <span data-i18n="hero.cta2">Télécharger CV</span>
-              </a>
-              <a href="https://wa.me/261385890907" target="_blank" rel="noopener" class="btn btn-whatsapp px-4 py-2 rounded-3 d-flex align-items-center gap-2">
-                <i class="bi bi-whatsapp"></i> WhatsApp
-              </a>
+              <a href="#projets" class="btn btn-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2"><i class="bi bi-folder-symlink"></i> <span data-i18n="hero.cta1">Voir les projets</span></a>
+              <a href="/cv/RAJAOMANJATO_VENTSO_CV.pdf" download class="btn btn-outline-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2"><i class="bi bi-download"></i> <span data-i18n="hero.cta2">Télécharger CV</span></a>
+              <a href="https://wa.me/261385890907" target="_blank" rel="noopener" class="btn btn-whatsapp px-4 py-2 rounded-3 d-flex align-items-center gap-2"><i class="bi bi-whatsapp"></i> WhatsApp</a>
             </div>
           </div>
-
           <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
             <div class="terminal-window">
               <div class="terminal-header d-flex align-items-center justify-content-between">
@@ -892,26 +293,18 @@
               </div>
               <form id="terminalForm" class="d-flex align-items-center gap-2 px-3 py-2" style="border-top:1px solid var(--border);background:var(--bg-elev-2);font-family:'JetBrains Mono',monospace;font-size:0.73rem;">
                 <span style="color:var(--amber);">guest@portfolio:~$</span>
-                <input id="terminalInput" type="text" placeholder="Entrez une commande..." autocomplete="off" spellcheck="false"
-                  class="flex-grow-1 bg-transparent border-0"
-                  style="outline:none;color:var(--cyan);" />
+                <input id="terminalInput" type="text" placeholder="Entrez une commande..." autocomplete="off" spellcheck="false" class="flex-grow-1 bg-transparent border-0" style="outline:none;color:var(--cyan);" />
               </form>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    <!-- ============ À PROPOS ============ -->
+    <!-- À PROPOS -->
     <section id="about" class="py-5">
       <div class="container py-5">
-        <div class="section-title" data-aos="fade-up">
-          <span class="num">01.</span>
-          <h2 data-i18n="about.title">Profil Professionnel</h2>
-          <span class="line d-none d-sm-block"></span>
-        </div>
-
+        <div class="section-title" data-aos="fade-up"><span class="num">01.</span><h2 data-i18n="about.title">Profil Professionnel</h2><span class="line d-none d-sm-block"></span></div>
         <div class="row g-4">
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
             <div class="text-dim lh-lg mb-4" style="font-size:clamp(0.9rem,1.5vw,1rem);">
@@ -922,52 +315,23 @@
                 Mon stage chez <strong style="color:var(--text);">FTM / SaryTany</strong> m'a permis d'acquérir une solide expérience : administration Windows Server 2022 (AD DS, DNS, DHCP, GPO), support N1/N2, virtualisation VMware/Hyper-V et simulation d'infrastructures avec GNS3 &amp; Cisco Packet Tracer.
               </p>
             </div>
-
             <div class="row g-3 font-mono-code" style="font-size:0.78rem;">
-              <div class="col-sm-6">
-                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
-                  <i class="bi bi-geo-alt text-cyan me-1"></i>
-                  <span class="text-cyan fw-semibold">›</span> Antananarivo, Madagascar
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
-                  <i class="bi bi-mortarboard text-cyan me-1"></i>
-                  <span class="text-cyan fw-semibold">›</span> DST + Licence 3 ESIIA
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
-                  <i class="bi bi-translate text-cyan me-1"></i>
-                  <span class="text-cyan fw-semibold">›</span> FR · EN · Malagasy
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);">
-                  <i class="bi bi-telephone text-cyan me-1"></i>
-                  <span class="text-cyan fw-semibold">›</span> 038 58 909 07
-                </div>
-              </div>
+              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-geo-alt text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> Antananarivo, Madagascar</div></div>
+              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-mortarboard text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> DST + Licence 3 ESIIA</div></div>
+              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-translate text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> FR · EN · Malagasy</div></div>
+              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-telephone text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> 038 58 909 07</div></div>
             </div>
           </div>
-
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="card-custom text-center">
-              <div class="d-inline-flex align-items-center justify-content-center mb-3"
-                style="width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));padding:3px;">
-                <div style="width:100%;height:100%;border-radius:50%;background:var(--bg-elev-2);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.2rem;color:var(--cyan);">
-                  RV
-                </div>
+              <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));padding:3px;">
+                <div style="width:100%;height:100%;border-radius:50%;background:var(--bg-elev-2);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.6rem;color:var(--cyan);">V</div>
               </div>
               <h3 class="font-heading fw-semibold mb-1">RAJAOMANJATO VENTSO</h3>
               <p class="font-mono-code mb-4" style="color:var(--amber);font-size:0.72rem;">IT SUPPORT &amp; CLOUD CONSULTANT</p>
               <div class="d-flex justify-content-center gap-3 font-mono-code" style="border-top:1px solid var(--border);padding-top:14px;font-size:0.75rem;">
-                <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-1">
-                  <i class="bi bi-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-1">
-                  <i class="bi bi-github"></i> GitHub
-                </a>
+                <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-1"><i class="bi bi-linkedin"></i> LinkedIn</a>
+                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-1"><i class="bi bi-github"></i> GitHub</a>
               </div>
             </div>
           </div>
@@ -975,76 +339,25 @@
       </div>
     </section>
 
-    <!-- ============ SERVICES ============ -->
+    <!-- SERVICES -->
     <section id="services" class="py-5">
       <div class="container py-5">
-        <div class="section-title" data-aos="fade-up">
-          <span class="num">02.</span>
-          <h2 data-i18n="services.title">Services proposés</h2>
-          <span class="line d-none d-sm-block"></span>
-        </div>
-
+        <div class="section-title" data-aos="fade-up"><span class="num">02.</span><h2 data-i18n="services.title">Services proposés</h2><span class="line d-none d-sm-block"></span></div>
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
-            <div class="card-custom h-100">
-              <div class="icon-box mb-3"><i class="bi bi-headset"></i></div>
-              <h3 class="font-heading fw-semibold h6 mb-2">Support IT N1 / N2</h3>
-              <p class="text-dim mb-0" style="font-size:0.83rem;">Diagnostic, résolution d'incidents matériels &amp; logiciels, maintenance du parc informatique.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom h-100">
-              <div class="icon-box mb-3"><i class="bi bi-hdd-network"></i></div>
-              <h3 class="font-heading fw-semibold h6 mb-2">Admin Systèmes</h3>
-              <p class="text-dim mb-0" style="font-size:0.83rem;">Windows Server 2022 (AD DS, DNS, DHCP, GPO), Linux Debian/Ubuntu, gestion des utilisateurs et politiques.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-            <div class="card-custom h-100">
-              <div class="icon-box mb-3"><i class="bi bi-router"></i></div>
-              <h3 class="font-heading fw-semibold h6 mb-2">Admin Réseau</h3>
-              <p class="text-dim mb-0" style="font-size:0.83rem;">TCP/IP, VLAN, OSPF, ACL, NAT/PAT — conception &amp; simulation Cisco Packet Tracer / GNS3.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
-            <div class="card-custom h-100">
-              <div class="icon-box mb-3"><i class="bi bi-boxes"></i></div>
-              <h3 class="font-heading fw-semibold h6 mb-2">Virtualisation</h3>
-              <p class="text-dim mb-0" style="font-size:0.83rem;">VMware Workstation, Hyper-V, VirtualBox — création et gestion d'environnements virtualisés.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom h-100">
-              <div class="icon-box mb-3"><i class="bi bi-code-square"></i></div>
-              <h3 class="font-heading fw-semibold h6 mb-2">Développement</h3>
-              <p class="text-dim mb-0" style="font-size:0.83rem;">Scripts Python, applications web PHP/MySQL, automatisation de tâches système.</p>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-            <div class="card-custom h-100">
-              <div class="icon-box mb-3"><i class="bi bi-cpu"></i></div>
-              <h3 class="font-heading fw-semibold h6 mb-2">IoT &amp; Embarqué</h3>
-              <p class="text-dim mb-0" style="font-size:0.83rem;">ESP32, capteurs, enregistrement de données, protocoles de communication IoT.</p>
-            </div>
-          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-headset"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Support IT N1 / N2</h3><p class="text-dim mb-0" style="font-size:0.83rem;">Diagnostic, résolution d'incidents matériels &amp; logiciels, maintenance du parc informatique.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-hdd-network"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Admin Systèmes</h3><p class="text-dim mb-0" style="font-size:0.83rem;">Windows Server 2022 (AD DS, DNS, DHCP, GPO), Linux Debian/Ubuntu, gestion des utilisateurs et politiques.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-router"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Admin Réseau</h3><p class="text-dim mb-0" style="font-size:0.83rem;">TCP/IP, VLAN, OSPF, ACL, NAT/PAT — conception &amp; simulation Cisco Packet Tracer / GNS3.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-boxes"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Virtualisation</h3><p class="text-dim mb-0" style="font-size:0.83rem;">VMware Workstation, Hyper-V, VirtualBox — création et gestion d'environnements virtualisés.</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-code-square"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Développement Web</h3><p class="text-dim mb-0" style="font-size:0.83rem;">Applications PHP/MySQL, dashboards, API REST, e-commerce (WordPress/WooCommerce).</p></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-cpu"></i></div><h3 class="font-heading fw-semibold h6 mb-2">IoT &amp; Embarqué</h3><p class="text-dim mb-0" style="font-size:0.83rem;">ESP32, capteurs, protocoles de communication, intégration dashboard temps réel.</p></div></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ EXPÉRIENCE ============ -->
+    <!-- EXPÉRIENCE -->
     <section id="experience" class="py-5">
       <div class="container py-5">
-        <div class="section-title" data-aos="fade-up">
-          <span class="num">03.</span>
-          <h2 data-i18n="exp.title">Parcours &amp; Expérience</h2>
-          <span class="line d-none d-sm-block"></span>
-        </div>
-
+        <div class="section-title" data-aos="fade-up"><span class="num">03.</span><h2 data-i18n="exp.title">Parcours &amp; Expérience</h2><span class="line d-none d-sm-block"></span></div>
         <div class="row g-4">
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="timeline-item">
@@ -1054,9 +367,7 @@
                     <h3 class="font-heading fw-semibold h6 mb-1">Stagiaire Admin Systèmes &amp; Réseaux</h3>
                     <div class="font-mono-code text-cyan" style="font-size:0.72rem;">FTM — SaryTany, Antananarivo</div>
                   </div>
-                  <span class="font-mono-code px-3 py-1 rounded-2" style="color:var(--amber);background:var(--bg-elev-2);border:1px solid var(--border);font-size:0.68rem;">
-                    Nov 2024 — Jan 2025
-                  </span>
+                  <span class="font-mono-code px-3 py-1 rounded-2" style="color:var(--amber);background:var(--bg-elev-2);border:1px solid var(--border);font-size:0.68rem;">Nov 2024 — Jan 2025</span>
                 </div>
                 <ul class="text-dim ps-3 mb-0" style="font-size:0.83rem;line-height:1.8;">
                   <li>Déploiement et administration Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation VMware / Hyper-V.</li>
@@ -1066,31 +377,23 @@
               </div>
             </div>
           </div>
-
           <div class="col-lg-6">
             <div class="d-flex flex-column gap-4">
               <div data-aos="fade-up" data-aos-delay="200">
                 <div class="card-custom">
                   <div class="d-flex align-items-center gap-3 mb-2">
                     <div class="icon-box"><i class="bi bi-code-slash"></i></div>
-                    <div class="flex-grow-1">
-                      <h4 class="font-heading fw-semibold h6 mb-0">Formation Codage (Python &amp; Java)</h4>
-                      <div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre Madagascar</div>
-                    </div>
+                    <div class="flex-grow-1"><h4 class="font-heading fw-semibold h6 mb-0">Formation Codage (Python &amp; Java)</h4><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre Madagascar</div></div>
                     <span class="font-mono-code" style="color:var(--amber);font-size:0.7rem;">Juil 2025</span>
                   </div>
                   <p class="text-dim mb-0" style="font-size:0.8rem;">Programmation orientée objet, algorithmes et scripts d'automatisation.</p>
                 </div>
               </div>
-
               <div data-aos="fade-up" data-aos-delay="300">
                 <div class="card-custom">
                   <div class="d-flex align-items-center gap-3 mb-2">
                     <div class="icon-box"><i class="bi bi-cpu"></i></div>
-                    <div class="flex-grow-1">
-                      <h4 class="font-heading fw-semibold h6 mb-0">Formation Protocoles IoT</h4>
-                      <div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre Madagascar</div>
-                    </div>
+                    <div class="flex-grow-1"><h4 class="font-heading fw-semibold h6 mb-0">Formation Protocoles IoT</h4><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre Madagascar</div></div>
                     <span class="font-mono-code" style="color:var(--amber);font-size:0.7rem;">Fév 2025</span>
                   </div>
                   <p class="text-dim mb-0" style="font-size:0.8rem;">Protocoles IoT, interfaçage capteurs et sécurisation des flux de données.</p>
@@ -1102,252 +405,175 @@
       </div>
     </section>
 
-    <!-- ============ PROJETS ============ -->
+    <!-- ================= PROJETS ================= -->
     <section id="projets" class="py-5">
       <div class="container py-5">
         <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-4" data-aos="fade-up">
-          <div class="section-title mb-0">
-            <span class="num">04.</span>
-            <h2 data-i18n="projects.title">Projets &amp; Réalisations</h2>
-            <span class="line d-none d-sm-block"></span>
-          </div>
-          <span class="font-mono-code text-dim" style="font-size:0.72rem;" data-i18n="projects.count">3 projets phares</span>
+          <div class="section-title mb-0"><span class="num">04.</span><h2 data-i18n="projects.title">Projets &amp; Réalisations</h2><span class="line d-none d-sm-block"></span></div>
+          <a href="https://github.com/ventso00?tab=repositories" target="_blank" rel="noopener" class="font-mono-code text-dim text-decoration-none d-flex align-items-center gap-2" style="font-size:0.72rem;"><i class="bi bi-github"></i> Voir tous les repos</a>
         </div>
 
         <div class="row g-4">
-          <!-- Boîte noire automobile -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <a href="#" class="card-link" aria-label="Projet Boîte noire automobile">
-              <div class="card-custom h-100 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                  <span style="color:var(--amber);">IoT &amp; Embarqué</span>
-                  <span class="px-2 py-1 rounded-2" style="background:rgba(255,180,84,0.12);color:var(--amber);">Projet perso</span>
-                </div>
-                <h3 class="font-heading fw-semibold h6 mb-1">Boîte noire automobile</h3>
-                <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Depuis 2023</p>
-                <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
-                  Enregistrement de télémétrie et de données de conduite. Système embarqué à base d'ESP32 avec stockage SD et capteurs.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tech-tag">ESP32</span>
-                  <span class="tech-tag">SD Card</span>
-                  <span class="tech-tag">Capteurs</span>
-                </div>
+
+          <!-- SMARTWATER -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="card-custom project-card h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
+                <span style="color:var(--amber);">IoT · Eau · ISPM</span>
+                <span class="px-2 py-1 rounded-2" style="background:rgba(79,216,232,0.12);color:var(--cyan);">Vedette</span>
               </div>
-            </a>
+              <h3 class="font-heading fw-semibold h6 mb-1">SmartWater</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Analyser. Décider. Filtrer.</p>
+              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
+                Système intelligent de <strong style="color:var(--text);">détection et filtration de l'eau</strong> : dashboard PHP, API capteurs temps réel et présentation immersive (15 scènes).
+              </p>
+              <div class="project-actions">
+                <a href="https://smartwatermdg.getenjoyment.net/" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo web</a>
+                <a href="https://smart-water-presentation-immersive--ranprincy45.replit.app/" target="_blank" rel="noopener" class="action-link demo"><i class="bi bi-play-circle"></i> Présentation</a>
+                <a href="https://github.com/ventso00/SmartWater_project" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code</a>
+                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalSmartWater"><i class="bi bi-book"></i> Lire la description</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- SYSTÈME GAZ -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom project-card h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
+                <span style="color:var(--amber);">IoT · Sécurité</span>
+              </div>
+              <h3 class="font-heading fw-semibold h6 mb-1">Système de détection de gaz</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Supervision &amp; commande à distance</p>
+              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
+                Détection gaz en temps réel, <strong style="color:var(--text);">alerte automatique</strong>, commande à distance (vanne) et gestion multi-utilisateurs (CRUD + auth).
+              </p>
+              <div class="project-actions">
+                <a href="https://gazsystem.getenjoyment.net/index.php" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo live</a>
+                <a href="https://github.com/ventso00/systeme-gaz" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code</a>
+                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalGaz"><i class="bi bi-book"></i> Lire la description</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- IKALY -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-custom project-card h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
+                <span style="color:var(--amber);">E-commerce · Web</span>
+                <span class="px-2 py-1 rounded-2" style="background:rgba(52,211,153,0.12);color:var(--emerald);">Client réel</span>
+              </div>
+              <h3 class="font-heading fw-semibold h6 mb-1">iKaly — Restaurant en ligne</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Boutique &amp; commande en ligne</p>
+              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
+                Site e-commerce pour un <strong style="color:var(--text);">restaurant malgache</strong> : catalogue (burgers, pizzas, boissons), panier, commande en ligne, carte interactive et page parking.
+              </p>
+              <div class="project-actions">
+                <a href="https://ikaly.web-sans-frontiere.com" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Voir le site</a>
+                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalIkaly"><i class="bi bi-book"></i> Lire la description</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- BOÎTE NOIRE AUTO -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
+            <div class="card-custom project-card h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
+                <span style="color:var(--amber);">Embarqué · Perso</span>
+              </div>
+              <h3 class="font-heading fw-semibold h6 mb-1">Boîte noire automobile</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Depuis 2023</p>
+              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
+                Enregistreur de télémétrie et de données de conduite à base d'ESP32 : stockage SD et capteurs multiples.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Profil GitHub</a>
+                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalBoiteNoire"><i class="bi bi-book"></i> Lire la description</button>
+              </div>
+            </div>
           </div>
 
           <!-- WIFIKO -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-            <a href="#" class="card-link" aria-label="Projet WIFIKO">
-              <div class="card-custom h-100 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                  <span style="color:var(--amber);">Web App</span>
-                </div>
-                <h3 class="font-heading fw-semibold h6 mb-1">WIFIKO</h3>
-                <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Gestion d'accès WiFi</p>
-                <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
-                  Plateforme de gestion d'accès WiFi : authentification, suivi des connexions et administration des utilisateurs.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tech-tag">PHP</span>
-                  <span class="tech-tag">MySQL</span>
-                  <span class="tech-tag">Apache</span>
-                </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-custom project-card h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
+                <span style="color:var(--amber);">Web App · Réseaux</span>
               </div>
-            </a>
+              <h3 class="font-heading fw-semibold h6 mb-1">WIFIKO</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Gestion d'accès WiFi</p>
+              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
+                Plateforme de gestion d'accès WiFi : authentification, suivi des connexions et administration centralisée.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Profil GitHub</a>
+                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalWifiko"><i class="bi bi-book"></i> Lire la description</button>
+              </div>
+            </div>
           </div>
 
-          <!-- Simulation SaryTany -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <a href="#" class="card-link" aria-label="Projet Simulation SaryTany">
-              <div class="card-custom h-100 d-flex flex-column">
-                <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                  <span style="color:var(--amber);">Réseaux</span>
-                </div>
-                <h3 class="font-heading fw-semibold h6 mb-1">Simulation SaryTany</h3>
-                <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Cisco Packet Tracer</p>
-                <p class="text-dim flex-grow-1 mb-3" style="font-size:0.82rem;line-height:1.7;">
-                  Reproduction de l'infrastructure réseau de l'entreprise SaryTany : VLANs, routage, ACL et services réseau.
-                </p>
-                <div class="d-flex flex-wrap gap-2">
-                  <span class="tech-tag">Cisco</span>
-                  <span class="tech-tag">VLAN</span>
-                  <span class="tech-tag">Routing</span>
-                </div>
+          <!-- SIMULATION SARYTANY -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
+            <div class="card-custom project-card h-100 d-flex flex-column">
+              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
+                <span style="color:var(--amber);">Réseaux · Cisco</span>
               </div>
-            </a>
+              <h3 class="font-heading fw-semibold h6 mb-1">Simulation SaryTany</h3>
+              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Cisco Packet Tracer</p>
+              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
+                Reproduction de l'infrastructure réseau de l'entreprise SaryTany : VLANs, routage inter-VLAN, ACL et services réseau.
+              </p>
+              <div class="project-actions">
+                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Profil GitHub</a>
+                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalSaryTany"><i class="bi bi-book"></i> Lire la description</button>
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- ============ COMPÉTENCES ============ -->
+    <!-- COMPÉTENCES -->
     <section id="competences" class="py-5">
       <div class="container py-5">
-        <div class="section-title" data-aos="fade-up">
-          <span class="num">05.</span>
-          <h2 data-i18n="skills.title">Compétences Techniques</h2>
-          <span class="line d-none d-sm-block"></span>
-        </div>
-
+        <div class="section-title" data-aos="fade-up"><span class="num">05.</span><h2 data-i18n="skills.title">Compétences Techniques</h2><span class="line d-none d-sm-block"></span></div>
         <div class="row g-4">
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="card-custom">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="icon-box"><i class="bi bi-hdd-network"></i></div>
-                <h3 class="font-heading fw-semibold h6 mb-0">Systèmes &amp; Réseaux</h3>
-              </div>
-
-              <div class="mb-3">
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>Windows Server 2022</span><span class="text-cyan">90%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>Linux (Debian / Ubuntu)</span><span class="text-cyan">80%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>Cisco Packet Tracer / GNS3</span><span class="text-cyan">85%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-              </div>
-              <div>
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>VMware / Hyper-V / VirtualBox</span><span class="text-cyan">78%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-              </div>
+              <div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-hdd-network"></i></div><h3 class="font-heading fw-semibold h6 mb-0">Systèmes &amp; Réseaux</h3></div>
+              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Windows Server 2022</span><span class="text-cyan">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
+              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Linux (Debian / Ubuntu)</span><span class="text-cyan">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Cisco Packet Tracer / GNS3</span><span class="text-cyan">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+              <div><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>VMware / Hyper-V / VirtualBox</span><span class="text-cyan">78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
             </div>
           </div>
-
           <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="card-custom">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="icon-box"><i class="bi bi-code-square"></i></div>
-                <h3 class="font-heading fw-semibold h6 mb-0">Développement &amp; Outils</h3>
-              </div>
-
-              <div class="mb-3">
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>Python</span><span class="text-cyan">80%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>PHP / MySQL</span><span class="text-cyan">75%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-              </div>
-              <div class="mb-3">
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>C / C++</span><span class="text-cyan">70%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
-              </div>
-              <div>
-                <div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;">
-                  <span>Git / GitHub · Wireshark · VS Code</span><span class="text-cyan">75%</span>
-                </div>
-                <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
-              </div>
+              <div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-code-square"></i></div><h3 class="font-heading fw-semibold h6 mb-0">Développement &amp; Outils</h3></div>
+              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>PHP / MySQL</span><span class="text-cyan">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
+              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Python</span><span class="text-cyan">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
+              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>C / C++ / ESP32</span><span class="text-cyan">75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
+              <div><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>WordPress / WooCommerce</span><span class="text-cyan">70%</span></div><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ FORMATION & LANGUES ============ -->
+    <!-- FORMATION -->
     <section id="formation" class="py-5">
       <div class="container py-5">
-        <div class="section-title" data-aos="fade-up">
-          <span class="num">06.</span>
-          <h2 data-i18n="edu.title">Formation, Langues &amp; Certifs</h2>
-          <span class="line d-none d-sm-block"></span>
-        </div>
-
+        <div class="section-title" data-aos="fade-up"><span class="num">06.</span><h2 data-i18n="edu.title">Formation, Langues &amp; Certifs</h2><span class="line d-none d-sm-block"></span></div>
         <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
-            <div class="card-custom h-100">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="icon-box"><i class="bi bi-mortarboard"></i></div>
-                <div>
-                  <h3 class="font-heading fw-semibold h6 mb-0">Licence 3 ESIIA</h3>
-                  <div class="font-mono-code text-cyan" style="font-size:0.68rem;">ISPM Antsobolo</div>
-                </div>
-              </div>
-              <p class="text-dim mb-2" style="font-size:0.83rem;">Électronique, Systèmes Informatiques et Intelligence Artificielle — en cours.</p>
-              <span class="font-mono-code text-amber" style="font-size:0.68rem;">2025 — présent</span>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom h-100">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="icon-box"><i class="bi bi-award"></i></div>
-                <div>
-                  <h3 class="font-heading fw-semibold h6 mb-0">Baccalauréat Général</h3>
-                  <div class="font-mono-code text-cyan" style="font-size:0.68rem;">Lycée A. Sabotsy Namehana</div>
-                </div>
-              </div>
-              <p class="text-dim mb-2" style="font-size:0.83rem;">Série scientifique — LASN.</p>
-              <span class="font-mono-code text-amber" style="font-size:0.68rem;">2023 — 2024</span>
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-            <div class="card-custom h-100">
-              <div class="d-flex align-items-center gap-3 mb-3">
-                <div class="icon-box"><i class="bi bi-patch-check"></i></div>
-                <div>
-                  <h3 class="font-heading fw-semibold h6 mb-0">Certificats ODC</h3>
-                  <div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre</div>
-                </div>
-              </div>
-              <ul class="text-dim mb-2 ps-3" style="font-size:0.8rem;line-height:1.7;">
-                <li>Codage Python &amp; Java</li>
-                <li>Protocoles IoT</li>
-              </ul>
-              <span class="font-mono-code text-amber" style="font-size:0.68rem;">2025</span>
-            </div>
-          </div>
-
-          <!-- Langues -->
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50"><div class="card-custom h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-mortarboard"></i></div><div><h3 class="font-heading fw-semibold h6 mb-0">Licence 3 ESIIA</h3><div class="font-mono-code text-cyan" style="font-size:0.68rem;">ISPM Antsobolo</div></div></div><p class="text-dim mb-2" style="font-size:0.83rem;">Électronique, Systèmes Informatiques et Intelligence Artificielle — en cours.</p><span class="font-mono-code text-amber" style="font-size:0.68rem;">2025 — présent</span></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="card-custom h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-award"></i></div><div><h3 class="font-heading fw-semibold h6 mb-0">Baccalauréat Général</h3><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Lycée A. Sabotsy Namehana</div></div></div><p class="text-dim mb-2" style="font-size:0.83rem;">Série scientifique — LASN.</p><span class="font-mono-code text-amber" style="font-size:0.68rem;">2023 — 2024</span></div></div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><div class="card-custom h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-patch-check"></i></div><div><h3 class="font-heading fw-semibold h6 mb-0">Certificats ODC</h3><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre</div></div></div><ul class="text-dim mb-2 ps-3" style="font-size:0.8rem;line-height:1.7;"><li>Codage Python &amp; Java</li><li>Protocoles IoT</li></ul><span class="font-mono-code text-amber" style="font-size:0.68rem;">2025</span></div></div>
           <div class="col-12" data-aos="fade-up" data-aos-delay="200">
             <div class="card-custom">
-              <div class="d-flex align-items-center gap-3 mb-4">
-                <div class="icon-box"><i class="bi bi-translate"></i></div>
-                <h3 class="font-heading fw-semibold h6 mb-0" data-i18n="lang.title">Langues</h3>
-              </div>
-
+              <div class="d-flex align-items-center gap-3 mb-4"><div class="icon-box"><i class="bi bi-translate"></i></div><h3 class="font-heading fw-semibold h6 mb-0" data-i18n="lang.title">Langues</h3></div>
               <div class="row g-3">
-                <div class="col-md-4">
-                  <div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;">
-                    <span>Français</span><span class="text-cyan">C2</span>
-                  </div>
-                  <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
-                  <div class="text-dim mt-1" style="font-size:0.7rem;">Excellente maîtrise</div>
-                </div>
-                <div class="col-md-4">
-                  <div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;">
-                    <span>Anglais</span><span class="text-cyan">B1</span>
-                  </div>
-                  <div class="skill-bar"><div class="skill-fill" data-width="60"></div></div>
-                  <div class="text-dim mt-1" style="font-size:0.7rem;">Intermédiaire</div>
-                </div>
-                <div class="col-md-4">
-                  <div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;">
-                    <span>Malagasy</span><span class="text-cyan">Natif</span>
-                  </div>
-                  <div class="skill-bar"><div class="skill-fill" data-width="100"></div></div>
-                  <div class="text-dim mt-1" style="font-size:0.7rem;">Langue maternelle</div>
-                </div>
+                <div class="col-md-4"><div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;"><span>Français</span><span class="text-cyan">C2</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div><div class="text-dim mt-1" style="font-size:0.7rem;">Excellente maîtrise</div></div>
+                <div class="col-md-4"><div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;"><span>Anglais</span><span class="text-cyan">B1</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div><div class="text-dim mt-1" style="font-size:0.7rem;">Intermédiaire</div></div>
+                <div class="col-md-4"><div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;"><span>Malagasy</span><span class="text-cyan">Natif</span></div><div class="skill-bar"><div class="skill-fill" data-width="100"></div></div><div class="text-dim mt-1" style="font-size:0.7rem;">Langue maternelle</div></div>
               </div>
             </div>
           </div>
@@ -1355,568 +581,275 @@
       </div>
     </section>
 
-    <!-- ============ STATS ============ -->
+    <!-- STATS -->
     <section class="py-4">
       <div class="container">
         <div class="row g-4 text-center">
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="50">
-            <div class="card-custom">
-              <div class="stat-number" data-count="6">0</div>
-              <div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.projects">PROJETS</div>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom">
-              <div class="stat-number" data-count="2">0</div>
-              <div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.certs">CERTIFICATS</div>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="150">
-            <div class="card-custom">
-              <div class="stat-number" data-count="3">0</div>
-              <div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.langs">LANGUES</div>
-            </div>
-          </div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-custom">
-              <div class="stat-number" data-count="1">0</div>
-              <div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.intern">STAGE PRO</div>
-            </div>
-          </div>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="50"><div class="card-custom"><div class="stat-number" data-count="6">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.projects">PROJETS</div></div></div>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="card-custom"><div class="stat-number" data-count="2">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.certs">CERTIFICATS</div></div></div>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="150"><div class="card-custom"><div class="stat-number" data-count="3">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.langs">LANGUES</div></div></div>
+          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="card-custom"><div class="stat-number" data-count="1">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.intern">STAGE PRO</div></div></div>
         </div>
       </div>
     </section>
 
-    <!-- ============ CONTACT ============ -->
+    <!-- CONTACT -->
     <section id="contact" class="py-5">
       <div class="container py-5">
-        <div class="section-title" data-aos="fade-up">
-          <span class="num">07.</span>
-          <h2 data-i18n="contact.title">Prendre Contact</h2>
-          <span class="line d-none d-sm-block"></span>
-        </div>
-
+        <div class="section-title" data-aos="fade-up"><span class="num">07.</span><h2 data-i18n="contact.title">Prendre Contact</h2><span class="line d-none d-sm-block"></span></div>
         <div class="row g-4 justify-content-center">
           <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
             <div class="card-custom">
-              <p class="text-dim mb-4 text-center" style="font-size:0.88rem;" data-i18n="contact.intro">
-                Disponible pour des opportunités IT, stages ou collaborations. N'hésitez pas à me contacter.
-              </p>
-
+              <p class="text-dim mb-4 text-center" style="font-size:0.88rem;" data-i18n="contact.intro">Disponible pour des opportunités IT, stages ou collaborations.</p>
               <form id="contactForm" class="row g-3" action="https://api.web3forms.com/submit" method="POST">
-                <!-- Web3Forms Access Key -->
                 <input type="hidden" name="access_key" value="ccc291cb-70d7-4a7b-a962-6554033e75bf" />
                 <input type="hidden" name="subject" value="Nouveau message depuis le portfolio" />
                 <input type="hidden" name="from_name" value="Portfolio RAJAOMANJATO VENTSO" />
-                <!-- Honeypot anti-spam -->
                 <input type="checkbox" name="botcheck" class="d-none" style="display:none" />
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control form-control-custom" placeholder="Votre nom" required />
-                </div>
-                <div class="col-md-6">
-                  <input type="email" name="email" class="form-control form-control-custom" placeholder="Votre email" required />
-                </div>
-                <div class="col-12">
-                  <input type="text" name="subject_user" class="form-control form-control-custom" placeholder="Sujet" required />
-                </div>
-                <div class="col-12">
-                  <textarea name="message" class="form-control form-control-custom" rows="5" placeholder="Votre message..." required></textarea>
-                </div>
-                <div class="col-12 text-center">
-                  <button type="submit" class="btn btn-cyan px-5 py-2 rounded-3 font-mono-code d-inline-flex align-items-center gap-2">
-                    <i class="bi bi-send"></i> <span data-i18n="contact.send">Envoyer le message</span>
-                  </button>
-                </div>
+                <div class="col-md-6"><input type="text" name="name" class="form-control form-control-custom" placeholder="Votre nom" required /></div>
+                <div class="col-md-6"><input type="email" name="email" class="form-control form-control-custom" placeholder="Votre email" required /></div>
+                <div class="col-12"><input type="text" name="subject_user" class="form-control form-control-custom" placeholder="Sujet" required /></div>
+                <div class="col-12"><textarea name="message" class="form-control form-control-custom" rows="5" placeholder="Votre message..." required></textarea></div>
+                <div class="col-12 text-center"><button type="submit" class="btn btn-cyan px-5 py-2 rounded-3 font-mono-code d-inline-flex align-items-center gap-2"><i class="bi bi-send"></i> <span data-i18n="contact.send">Envoyer le message</span></button></div>
               </form>
-
               <div id="formStatus" class="text-center mt-3 font-mono-code" style="font-size:0.8rem;display:none;"></div>
             </div>
-
             <div class="d-flex flex-wrap justify-content-center gap-4 mt-4 font-mono-code" style="font-size:0.78rem;">
-              <a href="mailto:rajaomanjatoventso@gmail.com" class="text-dim text-decoration-none d-flex align-items-center gap-2">
-                <i class="bi bi-envelope text-cyan"></i> rajaomanjatoventso@gmail.com
-              </a>
-              <a href="https://wa.me/261385890907" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2">
-                <i class="bi bi-whatsapp text-cyan"></i> 038 58 909 07
-              </a>
-              <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2">
-                <i class="bi bi-linkedin text-cyan"></i> LinkedIn
-              </a>
-              <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2">
-                <i class="bi bi-github text-cyan"></i> GitHub
-              </a>
+              <a href="mailto:rajaomanjatoventso@gmail.com" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-envelope text-cyan"></i> rajaomanjatoventso@gmail.com</a>
+              <a href="https://wa.me/261385890907" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-whatsapp text-cyan"></i> 038 58 909 07</a>
+              <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-linkedin text-cyan"></i> LinkedIn</a>
+              <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-github text-cyan"></i> GitHub</a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ FOOTER ============ -->
     <footer class="py-4 text-center font-mono-code" style="border-top:1px solid var(--border);font-size:0.72rem;">
       <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
-        <span class="text-dim">
-          © 2025 <span class="text-cyan">RAJAOMANJATO VENTSO</span>
-        </span>
-        <span class="text-dim no-print">
-          Built with <i class="bi bi-heart-fill" style="color:var(--pink);"></i> &amp;
-          <i class="bi bi-bootstrap-fill" style="color:var(--purple);"></i>
-        </span>
+        <span class="text-dim">© 2025 <span class="text-cyan">RAJAOMANJATO VENTSO</span></span>
+        <span class="text-dim no-print">Built with <i class="bi bi-heart-fill" style="color:var(--pink);"></i> &amp; <i class="bi bi-bootstrap-fill" style="color:var(--purple);"></i></span>
       </div>
     </footer>
 
   </main>
 
-  <!-- Scroll to top -->
-  <button id="scrollTop" aria-label="Retour en haut">
-    <i class="bi bi-arrow-up fs-5"></i>
-  </button>
-
-  <!-- Toast -->
+  <button id="scrollTop" aria-label="Retour en haut"><i class="bi bi-arrow-up fs-5"></i></button>
   <div id="toast" class="toast-custom" role="status" aria-live="polite"></div>
 
-  <!-- QR Code Modal -->
-  <div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content qr-modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title font-heading">Ma carte de visite</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
-        </div>
-        <div class="modal-body text-center">
-          <p class="text-dim" style="font-size:0.82rem;">Scannez ce QR code pour ajouter mon contact à votre téléphone.</p>
-          <img id="qrImage" src="" alt="QR Code vCard" class="img-fluid rounded-3" style="max-width:260px;background:#fff;padding:12px;" />
-        </div>
-        <div class="modal-footer justify-content-center">
-          <button onclick="shareProfile()" class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code">
-            <i class="bi bi-share"></i> Partager cette page
-          </button>
-        </div>
-      </div>
+  <!-- MODALS PROJETS (Lire la description) -->
+  <div class="modal fade" id="modalSmartWater" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-droplet-fill text-cyan me-2"></i>SmartWater — Système intelligent de gestion de l'eau</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <p><strong style="color:var(--amber);">Contexte :</strong> Projet scolaire &amp; personnel mené à l'ISPM Antsobolo (Licence 3 ESIIA), dans le cadre de la spécialisation IoT et systèmes embarqués. L'objectif était de concevoir un système intelligent capable d'<strong style="color:var(--text);">analyser la qualité de l'eau en temps réel</strong>, de <strong style="color:var(--text);">décider automatiquement</strong> des actions à mener (alerte, filtration) et de <strong style="color:var(--text);">filtrer</strong> l'eau selon les seuils définis.</p>
+    <h4>🎯 Objectifs du projet</h4>
+    <ul><li>Mesurer en continu les paramètres physico-chimiques de l'eau (capteurs IoT)</li><li>Transmettre les données vers un serveur PHP/MySQL via API REST</li><li>Afficher un dashboard temps réel avec historique et statistiques</li><li>Automatiser la décision : déclencher la filtration si seuil critique dépassé</li></ul>
+    <h4>🛠️ Architecture technique</h4>
+    <ul><li><strong style="color:var(--text);">Frontend / Backend :</strong> PHP 8, HTML5, CSS3, JavaScript (dashboard responsive)</li><li><strong style="color:var(--text);">Base de données :</strong> MySQL (mesures, historique, utilisateurs)</li><li><strong style="color:var(--text);">API REST :</strong> <code>insert.php</code>, <code>get_status.php</code> pour la communication capteurs ↔ serveur</li><li><strong style="color:var(--text);">IoT :</strong> capteurs connectés (ESP32 / Arduino), protocoles de communication</li><li><strong style="color:var(--text);">Présentation :</strong> 15 scènes immersives pour vulgariser le projet devant un jury</li></ul>
+    <h4>💼 Compétences professionnelles démontrées</h4>
+    <ul><li><strong style="color:var(--text);">Full-stack :</strong> développement PHP/MySQL complet (front + back + API)</li><li><strong style="color:var(--text);">IoT &amp; embarqué :</strong> interfaçage capteurs, protocoles de communication</li><li><strong style="color:var(--text);">Data visualisation :</strong> dashboard avec graphiques statistiques et historique</li><li><strong style="color:var(--text);">Gestion de projet :</strong> conception, développement, déploiement, présentation jury</li></ul>
+    <h4>🔗 Liens du projet</h4>
+    <div class="d-flex flex-wrap gap-2 mt-2">
+      <a href="https://smartwatermdg.getenjoyment.net/" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo web</a>
+      <a href="https://smart-water-presentation-immersive--ranprincy45.replit.app/" target="_blank" rel="noopener" class="action-link demo"><i class="bi bi-play-circle"></i> Présentation immersive</a>
+      <a href="https://github.com/ventso00/SmartWater_project" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code source</a>
     </div>
-  </div>
+  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
 
-  <!-- ============================================================
-       SCRIPTS
-       ============================================================ -->
+  <div class="modal fade" id="modalGaz" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-fire text-amber me-2"></i>Système de détection de gaz</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <p><strong style="color:var(--amber);">Contexte :</strong> Projet de détection et supervision de gaz à distance, avec <strong style="color:var(--text);">commande automatique et manuelle d'une vanne</strong> pour couper l'alimentation en cas de fuite détectée. Conçu pour un environnement domestique ou industriel.</p>
+    <h4>🎯 Fonctionnalités clés</h4>
+    <ul><li>Détection en temps réel du taux de gaz (capteur MQ-x)</li><li>Alerte automatique en cas de dépassement de seuil</li><li>Commande à distance de la vanne de coupure (via dashboard)</li><li>Gestion multi-utilisateurs avec authentification (CRUD complet)</li><li>Historique des mesures et tableau de bord administrateur</li></ul>
+    <h4>🛠️ Stack technique</h4>
+    <ul><li><strong style="color:var(--text);">Backend :</strong> PHP 8, architecture MVC légère</li><li><strong style="color:var(--text);">Base de données :</strong> MySQL (utilisateurs, mesures, logs)</li><li><strong style="color:var(--text);">Sécurité :</strong> authentification, sessions, gestion des droits utilisateurs</li><li><strong style="color:var(--text);">API :</strong> <code>insert.php</code> (capteurs), <code>get_last_data.php</code> (temps réel), <code>commande_gaz.php</code> (actionneur)</li></ul>
+    <h4>💼 Compétences professionnelles démontrées</h4>
+    <ul><li><strong style="color:var(--text);">Développement sécurisé :</strong> auth, sessions, CRUD utilisateurs</li><li><strong style="color:var(--text);">IoT temps réel :</strong> capteurs + actionneurs + communication bidirectionnelle</li><li><strong style="color:var(--text);">Sécurité industrielle :</strong> détection + coupure automatique (fail-safe)</li></ul>
+    <div class="d-flex flex-wrap gap-2 mt-2"><a href="https://gazsystem.getenjoyment.net/index.php" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo live</a><a href="https://github.com/ventso00/systeme-gaz" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code source</a></div>
+  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
+
+  <div class="modal fade" id="modalIkaly" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-shop text-emerald me-2"></i>iKaly — Restaurant en ligne</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <p><strong style="color:var(--amber);">Contexte :</strong> Réalisation d'un <strong style="color:var(--text);">site e-commerce client réel</strong> pour un restaurant malgache. Objectif : digitaliser la carte du restaurant, permettre les commandes en ligne et améliorer la visibilité locale.</p>
+    <h4>🎯 Fonctionnalités livrées</h4>
+    <ul><li>Catalogue produits par catégories (Burgers, Pizzas, Boissons, Bières, Jus)</li><li>Fiches produits avec prix (Ar), promotions et "vue rapide"</li><li>Système de commande en ligne (panier + checkout)</li><li>Page "Parking iKALY" avec informations pratiques</li><li>Carte interactive / localisation (iKALY Maps)</li><li>Design responsive adapté au mobile</li></ul>
+    <h4>🛠️ Stack technique</h4>
+    <ul><li><strong style="color:var(--text);">CMS :</strong> WordPress + WooCommerce</li><li><strong style="color:var(--text);">Frontend :</strong> thème personnalisé, responsive design</li><li><strong style="color:var(--text);">Backend :</strong> PHP, MySQL (via WordPress)</li><li><strong style="color:var(--text);">Hébergement :</strong> Web Sans Frontière (web-sans-frontiere.com)</li></ul>
+    <h4>💼 Compétences professionnelles démontrées</h4>
+    <ul><li><strong style="color:var(--text);">Gestion de projet client :</strong> recueil du besoin, livraison, mise en production</li><li><strong style="color:var(--text);">E-commerce :</strong> catalogue, panier, gestion des prix (Ariary)</li><li><strong style="color:var(--text);">CMS :</strong> personnalisation WordPress / WooCommerce</li><li><strong style="color:var(--text);">UX/UI :</strong> navigation fluide, catégories claires, responsive</li></ul>
+    <div class="d-flex flex-wrap gap-2 mt-2"><a href="https://ikaly.web-sans-frontiere.com" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Voir le site</a></div>
+  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
+
+  <div class="modal fade" id="modalBoiteNoire" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-car-front-fill text-purple me-2"></i>Boîte noire automobile</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <p><strong style="color:var(--amber);">Contexte :</strong> Projet personnel démarré en 2023, visant à concevoir un système embarqué type <strong style="color:var(--text);">"boîte noire"</strong> pour enregistrer la télémétrie et les données de conduite d'un véhicule, à l'image des systèmes professionnels mais à coût réduit.</p>
+    <h4>🎯 Fonctionnalités</h4>
+    <ul><li>Acquisition de données via capteurs (accélération, vitesse, température...)</li><li>Enregistrement continu sur carte SD (format exploitable)</li><li>Microcontrôleur ESP32 pour la gestion des entrées/sorties</li><li>Restitution des données pour analyse post-trajet</li></ul>
+    <h4>🛠️ Stack technique</h4>
+    <ul><li><strong style="color:var(--text);">Microcontrôleur :</strong> ESP32 (Wi-Fi / Bluetooth intégrés)</li><li><strong style="color:var(--text);">Stockage :</strong> module SD Card</li><li><strong style="color:var(--text);">Capteurs :</strong> accéléromètre, gyroscope, température</li><li><strong style="color:var(--text);">Langage :</strong> C/C++ (Arduino framework)</li></ul>
+    <h4>💼 Compétences démontrées</h4>
+    <ul><li>Conception de système embarqué complet (hardware + firmware)</li><li>Gestion de capteurs multiples et communication série</li><li>Gestion du stockage de données et intégrité des enregistrements</li></ul>
+  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
+
+  <div class="modal fade" id="modalWifiko" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-wifi text-cyan me-2"></i>WIFIKO — Gestion d'accès WiFi</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <p><strong style="color:var(--amber);">Contexte :</strong> Développement d'une plateforme web de gestion d'accès WiFi, destinée à administrer les utilisateurs, tracer les connexions et contrôler les accès à un réseau partagé.</p>
+    <h4>🎯 Fonctionnalités</h4>
+    <ul><li>Authentification et identification des utilisateurs WiFi</li><li>Suivi des sessions et des connexions</li><li>Administration centralisée (users, logs, quotas)</li><li>Interface web légère et accessible</li></ul>
+    <h4>🛠️ Stack technique</h4>
+    <ul><li>PHP · MySQL · Apache · SQL</li><li>Architecture web classique (LAMP)</li></ul>
+    <h4>💼 Compétences démontrées</h4>
+    <ul><li>Développement web back-end PHP/MySQL</li><li>Conception de base de données relationnelle</li><li>Gestion d'authentification et de sessions</li></ul>
+  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
+
+  <div class="modal fade" id="modalSaryTany" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-diagram-3-fill text-amber me-2"></i>Simulation réseau SaryTany</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
+    <p><strong style="color:var(--amber);">Contexte :</strong> Dans le cadre du stage chez FTM / SaryTany, réalisation d'une <strong style="color:var(--text);">simulation complète de l'infrastructure réseau</strong> de l'entreprise sous Cisco Packet Tracer, pour valider l'architecture et préparer le déploiement.</p>
+    <h4>🎯 Contenu de la maquette</h4>
+    <ul><li>Segmentation en VLANs par service (administration, production, invités)</li><li>Routage inter-VLAN avec switchs L3 et routeurs</li><li>Configuration des ACL pour la sécurité entre segments</li><li>Services réseau : DHCP, DNS, NAT/PAT</li><li>Tests de connectivité et validation des flux</li></ul>
+    <h4>🛠️ Outils utilisés</h4>
+    <ul><li>Cisco Packet Tracer · GNS3</li><li>Protocoles : TCP/IP, VLAN, STP, OSPF, ACL, NAT</li></ul>
+    <h4>💼 Compétences démontrées</h4>
+    <ul><li>Conception d'architecture réseau d'entreprise</li><li>Configuration avancée de routeurs et switchs Cisco</li><li>Application des bonnes pratiques de segmentation &amp; sécurité</li><li>Documentation et validation de maquette réseau</li></ul>
+  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
+
+  <!-- QR Modal -->
+  <div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content qr-modal-content"><div class="modal-header"><h5 class="modal-title font-heading">Ma carte de visite</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><p class="text-dim" style="font-size:0.82rem;">Scannez ce QR code pour ajouter mon contact à votre téléphone.</p><img id="qrImage" src="" alt="QR Code vCard" class="img-fluid rounded-3" style="max-width:260px;background:#fff;padding:12px;" /></div><div class="modal-footer justify-content-center"><button onclick="shareProfile()" class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code"><i class="bi bi-share"></i> Partager cette page</button></div></div></div></div>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-
   <script>
-    /* ============================================================
-       1. INITIALISATION
-       ============================================================ */
-    AOS.init({
-      duration: 700,
-      easing: 'ease-out-cubic',
-      once: true,
-      offset: 50,
-      disable: false // animations toujours actives (même mobile)
-    });
+    AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 50, disable: false });
+    window.addEventListener('load', () => setTimeout(() => document.getElementById('pageLoader').classList.add('hidden'), 300));
 
-    /* ============================================================
-       2. LOADER
-       ============================================================ */
-    window.addEventListener('load', () => {
-      setTimeout(() => document.getElementById('pageLoader').classList.add('hidden'), 300);
-    });
-
-    /* ============================================================
-       3. NAVBAR SCROLL + SCROLL TOP
-       ============================================================ */
     const nav = document.getElementById('mainNav');
     const scrollTopBtn = document.getElementById('scrollTop');
-
-    window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 40);
-      scrollTopBtn.classList.toggle('visible', window.scrollY > 400);
-    }, { passive: true });
-
+    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); scrollTopBtn.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
     scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-    /* ============================================================
-       4. MENU MOBILE OVERLAY
-       ============================================================ */
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     const closeMenu = document.getElementById('closeMenu');
-
-    menuToggle?.addEventListener('click', () => {
-      mobileMenu.classList.add('show');
-      document.body.style.overflow = 'hidden';
-    });
-
+    menuToggle?.addEventListener('click', () => { mobileMenu.classList.add('show'); document.body.style.overflow = 'hidden'; });
     closeMenu?.addEventListener('click', closeMobile);
     mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+    function closeMobile() { mobileMenu.classList.remove('show'); document.body.style.overflow = ''; }
 
-    function closeMobile() {
-      mobileMenu.classList.remove('show');
-      document.body.style.overflow = '';
-    }
-
-    /* ============================================================
-       5. THEME TOGGLE (sombre / clair, avec auto-détection)
-       ============================================================ */
     const themeToggle = document.getElementById('themeToggle');
     const iconSun = document.getElementById('iconSun');
     const iconMoon = document.getElementById('iconMoon');
-
-    function applyTheme(theme) {
-      document.documentElement.setAttribute('data-bs-theme', theme);
-      localStorage.setItem('theme', theme);
-      iconSun.classList.toggle('d-none', theme !== 'light');
-      iconMoon.classList.toggle('d-none', theme === 'light');
-    }
-
-    themeToggle?.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-bs-theme');
-      applyTheme(current === 'dark' ? 'light' : 'dark');
-    });
-
-    // Chargement : préférence sauvegardée > préférence système > sombre par défaut
+    function applyTheme(theme) { document.documentElement.setAttribute('data-bs-theme', theme); localStorage.setItem('theme', theme); iconSun.classList.toggle('d-none', theme !== 'light'); iconMoon.classList.toggle('d-none', theme === 'light'); }
+    themeToggle?.addEventListener('click', () => { const c = document.documentElement.getAttribute('data-bs-theme'); applyTheme(c === 'dark' ? 'light' : 'dark'); });
     const savedTheme = localStorage.getItem('theme');
     const systemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
     applyTheme(savedTheme || (systemLight ? 'light' : 'dark'));
 
-    /* ============================================================
-       6. TYPEWRITER (FR uniquement, statique après)
-       ============================================================ */
     const tw = document.getElementById('typewriter');
     const twText = "> IT Support & Cloud Consultant — Antananarivo, Madagascar";
     let twIndex = 0;
-
-    function typeWriter() {
-      if (twIndex < twText.length) {
-        tw.textContent += twText.charAt(twIndex);
-        twIndex++;
-        setTimeout(typeWriter, 45);
-      }
-    }
+    function typeWriter() { if (twIndex < twText.length) { tw.textContent += twText.charAt(twIndex); twIndex++; setTimeout(typeWriter, 45); } }
     setTimeout(typeWriter, 700);
 
-    /* ============================================================
-       7. TERMINAL INTERACTIF
-       ============================================================ */
     const terminalBody = document.getElementById('terminalBody');
     const terminalForm = document.getElementById('terminalForm');
     const terminalInput = document.getElementById('terminalInput');
-
     const commands = {
-      help: () => `
-        <div class="text-cyan fw-bold">Commandes disponibles :</div>
-        <div class="text-dim ps-3">
-          • <span class="text-cyan">whoami</span> — Informations personnelles<br/>
-          • <span class="text-cyan">projets</span> — Liste des projets<br/>
-          • <span class="text-cyan">contact</span> — Coordonnées<br/>
-          • <span class="text-cyan">skills</span> — Compétences techniques<br/>
-          • <span class="text-cyan">cv</span> — Télécharger le CV<br/>
-          • <span class="text-cyan">clear</span> — Effacer le terminal
-        </div>`,
-      whoami: () => `
-        <div class="text-dim ps-3" style="border-left:2px solid var(--border);">
-          Nom : RAJAOMANJATO VENTSO<br/>
-          Rôle : IT Support &amp; Admin Systèmes/Réseaux<br/>
-          Formation : DST + Licence 3 ESIIA (ISPM Antsobolo)<br/>
-          Statut : Disponible pour opportunités IT
-        </div>`,
-      projets: () => `
-        <div class="text-dim ps-3">
-          [1] Boîte noire automobile — ESP32, SD Card, capteurs<br/>
-          [2] WIFIKO — PHP, MySQL, Apache<br/>
-          [3] Simulation SaryTany — Cisco Packet Tracer
-        </div>`,
-      contact: () => `
-        <div class="text-dim ps-3">
-          Email : rajaomanjatoventso@gmail.com<br/>
-          Tel / WhatsApp : 038 58 909 07<br/>
-          LinkedIn : linkedin.com/in/ventso-rajaomanjato<br/>
-          GitHub : github.com/ventso00<br/>
-          Localisation : Antananarivo, Madagascar
-        </div>`,
-      skills: () => `
-        <div class="text-dim ps-3">
-          Systèmes : Windows Server 2022 · Linux (Debian/Ubuntu)<br/>
-          Réseaux : TCP/IP · VLAN · OSPF · ACL · Cisco · GNS3<br/>
-          Virtualisation : VMware · Hyper-V · VirtualBox<br/>
-          Dev : Python · C/C++ · PHP · MySQL<br/>
-          Outils : Git/GitHub · Wireshark · VS Code
-        </div>`,
-      cv: () => {
-        window.open('/cv/RAJAOMANJATO_VENTSO_CV.pdf', '_blank');
-        return '<div class="text-emerald">→ Ouverture du CV dans un nouvel onglet...</div>';
-      },
+      help: () => `<div class="text-cyan fw-bold">Commandes :</div><div class="text-dim ps-3">• <span class="text-cyan">whoami</span> — Infos<br/>• <span class="text-cyan">projets</span> — Liste<br/>• <span class="text-cyan">contact</span> — Coordonnées<br/>• <span class="text-cyan">skills</span> — Compétences<br/>• <span class="text-cyan">cv</span> — CV PDF<br/>• <span class="text-cyan">clear</span> — Effacer</div>`,
+      whoami: () => `<div class="text-dim ps-3" style="border-left:2px solid var(--border);">Nom : RAJAOMANJATO VENTSO<br/>Rôle : IT Support &amp; Admin Systèmes/Réseaux<br/>Formation : DST + Licence 3 ESIIA<br/>Statut : Disponible</div>`,
+      projets: () => `<div class="text-dim ps-3">[1] <span class="text-cyan">SmartWater</span> — PHP/MySQL · IoT eau<br/>[2] <span class="text-cyan">Système Gaz</span> — PHP/MySQL · détection + commande distante<br/>[3] <span class="text-cyan">iKaly</span> — E-commerce WordPress<br/>[4] <span class="text-cyan">Boîte noire auto</span> — ESP32<br/>[5] <span class="text-cyan">WIFIKO</span> — Gestion WiFi<br/>[6] <span class="text-cyan">Simulation SaryTany</span> — Cisco<br/>→ <span class="text-cyan">github.com/ventso00</span></div>`,
+      contact: () => `<div class="text-dim ps-3">Email : rajaomanjatoventso@gmail.com<br/>Tel / WhatsApp : 038 58 909 07<br/>LinkedIn : /in/ventso-rajaomanjato<br/>GitHub : /ventso00</div>`,
+      skills: () => `<div class="text-dim ps-3">Systèmes : Windows Server 2022 · Linux<br/>Réseaux : VLAN · OSPF · ACL · Cisco · GNS3<br/>Virtualisation : VMware · Hyper-V · VirtualBox<br/>Dev : PHP · Python · MySQL · C/C++<br/>Outils : Git · Wireshark · WordPress</div>`,
+      cv: () => { window.open('/cv/RAJAOMANJATO_VENTSO_CV.pdf', '_blank'); return '<div class="text-emerald">→ Ouverture du CV...</div>'; },
       clear: () => { terminalBody.innerHTML = ''; return ''; }
     };
-
     terminalForm?.addEventListener('submit', (e) => {
       e.preventDefault();
       const cmd = terminalInput.value.trim().toLowerCase();
       if (!cmd) return;
-
-      terminalBody.insertAdjacentHTML('beforeend',
-        `<div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span style="color:var(--text);">${escapeHtml(cmd)}</span></div>`
-      );
-
-      if (commands[cmd]) {
-        const output = commands[cmd]();
-        if (output) terminalBody.insertAdjacentHTML('beforeend', output);
-      } else {
-        terminalBody.insertAdjacentHTML('beforeend',
-          `<div style="color:#ef4444;">Commande inconnue : ${escapeHtml(cmd)}. Tapez <span class="text-cyan">help</span>.</div>`
-        );
-      }
-
+      terminalBody.insertAdjacentHTML('beforeend', `<div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span style="color:var(--text);">${escapeHtml(cmd)}</span></div>`);
+      if (commands[cmd]) { const output = commands[cmd](); if (output) terminalBody.insertAdjacentHTML('beforeend', output); }
+      else { terminalBody.insertAdjacentHTML('beforeend', `<div style="color:#ef4444;">Commande inconnue : ${escapeHtml(cmd)}. Tapez <span class="text-cyan">help</span>.</div>`); }
       terminalInput.value = '';
       terminalBody.scrollTop = terminalBody.scrollHeight;
     });
+    function escapeHtml(str) { return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
-    function escapeHtml(str) {
-      return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-    }
+    function showToast(message) { const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.add('show'); clearTimeout(toast._timeout); toast._timeout = setTimeout(() => toast.classList.remove('show'), 3200); }
 
-    /* ============================================================
-       8. TOAST
-       ============================================================ */
-    function showToast(message) {
-      const toast = document.getElementById('toast');
-      toast.textContent = message;
-      toast.classList.add('show');
-      clearTimeout(toast._timeout);
-      toast._timeout = setTimeout(() => toast.classList.remove('show'), 3200);
-    }
-
-    /* ============================================================
-       9. SKILL BARS (IntersectionObserver)
-       ============================================================ */
     const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.querySelectorAll('.skill-fill').forEach((fill, i) => {
-            setTimeout(() => fill.style.width = fill.dataset.width + '%', i * 120);
-          });
-          skillObserver.unobserve(entry.target);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.querySelectorAll('.skill-fill').forEach((fill, i) => setTimeout(() => fill.style.width = fill.dataset.width + '%', i * 120)); skillObserver.unobserve(entry.target); } });
     }, { threshold: 0.25 });
-
     document.querySelectorAll('#competences .card-custom, #formation .card-custom').forEach(c => skillObserver.observe(c));
 
-    /* ============================================================
-       10. STATS COUNTER ANIMÉ
-       ============================================================ */
     const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.count, 10);
-          let current = 0;
-          const duration = 1400;
-          const step = Math.max(1, Math.floor(target / (duration / 30)));
-          const interval = setInterval(() => {
-            current += step;
-            if (current >= target) { current = target; clearInterval(interval); }
-            el.textContent = current + (target >= 3 ? '+' : '');
-          }, 30);
-          statObserver.unobserve(el);
-        }
-      });
+      entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; const target = parseInt(el.dataset.count, 10); let current = 0; const step = Math.max(1, Math.floor(target / (1400 / 30))); const interval = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(interval); } el.textContent = current + (target >= 3 ? '+' : ''); }, 30); statObserver.unobserve(el); } });
     }, { threshold: 0.4 });
-
     document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
 
-    /* ============================================================
-       11. WEB SHARE API
-       ============================================================ */
     function shareProfile() {
-      const data = {
-        title: 'RAJAOMANJATO VENTSO | IT Support & Cloud Consultant',
-        text: 'Découvrez le portfolio de RAJAOMANJATO VENTSO',
-        url: window.location.href
-      };
-      if (navigator.share) {
-        navigator.share(data).catch(() => {});
-      } else {
-        navigator.clipboard.writeText(window.location.href);
-        showToast('🔗 Lien copié dans le presse-papier');
-      }
+      const data = { title: 'RAJAOMANJATO VENTSO | Portfolio', text: 'Découvrez le portfolio de RAJAOMANJATO VENTSO', url: window.location.href };
+      if (navigator.share) navigator.share(data).catch(() => {});
+      else { navigator.clipboard.writeText(window.location.href); showToast('🔗 Lien copié'); }
     }
 
-    /* ============================================================
-       12. QR CODE vCard (via api.qrserver.com, gratuit)
-       ============================================================ */
     (function initQR() {
-      const vcard = [
-        'BEGIN:VCARD',
-        'VERSION:3.0',
-        'N:RAJAOMANJATO;VENTSO;;;',
-        'FN:RAJAOMANJATO VENTSO',
-        'TITLE:IT Support & Cloud Consultant',
-        'EMAIL:rajaomanjatoventso@gmail.com',
-        'TEL:+261385890907',
-        'URL:https://www.linkedin.com/in/ventso-rajaomanjato-216663339',
-        'ADR:;;Antananarivo;;;Madagascar',
-        'END:VCARD'
-      ].join('\n');
-
-      const qrUrl = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(vcard);
+      const vcard = ['BEGIN:VCARD','VERSION:3.0','N:RAJAOMANJATO;VENTSO;;;','FN:RAJAOMANJATO VENTSO','TITLE:IT Support & Cloud Consultant','EMAIL:rajaomanjatoventso@gmail.com','TEL:+261385890907','URL:https://www.linkedin.com/in/ventso-rajaomanjato-216663339','ADR:;;Antananarivo;;;Madagascar','END:VCARD'].join('\n');
       const img = document.getElementById('qrImage');
-      if (img) img.src = qrUrl;
+      if (img) img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(vcard);
     })();
 
-    /* ============================================================
-       13. FORMULAIRE CONTACT (Web3Forms)
-       ============================================================ */
     const contactForm = document.getElementById('contactForm');
     const formStatus = document.getElementById('formStatus');
-
     contactForm?.addEventListener('submit', async (e) => {
       e.preventDefault();
       const btn = contactForm.querySelector('button[type="submit"]');
       const original = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Envoi...';
-
       try {
         const formData = new FormData(contactForm);
-        const response = await fetch(contactForm.action, {
-          method: 'POST',
-          body: formData
-        });
+        const response = await fetch(contactForm.action, { method: 'POST', body: formData });
         const result = await response.json();
-
         if (result.success) {
           formStatus.style.display = 'block';
           formStatus.innerHTML = '<span class="text-emerald">✅ Message envoyé ! Je vous répondrai bientôt.</span>';
-          showToast('✅ Message envoyé avec succès');
+          showToast('✅ Message envoyé');
           contactForm.reset();
-        } else {
-          throw new Error(result.message || 'Erreur inconnue');
-        }
+        } else throw new Error(result.message || 'Erreur');
       } catch (err) {
         formStatus.style.display = 'block';
         formStatus.innerHTML = '<span style="color:#ef4444;">❌ Erreur : ' + err.message + '</span>';
-        showToast('❌ Échec de l\'envoi. Réessayez.');
+        showToast('❌ Échec de l\'envoi.');
       } finally {
-        btn.disabled = false;
-        btn.innerHTML = original;
+        btn.disabled = false; btn.innerHTML = original;
         setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
       }
     });
 
-    /* ============================================================
-       14. i18n FR / EN / MG
-       ============================================================ */
     const translations = {
-      fr: {
-        'nav.about': 'À propos', 'nav.services': 'Services', 'nav.exp': 'Parcours',
-        'nav.projects': 'Projets', 'nav.skills': 'Compétences', 'nav.edu': 'Formation', 'nav.contact': 'Contact',
-        'hero.badge': 'DISPONIBLE — Opportunités IT',
-        'hero.desc': 'Technicien Support IT & Administrateur Systèmes et Réseaux. Spécialisé en Windows Server 2022, environnements Linux, maquettage réseau Cisco / GNS3, virtualisation et support N1/N2.',
-        'hero.cta1': 'Voir les projets', 'hero.cta2': 'Télécharger CV',
-        'about.title': 'Profil Professionnel',
-        'services.title': 'Services proposés',
-        'exp.title': 'Parcours & Expérience',
-        'projects.title': 'Projets & Réalisations', 'projects.count': '3 projets phares',
-        'skills.title': 'Compétences Techniques',
-        'edu.title': 'Formation, Langues & Certifs', 'lang.title': 'Langues',
-        'stats.projects': 'PROJETS', 'stats.certs': 'CERTIFICATS', 'stats.langs': 'LANGUES', 'stats.intern': 'STAGE PRO',
-        'contact.title': 'Prendre Contact', 'contact.intro': 'Disponible pour des opportunités IT, stages ou collaborations. N\'hésitez pas à me contacter.',
-        'contact.send': 'Envoyer le message'
-      },
-      en: {
-        'nav.about': 'About', 'nav.services': 'Services', 'nav.exp': 'Experience',
-        'nav.projects': 'Projects', 'nav.skills': 'Skills', 'nav.edu': 'Education', 'nav.contact': 'Contact',
-        'hero.badge': 'AVAILABLE — IT Opportunities',
-        'hero.desc': 'IT Support Technician & Systems/Network Administrator. Specialized in Windows Server 2022, Linux environments, Cisco / GNS3 network design, virtualization and N1/N2 support.',
-        'hero.cta1': 'View projects', 'hero.cta2': 'Download CV',
-        'about.title': 'Professional Profile',
-        'services.title': 'Services offered',
-        'exp.title': 'Experience & Training',
-        'projects.title': 'Projects & Achievements', 'projects.count': '3 flagship projects',
-        'skills.title': 'Technical Skills',
-        'edu.title': 'Education, Languages & Certificates', 'lang.title': 'Languages',
-        'stats.projects': 'PROJECTS', 'stats.certs': 'CERTIFICATES', 'stats.langs': 'LANGUAGES', 'stats.intern': 'INTERNSHIP',
-        'contact.title': 'Get in Touch', 'contact.intro': 'Available for IT opportunities, internships or collaborations. Feel free to contact me.',
-        'contact.send': 'Send message'
-      },
-      mg: {
-        'nav.about': 'Mombamomba', 'nav.services': 'Tolotra', 'nav.exp': 'Traikefa',
-        'nav.projects': 'Tetikasa', 'nav.skills': 'Fahaizana', 'nav.edu': 'Fianarana', 'nav.contact': 'Fifandraisana',
-        'hero.badge': 'MISY — Fotoana IT',
-        'hero.desc': 'Teknisianina Support IT & Mpitantana Rafitra sy Tambajotra. Manampahaizana Windows Server 2022, Linux, Cisco / GNS3, virtualization ary fanohanana N1/N2.',
-        'hero.cta1': 'Hijery tetikasa', 'hero.cta2': 'Alaina ny CV',
-        'about.title': 'Mombamomba ahy',
-        'services.title': 'Tolotra',
-        'exp.title': 'Traikefa & Fiofanana',
-        'projects.title': 'Tetikasa', 'projects.count': 'Tetikasa 3 lehibe',
-        'skills.title': 'Fahaizana Teknika',
-        'edu.title': 'Fianarana, Fiteny & Certificat', 'lang.title': 'Fiteny',
-        'stats.projects': 'TETIKASA', 'stats.certs': 'CERTIFICAT', 'stats.langs': 'FITENY', 'stats.intern': 'STAGE',
-        'contact.title': 'Ifandraisana', 'contact.intro': 'Misy ho an\'ny fotoana IT, stage na fiaraha-miasa. Aza misalasala mifandray amiko.',
-        'contact.send': 'Alefaso ny hafatra'
-      }
+      fr: { 'nav.about': 'À propos','nav.services': 'Services','nav.exp': 'Parcours','nav.projects': 'Projets','nav.skills': 'Compétences','nav.edu': 'Formation','nav.contact': 'Contact','hero.badge': 'DISPONIBLE — Opportunités IT','hero.desc': 'Technicien Support IT & Administrateur Systèmes et Réseaux. Spécialisé en Windows Server 2022, Linux, Cisco / GNS3, virtualisation et support N1/N2.','hero.cta1': 'Voir les projets','hero.cta2': 'Télécharger CV','about.title': 'Profil Professionnel','services.title': 'Services proposés','exp.title': 'Parcours & Expérience','projects.title': 'Projets & Réalisations','skills.title': 'Compétences Techniques','edu.title': 'Formation, Langues & Certifs','lang.title': 'Langues','stats.projects': 'PROJETS','stats.certs': 'CERTIFICATS','stats.langs': 'LANGUES','stats.intern': 'STAGE PRO','contact.title': 'Prendre Contact','contact.intro': 'Disponible pour des opportunités IT, stages ou collaborations.','contact.send': 'Envoyer le message' },
+      en: { 'nav.about': 'About','nav.services': 'Services','nav.exp': 'Experience','nav.projects': 'Projects','nav.skills': 'Skills','nav.edu': 'Education','nav.contact': 'Contact','hero.badge': 'AVAILABLE — IT Opportunities','hero.desc': 'IT Support Technician & Systems/Network Administrator. Specialized in Windows Server 2022, Linux, Cisco / GNS3, virtualization and N1/N2 support.','hero.cta1': 'View projects','hero.cta2': 'Download CV','about.title': 'Professional Profile','services.title': 'Services offered','exp.title': 'Experience & Training','projects.title': 'Projects & Achievements','skills.title': 'Technical Skills','edu.title': 'Education, Languages & Certificates','lang.title': 'Languages','stats.projects': 'PROJECTS','stats.certs': 'CERTIFICATES','stats.langs': 'LANGUAGES','stats.intern': 'INTERNSHIP','contact.title': 'Get in Touch','contact.intro': 'Available for IT opportunities, internships or collaborations.','contact.send': 'Send message' },
+      mg: { 'nav.about': 'Mombamomba','nav.services': 'Tolotra','nav.exp': 'Traikefa','nav.projects': 'Tetikasa','nav.skills': 'Fahaizana','nav.edu': 'Fianarana','nav.contact': 'Fifandraisana','hero.badge': 'MISY — Fotoana IT','hero.desc': 'Teknisianina Support IT & Mpitantana Rafitra sy Tambajotra. Manampahaizana Windows Server 2022, Linux, Cisco / GNS3, virtualization ary fanohanana N1/N2.','hero.cta1': 'Hijery tetikasa','hero.cta2': 'Alaina ny CV','about.title': 'Mombamomba ahy','services.title': 'Tolotra','exp.title': 'Traikefa & Fiofanana','projects.title': 'Tetikasa','skills.title': 'Fahaizana Teknika','edu.title': 'Fianarana, Fiteny & Certificat','lang.title': 'Fiteny','stats.projects': 'TETIKASA','stats.certs': 'CERTIFICAT','stats.langs': 'FITENY','stats.intern': 'STAGE','contact.title': 'Ifandraisana','contact.intro': 'Misy ho an\'ny fotoana IT, stage na fiaraha-miasa.','contact.send': 'Alefaso ny hafatra' }
     };
-
-    function applyLang(lang) {
-      localStorage.setItem('lang', lang);
-      document.documentElement.setAttribute('lang', lang);
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.dataset.i18n;
-        if (translations[lang] && translations[lang][key]) {
-          el.textContent = translations[lang][key];
-        }
-      });
-      document.querySelectorAll('.lang-switch button').forEach(b => {
-        b.classList.toggle('active', b.dataset.lang === lang);
-      });
-    }
-
-    document.querySelectorAll('.lang-switch button').forEach(btn => {
-      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
-    });
-
-    // Charger la langue sauvegardée (ou FR par défaut)
+    function applyLang(lang) { localStorage.setItem('lang', lang); document.documentElement.setAttribute('lang', lang); document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key]; }); document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang)); }
+    document.querySelectorAll('.lang-switch button').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
     applyLang(localStorage.getItem('lang') || 'fr');
 
-    /* ============================================================
-       15. TILT 3D (desktop uniquement)
-       ============================================================ */
     if (window.matchMedia('(hover: hover) and (min-width: 992px)').matches) {
       document.querySelectorAll('.card-custom').forEach(card => {
         card.addEventListener('mousemove', (e) => {
           const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-          const rx = ((y - rect.height / 2) / rect.height) * -4;
-          const ry = ((x - rect.width / 2) / rect.width) * 4;
+          const x = e.clientX - rect.left, y = e.clientY - rect.top;
+          const rx = ((y - rect.height / 2) / rect.height) * -4, ry = ((x - rect.width / 2) / rect.width) * 4;
           card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
         });
         card.addEventListener('mouseleave', () => { card.style.transform = ''; });
       });
     }
 
-    /* ============================================================
-       16. SMOOTH SCROLL pour ancres
-       ============================================================ */
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          const targetPos = target.getBoundingClientRect().top + window.pageYOffset - 80;
-          window.scrollTo({ top: targetPos, behavior: 'smooth' });
-        }
+        if (target) { e.preventDefault(); const targetPos = target.getBoundingClientRect().top + window.pageYOffset - 80; window.scrollTo({ top: targetPos, behavior: 'smooth' }); }
       });
     });
 
-    /* ============================================================
-       17. RACCOURCI CLAVIER : "/" pour focus terminal
-       ============================================================ */
     document.addEventListener('keydown', (e) => {
       if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-        e.preventDefault();
-        terminalInput?.focus();
-        terminalInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        e.preventDefault(); terminalInput?.focus(); terminalInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
       }
     });
   </script>

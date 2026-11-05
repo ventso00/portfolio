@@ -1,4 +1,4 @@
-name: Vérifier les hébergements du portfolio
+name: Vérifier la publication Netlify
 
 on:
   push:
@@ -11,18 +11,16 @@ permissions:
 jobs:
   check:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 3
     steps:
-      - name: Vérifier la V2 hébergée et rapporter les états
+      - name: Contrôler la version du portfolio sur Netlify
         shell: bash
         run: |
           set -euo pipefail
-          found=0
-          for url in "https://ventso-portfolio-v2.vercel.app/" "https://ventso.netlify.app/"; do
-            status=$(curl -L -sS --connect-timeout 8 --max-time 20 -o /tmp/live-portfolio.html -w "%{http_code}" "$url" || true)
-            bytes=$(wc -c </tmp/live-portfolio.html 2>/dev/null || echo 0)
-            new="non"
-            if grep -q "Des solutions web" /tmp/live-portfolio.html 2>/dev/null && grep -q "UptimePulse V2" /tmp/live-portfolio.html 2>/dev/null; then new="oui"; found=1; fi
-            echo "$url | HTTP $status | HTML $bytes octets | V2 $new"
-          done
-          test "$found" = 1
+          url="https://ventso.netlify.app/"
+          http=$(curl -sS -L --connect-timeout 8 --max-time 20 -o /tmp/live.html -w "%{http_code}" "$url")
+          echo "Site Netlify : $url | HTTP $http"
+          test "$http" = "200"
+          grep -q "Des solutions web" /tmp/live.html
+          grep -q "UptimePulse V2" /tmp/live.html
+          echo "Version V2 confirmée sur Netlify"

@@ -218,7 +218,7 @@
           <li class="nav-item"><a class="nav-link" href="#formation"><span class="num">06.</span> <span data-i18n="nav.edu">Formation</span></a></li>
           <li class="nav-item"><a class="nav-link" href="#contact"><span class="num">07.</span> <span data-i18n="nav.contact">Contact</span></a></li>
           <li class="nav-item">
-            <div class="lang-switch" role="group" aria-label="Langue">
+            <div class="lang-switch d-none" role="group" aria-label="Langue">
               <button data-lang="fr" class="active">FR</button>
               <button data-lang="en">EN</button>
               <button data-lang="mg">MG</button>
@@ -287,8 +287,8 @@
                 <div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span class="text-cyan">whoami</span></div>
                 <div class="text-dim ps-3 mt-1" style="border-left:2px solid var(--border);">
                   Nom : RAJAOMANJATO VENTSO<br/>
-                  Rôle :  Technicien Support IT & Systèmes/Réseaux Junior<br/>
-                  Statut : Disponible pour opportunités IT
+                  Rôle : Développeur Web Full-Stack Junior<br/>
+                  Statut : Ouvert aux collaborations à distance
                 </div>
               </div>
               <form id="terminalForm" class="d-flex align-items-center gap-2 px-3 py-2" style="border-top:1px solid var(--border);background:var(--bg-elev-2);font-family:'JetBrains Mono',monospace;font-size:0.73rem;">
@@ -773,7 +773,7 @@
     applyTheme(savedTheme || (systemLight ? 'light' : 'dark'));
 
     const tw = document.getElementById('typewriter');
-    const twText = "> Technicien Support IT & Systèmes/Réseaux Junior — Antananarivo, Madagascar";
+    const twText = "> Développeur Web Full-Stack Junior — React / Node.js — Madagascar";
     let twIndex = 0;
     function typeWriter() { if (twIndex < twText.length) { tw.textContent += twText.charAt(twIndex); twIndex++; setTimeout(typeWriter, 45); } }
     setTimeout(typeWriter, 700);
@@ -821,7 +821,7 @@
     }
 
     (function initQR() {
-      const vcard = ['BEGIN:VCARD','VERSION:3.0','N:RAJAOMANJATO;VENTSO;;;','FN:RAJAOMANJATO VENTSO','TITLE:Technicien Support IT & Systèmes/Réseaux Junior','EMAIL:rajaomanjatoventso@gmail.com','TEL:+261385890907','URL:https://www.linkedin.com/in/ventso-rajaomanjato-216663339','ADR:;;Antananarivo;;;Madagascar','END:VCARD'].join('\n');
+      const vcard = ['BEGIN:VCARD','VERSION:3.0','N:RAJAOMANJATO;VENTSO;;;','FN:RAJAOMANJATO VENTSO','TITLE:Développeur Web Full-Stack Junior','EMAIL:rajaomanjatoventso@gmail.com','TEL:+261385890907','URL:https://www.linkedin.com/in/ventso-rajaomanjato-216663339','ADR:;;Antananarivo;;;Madagascar','END:VCARD'].join('\n');
       const img = document.getElementById('qrImage');
       if (img) img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(vcard);
     })();
@@ -861,7 +861,7 @@
     };
     function applyLang(lang) { localStorage.setItem('lang', lang); document.documentElement.setAttribute('lang', lang); document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key]; }); document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang)); }
     document.querySelectorAll('.lang-switch button').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
-    applyLang(localStorage.getItem('lang') || 'fr');
+    applyLang('fr');
 
     if (window.matchMedia('(hover: hover) and (min-width: 992px)').matches) {
       document.querySelectorAll('.card-custom').forEach(card => {

@@ -1,6 +1,9 @@
 name: Recette navigateur du portfolio
 
 on:
+  push:
+    branches:
+      - draft/fullstack-remote-profile-2026
   workflow_dispatch:
 
 permissions:

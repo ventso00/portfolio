@@ -1,39 +1,43 @@
 # Portfolio — Ventso Rajaomanjato
 
-Portfolio statique en français : **Développeur web Full-Stack junior** basé à Madagascar, React / Node.js / Express et assistance applicative.
+**Assistant technique & Développeur IT** · Madagascar · Français
 
-Site officiel actuel : https://ventso.netlify.app/  
-**Cette branche est une proposition de refonte et n'est pas approuvée pour la production.**
+La branche `redesign/assistant-technique-it-2026` contient une refonte éditoriale et visuelle de la landing page Netlify : design clair, navigation minimale, animations discrètes, graphiques techniques SVG originaux, projets documentés et compatibilité mobile.
 
-## Structure
+## Site de destination
 
-- `index.html` : page complète autonome en HTML, CSS et JavaScript, sans dépendance de compilation.
-- `llms.txt`, `sitemap.xml`, `robots.txt` : informations de référencement.
-- `netlify.toml` et `_redirects` : configuration de routage et d'hébergement héritée.
-- `tests/check-static.mjs` : validations statiques sans dépendances npm.
-- `docs/PROFILE_README_DRAFT.md` : brouillon du README GitHub personnel.
+https://ventso.netlify.app/
 
-## Design
+Ce lien pointe sur le projet Netlify existant `ventso`. La nouvelle branche **ne correspond pas automatiquement au contenu publié**. La publication en production nécessite une validation et une opération de déploiement Netlify.
 
-Refonte éditoriale en français, responsive, sans framework et sans dépendances JS externes ; menu mobile accessible, navigation au clavier, option de réduction des animations, cartes de projets, contact par email.
+## Technologies du portfolio
 
-Les aperçus des projets sont **illustratifs** et non des captures authentifiées des logiciels. Les projets sont personnels/académiques.
+HTML, CSS, JavaScript natif ; aucune bibliothèque frontend nécessaire et aucune dépendance installée au lancement.
 
-## Vérifier la branche en local
+## Vérifier
 
-1. Cloner le dépôt et passer sur la branche `draft/fullstack-remote-profile-2026`.
-2. Lancer `node tests/check-static.mjs` (Node.js 18+).
-3. Ouvrir `index.html` en local. Pour un serveur statique local, utiliser `python -m http.server 8000` puis ouvrir `http://localhost:8000`.
-4. Vérifier manuellement sur écran mobile et ordinateur : navigation, liens, textes, lisibilité, contraste, contact et défilement.
+```bash
+node tests/check-static.mjs
+python3 -m http.server 8000
+```
 
-## Avant toute validation finale
+Puis ouvrir `http://localhost:8000` et tester le parcours. Les tests Playwright sont décrits dans `tests/portfolio.spec.mjs` ; les GitHub Actions de la branche fournissent des captures pour plusieurs tailles d'écran.
 
-- Inspecter le rendu à 320, 375, 768, 1024 et 1440 px.
-- Tester menu mobile et parcours clavier.
-- Vérifier les URL GitHub et les contacts.
-- Contrôler les contenus de projets et leurs limites.
-- Vérifier l'état du service Netlify et des éventuels aperçus automatiques.
-- Actualiser le CV de développement avant de proposer un bouton de téléchargement ; le CV historique n'est pas mis en avant.
-- Vérifier les anciens fichiers `portfolio.html` et les PDF avant toute suppression éventuelle.
+## Pages et contenus
 
-**Interdiction dans ce travail :** fusion dans `main` ou déploiement volontaire sans validation explicite du propriétaire.
+- `index.html` : landing page unique — accueil, compétences, projets, méthode, parcours, contact.
+- `404.html` : page d'erreur claire.
+- `netlify.toml` et `_redirects` : configuration du site statique.
+- `robots.txt`, `sitemap.xml`, `llms.txt` : informations d'indexation.
+
+Les visuels de projets sont des maquettes illustratives CSS. Aucun visuel Pinterest ou Canva sous droits tiers n'est copié.
+
+## Projet Netlify existant
+
+Le projet `ventso` affiche encore un déploiement ancien du **30 octobre 2026**, créé via une source API. Les changements GitHub ne produisent pas de nouvelle publication automatiquement dans la configuration observée.
+
+Pour mettre cette branche en ligne :
+1. Faire approuver la présentation et fusionner la branche dans `main`.
+2. Depuis `https://app.netlify.com/projects/ventso/overview`, vérifier que le dépôt `ventso00/portfolio` et la branche `main` sont reliés.
+3. Dans la section **Deploys**, relancer le déploiement du site existant ; configuration : dossier publié `.`, commande de build vide.
+4. Vérifier le déploiement publié et comparer les éléments de la page publique avec le HTML GitHub. Ne pas créer un second projet Netlify.

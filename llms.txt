@@ -1,22 +1,28 @@
 # Portfolio — Ventso Rajaomanjato
-> Développeur web Full-Stack junior basé à Madagascar. Recherche des collaborations francophones à distance en développement web et assistance applicative.
 
-Site : https://ventso.netlify.app/
+> Assistant technique et développeur IT. Portfolio francophone à Madagascar, orienté support informatique, systèmes et réseaux, développement logiciel, automatisation et applications web.
+
+Site officiel à actualiser sur Netlify : https://ventso.netlify.app/
 GitHub : https://github.com/ventso00
 LinkedIn : https://www.linkedin.com/in/ventso-rajaomanjato-216663339
 Contact : rajaomanjatoventso@gmail.com
 
-## Formation et positionnement
-Licence ESIIA — ISPM. Développement junior avec React, Node.js et Express. Travail assisté par l'intelligence artificielle avec compréhension et vérification du code. Les projets sont personnels ou académiques, pas des prestations clients.
+## Formation et parcours
 
-## Projets attestés par la présence de sources
-- UptimePulse V2 : https://github.com/ventso00/uptilmepulseV2 — React/TypeScript, Express, MySQL ; supervision de sites et incidents. Voir limites et prérequis du dépôt.
-- FF CV / ScoutMetrics : https://github.com/ventso00/ffCV — frontend/backend, tests, préparatifs Netlify ; données réelles limitées par les accès fournisseurs.
-- SmartWater : https://github.com/ventso00/SmartWater_project — pages PHP et traitements côté serveur d'un projet universitaire IoT.
-- ADOps GPO Manager : https://github.com/ventso00/gpoAPK — complément Windows/.NET/PowerShell pour administration Active Directory.
+Licence ESIIA obtenue à l'ISPM, Antananarivo. Stages en administration systèmes et réseaux à FTM / SaryTany. Activités de formation, de stage et projets personnels, sans prétention de mission cliente lorsqu'aucune n'est vérifiée.
 
-## Compétences et services recherchés
-Interfaces React, fonctionnalités Node.js/Express, connexion API, maintenance corrective et support applicatif en français selon périmètre et niveau.
+## Domaines
 
-## Limites de vérification
-Aucune certification externe, mission client payée, chiffre commercial, disponibilité permanente ou déploiement actif de projet n'est revendiqué. Les visuels du portfolio sont des illustrations et non des captures de logiciels réels.
+- Assistance technique : diagnostic, configuration de postes, support utilisateurs N1/N2 et documentation.
+- Systèmes : Windows Server 2022, AD DS, DNS, DHCP, GPO ; Linux Debian / Ubuntu.
+- Réseaux et virtualisation : pfSense, Cisco Packet Tracer, routage/switching, VMware, Hyper-V.
+- Développement : C#, PowerShell, Python, PHP, React/Node.js selon les projets, intégration API et automatisation.
+
+## Projets consultables
+
+- [UptimePulse V2](https://github.com/ventso00/uptilmepulseV2) : supervision HTTP/HTTPS, suivi incidents, React/TypeScript/Express/MySQL ; limites documentées.
+- [FF CV](https://github.com/ventso00/ffCV) : prototype d'API/présentation de profils, accès données réelles limité.
+- [SmartWater](https://github.com/ventso00/SmartWater_project) : projet universitaire IoT et pages PHP côté serveur.
+- [ADOps GPO Manager](https://github.com/ventso00/gpoAPK) : application WPF/.NET et scripts de gestion GPO.
+
+Les visuels du portfolio sont des représentations graphiques, pas des captures authentiques des applications. Aucune expérience ou certification supplémentaire n'est revendiquée.

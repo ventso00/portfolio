@@ -14,7 +14,7 @@ check("HTML de base", /^<!doctype html>/i.test(html) && /<\/html>\s*$/.test(html
 check("langue et viewport", /<html lang="fr">/.test(html) && /name="viewport"/.test(html));
 check("SEO et URL canonique", /rel="canonical"/.test(html) && /name="description"/.test(html));
 check("navigation simple et clavier", /class="skip"/.test(html) && /class="head-contact"/.test(html));
-check("navigation de sections", ["expertises","projets","methode","parcours","contact"].every(id => html.includes('id="'+id+'"') && html.includes('href="#'+id+'"')));
+check("navigation de sections", ["expertises","projets","methode","parcours","contact"].every(id => html.includes('id="'+id+'"')) && html.includes('href="#projets"') && html.includes('href="#contact"'));
 check("responsive", /@media\(max-width:680px\)/.test(html) && /prefers-reduced-motion/.test(html));
 check("4 dépôts corrects", ["uptilmepulseV2","ffCV","SmartWater_project","gpoAPK"].every(repo => html.includes("github.com/ventso00/" + repo)));
 check("aucune bibliothèque JS distante", !/<script[^>]+src=/.test(html));

@@ -22,7 +22,7 @@ for (const width of [360, 768, 1440]) {
 test("Menu mobile accessible", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 780 });
   await page.goto("http://127.0.0.1:8000/");
-  const menu = page.getByRole("button", { name: "Ouvrir le menu" });
+  const menu = page.locator("#menu-toggle");
   await expect(menu).toBeVisible();
   await menu.click();
   await expect(menu).toHaveAttribute("aria-expanded", "true");

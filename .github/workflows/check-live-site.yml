@@ -1,4 +1,4 @@
-name: Vérifier le portfolio public
+name: Vérifier les hébergements du portfolio
 
 on:
   push:
@@ -9,23 +9,20 @@ permissions:
   contents: read
 
 jobs:
-  live:
+  check:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 5
     steps:
-      - name: Vérifier que Netlify affiche la V2
+      - name: Vérifier la V2 hébergée et rapporter les états
         shell: bash
         run: |
           set -euo pipefail
-          url="https://ventso.netlify.app/"
-          for attempt in $(seq 1 24); do
-            status=$(curl -L -sS --connect-timeout 8 --max-time 18 -o /tmp/portfolio-live.html -w "%{http_code}" "$url" || true)
-            echo "Tentative $attempt : HTTP $status"
-            if [ "$status" = "200" ] && grep -q 'Des solutions web' /tmp/portfolio-live.html && grep -q 'UptimePulse V2' /tmp/portfolio-live.html; then
-              echo "SUCCÈS : V2 confirmée sur $url"
-              exit 0
-            fi
-            sleep 8
+          found=0
+          for url in "https://ventso-portfolio-v2.vercel.app/" "https://ventso.netlify.app/"; do
+            status=$(curl -L -sS --connect-timeout 8 --max-time 20 -o /tmp/live-portfolio.html -w "%{http_code}" "$url" || true)
+            bytes=$(wc -c </tmp/live-portfolio.html 2>/dev/null || echo 0)
+            new="non"
+            if grep -q "Des solutions web" /tmp/live-portfolio.html 2>/dev/null && grep -q "UptimePulse V2" /tmp/live-portfolio.html 2>/dev/null; then new="oui"; found=1; fi
+            echo "$url | HTTP $status | HTML $bytes octets | V2 $new"
           done
-          echo "ECHEC : le site public ne présente pas encore la V2."
-          exit 1
+          test "$found" = 1

@@ -1,0 +1,31 @@
+name: Vérifier le portfolio public
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Vérifier que Netlify affiche la V2
+        shell: bash
+        run: |
+          set -euo pipefail
+          url="https://ventso.netlify.app/"
+          for attempt in $(seq 1 24); do
+            status=$(curl -L -sS --connect-timeout 8 --max-time 18 -o /tmp/portfolio-live.html -w "%{http_code}" "$url" || true)
+            echo "Tentative $attempt : HTTP $status"
+            if [ "$status" = "200" ] && grep -q 'Des solutions web' /tmp/portfolio-live.html && grep -q 'UptimePulse V2' /tmp/portfolio-live.html; then
+              echo "SUCCÈS : V2 confirmée sur $url"
+              exit 0
+            fi
+            sleep 8
+          done
+          echo "ECHEC : le site public ne présente pas encore la V2."
+          exit 1

@@ -7,7 +7,7 @@ for (const width of [360, 768, 1440]) {
     page.on("pageerror", error => errors.push(error.message));
     await page.goto("http://127.0.0.1:8000/", { waitUntil: "networkidle" });
     await expect(page).toHaveTitle(/Ventso Rajaomanjato/);
-    await expect(page.getByRole("heading", { name: /Des solutions web/ })).toBeVisible();
+    await expect(page.getByRole("heading", { name: /Vos outils numériques/ })).toBeVisible();
     await expect(page.getByRole("heading", { name: "UptimePulse V2" })).toBeVisible();
     const dimensions = await page.evaluate(() => ({
       document: document.documentElement.scrollWidth,
@@ -19,15 +19,11 @@ for (const width of [360, 768, 1440]) {
   });
 }
 
-test("Menu mobile accessible", async ({ page }) => {
+test("Landing page sans menu encombrant", async ({ page }) => {
   await page.setViewportSize({ width: 360, height: 780 });
   await page.goto("http://127.0.0.1:8000/");
-  const menu = page.locator("#menu-toggle");
-  await expect(menu).toBeVisible();
-  await menu.click();
-  await expect(menu).toHaveAttribute("aria-expanded", "true");
-  await page.getByRole("link", { name: "Projets", exact: true }).click();
-  await expect(menu).toHaveAttribute("aria-expanded", "false");
+  await expect(page.locator("#menu-toggle")).toHaveCount(0);
+  await page.getByRole("link", { name: /Explorer mes réalisations/ }).click();
   await expect(page).toHaveURL(/#projets$/);
 });
 

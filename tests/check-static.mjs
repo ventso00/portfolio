@@ -21,5 +21,5 @@ check("aucune bibliothèque JS distante", !/<script[^>]+src=/.test(html));
 check("contact", /mailto:rajaomanjatoventso@gmail.com/.test(html));
 check("pas d'ancien poste en titre", !/<title>[^<]*Technicien/.test(html));
 check("données structurées", /application\/ld\+json/.test(html));
-check("ressources de référencement alignées", seo.includes("ventso.netlify.app") && llms.includes("Développeur web Full-Stack junior"));
+check("ressources de référencement alignées", seo.includes("ventso.netlify.app") && llms.includes("Assistant technique et développeur IT"));
 process.stdout.write("12 contrôles statiques réussis.\n");

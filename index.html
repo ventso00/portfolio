@@ -1,857 +1,312 @@
-<!DOCTYPE html>
-<html lang="fr" data-bs-theme="dark">
+<!doctype html>
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAJAOMANJATO VENTSO | Technicien Support IT & Systèmes/Réseaux Junior</title>
-  <meta name="description" content="Portfolio de RAJAOMANJATO VENTSO — Technicien Support IT & Systèmes/Réseaux Junior à Antananarivo, Madagascar." />
-  <meta name="theme-color" content="#0a0e1a" />
-  <meta property="og:title" content="RAJAOMANJATO VENTSO | Technicien Support IT & Systèmes/Réseaux Junior" />
-  <meta property="og:description" content=" Technicien Support IT & Systèmes/Réseaux Junior — Antananarivo, Madagascar." />
-  <meta property="og:type" content="website" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="icon" type="image/gif" href="https://www.freeiconspng.com/uploads/chibi-stitch-png-cute-3.png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1220">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Ventso Rajaomanjato, développeur web Full-Stack junior à Madagascar. Interfaces React, applications Node.js/Express, intégration API et assistance applicative francophone à distance.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:url" content="https://ventso.netlify.app/">
+  <meta property="og:title" content="Ventso Rajaomanjato — Développeur web Full-Stack junior">
+  <meta property="og:description" content="React, Node.js, Express. Projets documentés, interfaces web et assistance applicative en français.">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://ventso.netlify.app/">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1220'/%3E%3Cpath d='m13 21 16 23 22-29' fill='none' stroke='%2395e3c1' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <title>Ventso Rajaomanjato — Développeur web Full-Stack junior</title>
   <style>
-    :root {
-      --bg: #0a0e1a; --bg-elev: #121829; --bg-elev-2: #1a2238;
-      --border: #24304f; --text: #e2e8f0; --text-dim: #94a3b8;
-      --cyan: #4fd8e8; --amber: #ffb454; --emerald: #34d399;
-      --purple: #a78bfa; --pink: #f472b6; --shadow: rgba(0, 0, 0, 0.4);
-    }
-    [data-bs-theme="light"] {
-      --bg: #f8fafc; --bg-elev: #ffffff; --bg-elev-2: #edf2f7;
-      --border: #cbd5e1; --text: #0f172a; --text-dim: #475569;
-      --cyan: #0284c7; --amber: #d97706; --emerald: #059669;
-      --purple: #7c3aed; --pink: #db2777; --shadow: rgba(0, 0, 0, 0.08);
-    }
-    * { scroll-behavior: smooth; }
-    html, body { overflow-x: hidden; }
-    body { background-color: var(--bg) !important; color: var(--text) !important; font-family: 'Inter', sans-serif; transition: background-color 0.4s ease, color 0.4s ease; }
-    .font-heading { font-family: 'Space Grotesk', sans-serif; }
-    .font-mono-code { font-family: 'JetBrains Mono', monospace; }
-    .text-cyan { color: var(--cyan) !important; }
-    .text-amber { color: var(--amber) !important; }
-    .text-emerald { color: var(--emerald) !important; }
-    .text-purple { color: var(--purple) !important; }
-    .text-dim { color: var(--text-dim) !important; }
-
-    .bg-grid-pattern { position: fixed; inset: 0; background-image: linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px); background-size: 48px 48px; opacity: 0.10; pointer-events: none; z-index: 0; }
-    .bg-blob { position: fixed; border-radius: 50%; filter: blur(140px); opacity: 0.15; pointer-events: none; z-index: 0; animation: floatBlob 18s ease-in-out infinite; }
-    .blob-1 { width: 380px; height: 380px; background: var(--cyan); top: -120px; left: -120px; }
-    .blob-2 { width: 320px; height: 320px; background: var(--purple); bottom: 8%; right: -120px; animation-delay: 4s; }
-    @keyframes floatBlob { 0%, 100% { transform: translate(0, 0) scale(1); } 50% { transform: translate(30px, -20px) scale(1.08); } }
-
-    .navbar-custom { background: rgba(10, 14, 26, 0.75) !important; backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
-    [data-bs-theme="light"] .navbar-custom { background: rgba(248, 250, 252, 0.85) !important; }
-    .navbar-custom.scrolled { background: rgba(10, 14, 26, 0.95) !important; box-shadow: 0 4px 24px var(--shadow); }
-    [data-bs-theme="light"] .navbar-custom.scrolled { background: rgba(248, 250, 252, 0.98) !important; }
-    .nav-link { color: var(--text-dim) !important; font-family: 'JetBrains Mono', monospace; font-size: 0.78rem; transition: all 0.3s ease; padding: 6px 4px !important; }
-    .nav-link:hover { color: var(--cyan) !important; transform: translateY(-1px); }
-    .nav-link .num { color: var(--amber); }
-    .navbar-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .monogram { width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, var(--cyan), var(--purple)); color: #0a0e1a; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 14px rgba(79, 216, 232, 0.3); transition: transform 0.3s ease; }
-    .navbar-brand:hover .monogram { transform: rotate(-6deg) scale(1.05); }
-    .brand-name { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 0.85rem; letter-spacing: 0.05em; color: var(--text); white-space: nowrap; }
-
-    .btn-cyan { background: var(--cyan); color: #0a0e1a; font-weight: 600; border: none; transition: all 0.3s ease; }
-    .btn-cyan:hover { background: var(--cyan); color: #0a0e1a; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4); }
-    .btn-outline-cyan { border: 1px solid var(--cyan); color: var(--cyan); background: transparent; transition: all 0.3s ease; }
-    .btn-outline-cyan:hover { background: var(--cyan); color: #0a0e1a; transform: translateY(-2px); }
-    .btn-whatsapp { background: #25D366; color: #fff; font-weight: 600; border: none; transition: all 0.3s ease; }
-    .btn-whatsapp:hover { background: #20ba5a; color: #fff; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); }
-
-    .social-dock { position: fixed; left: 20px; top: 50%; transform: translateY(-50%); z-index: 40; display: flex; flex-direction: column; gap: 12px; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 999px; padding: 12px 8px; box-shadow: 0 8px 30px var(--shadow); transition: all 0.3s ease; }
-    .social-dock a { width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--text-dim); background: var(--bg-elev-2); transition: all 0.3s ease; font-size: 1rem; position: relative; }
-    .social-dock a:hover { color: #0a0e1a; background: var(--cyan); transform: translateY(-3px) scale(1.1); box-shadow: 0 8px 20px rgba(79, 216, 232, 0.4); }
-    .social-dock a[data-tip]:hover::after { content: attr(data-tip); position: absolute; left: 52px; top: 50%; transform: translateY(-50%); background: var(--bg-elev-2); color: var(--text); font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--border); white-space: nowrap; pointer-events: none; }
-    @media (max-width: 900px) { .social-dock { left: 50%; top: auto; bottom: 12px; transform: translateX(-50%); flex-direction: row; padding: 8px 12px; gap: 8px; } .social-dock a[data-tip]:hover::after { display: none; } }
-
-    .badge-status { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; background: var(--bg-elev); border: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--cyan); }
-    .pulse-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); animation: pulseDot 2s infinite; }
-    @keyframes pulseDot { 0% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(52, 211, 153, 0); } 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0); } }
-
-    .hero-title { font-family: 'Space Grotesk', sans-serif; font-weight: 700; line-height: 1.05; font-size: clamp(1.9rem, 5vw, 3.4rem); }
-    .typewriter-wrap { font-family: 'JetBrains Mono', monospace; color: var(--amber); font-size: clamp(0.85rem, 2vw, 1rem); min-height: 1.5em; }
-    .typewriter-cursor { border-right: 2px solid var(--cyan); animation: blink 0.9s step-end infinite; padding-right: 2px; }
-    @keyframes blink { 50% { border-color: transparent; } }
-
-    .terminal-window { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; box-shadow: 0 20px 60px var(--shadow); transition: transform 0.4s ease, box-shadow 0.4s ease; }
-    .terminal-window:hover { transform: translateY(-4px); box-shadow: 0 30px 80px rgba(79, 216, 232, 0.15); }
-    .terminal-header { background: var(--bg-elev-2); border-bottom: 1px solid var(--border); padding: 10px 16px; }
-    .terminal-body { height: 280px; overflow-y: auto; padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 0.73rem; background: rgba(10, 14, 26, 0.5); scrollbar-width: thin; scrollbar-color: var(--border) transparent; }
-    [data-bs-theme="light"] .terminal-body { background: rgba(237, 242, 247, 0.5); }
-    .terminal-body::-webkit-scrollbar { width: 5px; }
-    .terminal-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-    .card-custom { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 16px; padding: 24px; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; overflow: hidden; height: 100%; }
-    .card-custom::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(79, 216, 232, 0.06), transparent); transition: left 0.7s ease; pointer-events: none; }
-    .card-custom:hover::before { left: 100%; }
-    .card-custom:hover { transform: translateY(-6px); border-color: var(--cyan); box-shadow: 0 20px 50px rgba(79, 216, 232, 0.12); }
-
-    /* Carte projet (plus riche) */
-    .project-card { position: relative; padding-top: 30px; }
-    .project-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border); }
-    .project-actions .action-link { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; text-decoration: none; transition: all 0.25s ease; border: 1px solid var(--border); background: var(--bg-elev-2); color: var(--text-dim); }
-    .project-actions .action-link:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
-    .project-actions .action-link.live { border-color: var(--emerald); color: var(--emerald); }
-    .project-actions .action-link.live:hover { background: var(--emerald); color: #0a0e1a; }
-    .project-actions .action-link.demo { border-color: var(--amber); color: var(--amber); }
-    .project-actions .action-link.demo:hover { background: var(--amber); color: #0a0e1a; }
-    .project-actions .action-link.read { border-color: var(--cyan); color: var(--cyan); cursor: pointer; }
-    .project-actions .action-link.read:hover { background: var(--cyan); color: #0a0e1a; }
-
-    .icon-box { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: var(--bg-elev-2); border: 1px solid var(--border); color: var(--cyan); font-size: 1.2rem; transition: all 0.3s ease; flex-shrink: 0; }
-    .card-custom:hover .icon-box { background: var(--cyan); color: #0a0e1a; transform: rotate(-6deg) scale(1.08); }
-
-    .section-title { display: flex; align-items: baseline; gap: 12px; margin-bottom: 2rem; }
-    .section-title .num { font-family: 'JetBrains Mono', monospace; color: var(--amber); font-size: 1.1rem; }
-    .section-title h2 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: clamp(1.3rem, 3vw, 1.75rem); margin: 0; }
-    .section-title .line { flex: 1; height: 1px; background: var(--border); }
-
-    .timeline-item { position: relative; padding-left: 32px; padding-bottom: 24px; border-left: 2px solid var(--border); }
-    .timeline-item:last-child { border-left-color: transparent; padding-bottom: 0; }
-    .timeline-item::before { content: ''; position: absolute; left: -9px; top: 0; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2px solid var(--cyan); transition: all 0.3s ease; }
-    .timeline-item:hover::before { background: var(--cyan); box-shadow: 0 0 20px var(--cyan); transform: scale(1.15); }
-
-    .skill-bar { height: 6px; background: var(--bg-elev-2); border-radius: 3px; overflow: hidden; margin-top: 6px; }
-    .skill-fill { height: 100%; background: linear-gradient(90deg, var(--cyan), var(--purple)); border-radius: 3px; width: 0; transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1); position: relative; }
-    .skill-fill::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent); animation: shimmer 2.4s infinite; }
-    @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-
-    .tech-tag { display: inline-block; padding: 4px 10px; border-radius: 6px; background: var(--bg-elev-2); border: 1px solid var(--border); font-family: 'JetBrains Mono', monospace; font-size: 0.68rem; color: var(--text-dim); transition: all 0.3s ease; }
-    .tech-tag:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
-
-    .stat-number { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 2.2rem; background: linear-gradient(135deg, var(--cyan), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1; }
-
-    .lang-switch { display: inline-flex; background: var(--bg-elev-2); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; }
-    .lang-switch button { background: transparent; border: none; color: var(--text-dim); padding: 5px 10px; cursor: pointer; transition: all 0.2s ease; }
-    .lang-switch button.active { background: var(--cyan); color: #0a0e1a; font-weight: 600; }
-
-    .form-control-custom { background: var(--bg-elev) !important; border: 1px solid var(--border) !important; color: var(--text) !important; border-radius: 10px; padding: 12px 16px; transition: all 0.3s ease; }
-    .form-control-custom:focus { border-color: var(--cyan) !important; box-shadow: 0 0 0 3px rgba(79, 216, 232, 0.15) !important; }
-    .form-control-custom::placeholder { color: var(--text-dim); opacity: 0.6; }
-
-    #scrollTop { position: fixed; bottom: 24px; right: 24px; width: 46px; height: 46px; border-radius: 50%; background: var(--cyan); color: #0a0e1a; border: none; display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transform: translateY(20px); transition: all 0.3s ease; z-index: 999; box-shadow: 0 10px 30px rgba(79, 216, 232, 0.4); }
-    #scrollTop.visible { opacity: 1; visibility: visible; transform: translateY(0); }
-    #scrollTop:hover { transform: translateY(-4px) scale(1.08); }
-    @media (max-width: 900px) { #scrollTop { bottom: 80px; } }
-
-    .toast-custom { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(120px); background: var(--bg-elev); border: 1px solid var(--cyan); color: var(--text); padding: 12px 24px; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; opacity: 0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); z-index: 9999; box-shadow: 0 10px 40px rgba(79, 216, 232, 0.3); max-width: 90vw; text-align: center; }
-    .toast-custom.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-    .qr-modal-content, .project-modal-content { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 16px; color: var(--text); }
-    .qr-modal-content .modal-header, .qr-modal-content .modal-footer,
-    .project-modal-content .modal-header, .project-modal-content .modal-footer { border-color: var(--border); }
-    .project-modal-content .modal-body h4 { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.2rem; margin-top: 1.2rem; margin-bottom: 0.6rem; color: var(--cyan); }
-    .project-modal-content .modal-body p, .project-modal-content .modal-body li { color: var(--text-dim); font-size: 0.9rem; line-height: 1.7; }
-    .project-modal-content .modal-body ul { padding-left: 20px; }
-
-    #pageLoader { position: fixed; inset: 0; background: var(--bg); z-index: 99999; display: flex; align-items: center; justify-content: center; transition: opacity 0.5s ease, visibility 0.5s ease; }
-    #pageLoader.hidden { opacity: 0; visibility: hidden; }
-    .loader-ring { width: 56px; height: 56px; border: 3px solid var(--border); border-top-color: var(--cyan); border-radius: 50%; animation: spin 1s linear infinite; }
-    @keyframes spin { to { transform: rotate(360deg); } }
-
-    @media (max-width: 991px) {
-      .mobile-menu-overlay { position: fixed; inset: 0; background: var(--bg); z-index: 1050; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; padding: 40px 20px; opacity: 0; visibility: hidden; transition: all 0.35s ease; }
-      .mobile-menu-overlay.show { opacity: 1; visibility: visible; }
-      .mobile-menu-overlay .close-btn { position: absolute; top: 20px; right: 20px; width: 44px; height: 44px; border-radius: 50%; background: var(--bg-elev); border: 1px solid var(--border); color: var(--text); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
-      .mobile-menu-overlay a { font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; color: var(--text-dim); text-decoration: none; transition: color 0.3s ease; }
-      .mobile-menu-overlay a:hover { color: var(--cyan); }
-      .mobile-menu-overlay a .num { color: var(--amber); margin-right: 8px; }
-    }
-
-    @media print {
-      .navbar-custom, .social-dock, #scrollTop, .toast-custom, .bg-blob, .bg-grid-pattern, #pageLoader, .btn, .mobile-menu-overlay, footer .no-print { display: none !important; }
-      body { background: #fff !important; color: #000 !important; }
-      .card-custom { border: 1px solid #ccc !important; box-shadow: none !important; page-break-inside: avoid; }
-      section { page-break-inside: avoid; }
-      a { color: #000 !important; text-decoration: underline; }
-      .section-title h2 { color: #000 !important; }
-    }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; } }
-    ::-webkit-scrollbar { width: 8px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-    ::-webkit-scrollbar-thumb:hover { background: var(--cyan); }
-    ::selection { background: var(--cyan); color: #0a0e1a; }
+    :root{--bg:#f8f9f6;--surface:#fff;--surface-2:#eef2ee;--ink:#14211f;--muted:#5d7069;--line:#dce5de;--accent:#156b52;--accent-hover:#0f513e;--lime:#c8f5a5;--dark:#101d1c;--radius:18px;--shadow:0 18px 65px rgba(14,43,33,.08)}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    img,svg{max-width:100%}
+    ::selection{background:#b9e9cc;color:#12261d}
+    :focus-visible{outline:3px solid #198f6e;outline-offset:4px;border-radius:5px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    .skip{position:absolute;z-index:100;top:-60px;left:10px;padding:10px 16px;background:var(--lime);color:var(--dark);border-radius:8px}.skip:focus{top:10px}
+    .container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
+    .section{padding:102px 0}
+    .section-heading{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:38px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:var(--accent)}
+    .eyebrow:before{content:"";width:20px;height:2px;background:currentColor}
+    h1,h2,h3,p{margin-top:0}
+    h1,h2,h3{line-height:1.13;letter-spacing:-.045em}
+    h1{font-size:clamp(3rem,6.6vw,6.3rem);max-width:12ch;margin:22px 0 25px;font-weight:800}
+    h2{font-size:clamp(2.1rem,4vw,3.6rem);margin:16px 0}
+    h3{font-size:1.26rem;letter-spacing:-.028em}
+    .lead{font-size:clamp(1rem,1.45vw,1.15rem);color:var(--muted);max-width:60ch}
+    .subtext{max-width:57ch;color:var(--muted);margin:0}
+    .muted{color:var(--muted)}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:13px 20px;border-radius:11px;font-weight:750;line-height:1.3;font-size:.94rem;border:1px solid transparent;transition:background .2s,transform .2s,border-color .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px)}.btn-primary{background:var(--accent);color:white}.btn-primary:hover{background:var(--accent-hover);box-shadow:0 10px 25px #156b5233}.btn-outline{background:transparent;border-color:var(--line);color:var(--ink)}.btn-outline:hover{background:var(--surface-2)}.btn-light{background:#fff;color:var(--dark)}.btn-light:hover{background:var(--lime)}
+    .btn svg,.nav svg{width:17px;height:17px;flex:none}
+    header{height:82px;position:sticky;top:0;z-index:30;background:rgba(248,249,246,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(16px)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.04em;font-size:1.05rem}
+    .brand-mark{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:var(--dark);color:var(--lime);font-size:1.15rem;letter-spacing:-.1em;padding-right:3px}
+    .brand small{display:block;font-size:10px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);line-height:1.1;margin-top:3px}
+    .nav-links{display:flex;gap:30px;align-items:center}
+    .nav-links a:not(.btn){font-size:.9rem;font-weight:650;color:#43554e}.nav-links a:not(.btn):hover{color:var(--accent)}
+    .mobile-toggle{display:none;width:43px;height:43px;border:1px solid var(--line);background:white;border-radius:10px;align-items:center;justify-content:center;font-size:1.3rem}
+    .hero{padding:85px 0 102px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.14fr .86fr;align-items:center;gap:65px}
+    .hero .lead{max-width:570px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 27px}
+    .hero-meta{display:flex;flex-wrap:wrap;align-items:center;gap:18px;font-size:.82rem;color:var(--muted)}
+    .status-dot{display:inline-block;width:8px;height:8px;background:#36a778;border-radius:50%;box-shadow:0 0 0 4px #36a77820;margin-right:8px}
+    .hero-card{position:relative;isolation:isolate;border-radius:26px;overflow:hidden;padding:24px;background:var(--dark);color:#eaf6ef;box-shadow:0 30px 75px #09291d28;min-height:472px}
+    .hero-card:before{content:"";position:absolute;width:380px;height:380px;background:#3b9366;filter:blur(100px);opacity:.18;top:-100px;right:-100px;z-index:-1}
+    .window-top{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:#99b4a6;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;padding-bottom:17px;border-bottom:1px solid #33473e}
+    .dots{display:flex;gap:6px}.dots i{display:block;width:9px;height:9px;border-radius:50%;background:#7c9588}.dots i:first-child{background:#ed8577}.dots i:nth-child(2){background:#e9bc6f}.dots i:nth-child(3){background:#8fd19c}
+    .window-label{margin:30px 0 13px;color:#a2baa9;font-size:11px;text-transform:uppercase;letter-spacing:.13em}
+    .window-title{font-size:clamp(1.55rem,2.6vw,2.2rem);letter-spacing:-.05em;font-weight:780;line-height:1.2}
+    .window-title em{font-style:normal;color:var(--lime)}
+    .stack-list{display:grid;gap:9px;margin:25px 0}
+    .stack-line{display:flex;align-items:center;gap:12px;padding:11px 13px;background:#ffffff0a;border:1px solid #ffffff15;border-radius:10px;font-size:12px;color:#dbece0}
+    .stack-line .symbol{color:var(--lime);font:700 16px ui-monospace,monospace;width:25px}
+    .stack-line span:last-child{margin-left:auto;color:#94b1a1;font-size:11px}
+    .card-bottom{border-top:1px solid #33473e;display:flex;justify-content:space-between;align-items:center;padding-top:20px;font-size:11px;color:#9ab5a5}
+    .card-bottom b{font-weight:600;color:var(--lime)}
+    .ticker{padding:18px 0;border-block:1px solid var(--line);background:#fff}
+    .ticker .container{display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap}
+    .ticker span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#60756b}
+    .ticker strong{color:#254438;font-size:.9rem;font-weight:760}
+    .surface{background:#fff}
+    .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .service-card{border:1px solid var(--line);border-radius:18px;background:white;padding:28px;transition:transform .2s,border-color .2s,box-shadow .2s}
+    .service-card:hover{transform:translateY(-5px);border-color:#a9cbb5;box-shadow:var(--shadow)}
+    .icon-box{display:grid;place-items:center;width:49px;height:49px;background:#e5f5e9;border-radius:13px;color:#126046;font-size:23px;margin-bottom:29px;font-weight:850}
+    .service-card p,.project-card p{color:var(--muted);font-size:.92rem}
+    .service-card p{margin-bottom:0}
+    .section-note{display:inline-flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
+    .projects{background:#eef3ee}
+    .project-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+    .project-card{border-radius:19px;background:white;border:1px solid #dce8df;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+    .project-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .project-visual{height:226px;padding:25px;position:relative;overflow:hidden}
+    .visual-uptime{background:linear-gradient(135deg,#0b2724,#236151)}
+    .visual-ff{background:linear-gradient(135deg,#161d3c,#374b92)}
+    .visual-water{background:linear-gradient(135deg,#0e3f54,#177991)}
+    .visual-gpo{background:linear-gradient(135deg,#242941,#455571)}
+    .preview{height:100%;border:1px solid #ffffff35;background:#ffffff16;border-radius:12px;padding:15px;color:white;backdrop-filter:blur(6px)}
+    .preview-bar{display:flex;justify-content:space-between;gap:8px;align-items:center;font-size:10px;letter-spacing:.07em;text-transform:uppercase;opacity:.9}
+    .preview-line{height:1px;background:#ffffff28;margin:13px 0}
+    .preview-numbers{display:flex;align-items:end;justify-content:space-between;gap:10px}
+    .preview-numbers b{font-size:29px;letter-spacing:-.05em;line-height:1}
+    .preview-numbers small{font-size:10px;color:#ddf1e9}
+    .preview-bars{display:flex;gap:6px;align-items:end;height:53px;margin-top:13px}
+    .preview-bars i{flex:1;background:#c2ffc0aa;border-radius:3px 3px 0 0;height:35%}
+    .preview-bars i:nth-child(2){height:65%}.preview-bars i:nth-child(3){height:49%}.preview-bars i:nth-child(4){height:86%}.preview-bars i:nth-child(5){height:75%}.preview-bars i:nth-child(6){height:100%}.preview-bars i:nth-child(7){height:72%}.preview-bars i:nth-child(8){height:90%}
+    .preview-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:23px}.preview-chips span{border:1px solid #ffffff42;border-radius:7px;padding:5px 10px;background:#ffffff13;font-size:11px;color:#fff}
+    .preview-water{display:flex;gap:12px;margin-top:20px}.preview-water b{flex:1;text-align:center;padding:12px 8px;border:1px solid #ffffff39;border-radius:10px;font-size:20px}.preview-water small{display:block;font-size:10px;font-weight:500;opacity:.78}
+    .project-body{padding:26px;display:flex;flex:1;flex-direction:column}
+    .project-tags{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 13px}
+    .project-tags span{background:#ebf4ee;color:#315d4a;font-size:11px;font-weight:750;border-radius:5px;padding:4px 7px}
+    .project-body h3{margin-bottom:10px}
+    .project-body p{margin-bottom:18px;flex:1}
+    .project-link{font-size:13px;font-weight:800;color:var(--accent);display:inline-flex;gap:8px;align-items:center;align-self:start;padding:7px 0}
+    .project-link:hover{text-decoration:underline;text-underline-offset:5px}
+    .disclaimer{font-size:12px;color:#64756c;max-width:80ch;margin:22px 0 0}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:step}
+    .step{border-top:2px solid var(--ink);padding:25px 5px 0}
+    .step:before{counter-increment:step;content:"0" counter(step);font-size:13px;letter-spacing:.1em;color:var(--accent);font-weight:800}
+    .step h3{margin-top:23px}.step p{color:var(--muted);font-size:.92rem}
+    .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start}
+    .about-box{background:var(--dark);color:#eef9f0;border-radius:22px;padding:31px}
+    .about-box .eyebrow{color:var(--lime)}
+    .about-box h3{font-size:1.7rem;margin:16px 0 20px}
+    .about-box p{color:#abc6b5;font-size:.91rem}
+    .about-row{padding:14px 0;border-top:1px solid #ffffff25;display:flex;justify-content:space-between;gap:16px;font-size:.85rem}.about-row span{color:#afc9b9}.about-row strong{text-align:right}
+    .about-list{list-style:none;margin:25px 0;padding:0}.about-list li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;gap:11px;color:#4b6156}.about-list li:before{content:"✓";color:var(--accent);font-weight:800}
+    .contact{background:var(--dark);color:white;position:relative;overflow:hidden}
+    .contact:after{content:"";position:absolute;right:-200px;bottom:-320px;width:540px;height:540px;border:95px solid #95e3c112;border-radius:50%;pointer-events:none}
+    .contact .eyebrow{color:var(--lime)}.contact h2{max-width:15ch}
+    .contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:65px;align-items:center;position:relative;z-index:1}
+    .contact p{color:#aac1b3;max-width:51ch}
+    .contact .btn-outline{color:white;border-color:#3b5449}
+    .contact .btn-outline:hover{background:#263d32}
+    .contact-details{border:1px solid #355448;border-radius:18px;padding:27px;background:#ffffff08}
+    .contact-details a{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:15px 0;border-bottom:1px solid #395348;font-size:.9rem;overflow-wrap:anywhere}
+    .contact-details a:last-child{border:0}
+    .contact-details a:hover{color:var(--lime)}
+    .contact-details span{color:#a3b9ae}
+    footer{background:#0c1614;color:#9eb1a7;padding:23px 0}
+    footer .container{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12px}
+    footer a:hover{color:white}
+    .back-top{position:fixed;bottom:22px;right:20px;z-index:25;background:var(--ink);color:white;border:0;border-radius:12px;width:44px;height:44px;display:grid;place-items:center;box-shadow:0 10px 25px #14211f3c;opacity:0;pointer-events:none;transition:opacity .2s}.back-top.show{opacity:1;pointer-events:auto}
+    .reveal{opacity:0;transform:translateY(17px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+    @media(min-width:901px){.nav-links{display:flex!important}}
+    @media(max-width:900px){.nav-links{display:none;position:absolute;top:81px;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);padding:23px 24px;box-shadow:var(--shadow);flex-direction:column;align-items:stretch;gap:16px}.nav-links.open{display:flex}.mobile-toggle{display:flex}.hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr;gap:35px}.hero-card{max-width:620px;min-height:unset}.hero{padding:60px 0 76px}.section{padding:76px 0}}
+    @media(max-width:680px){.container{width:min(100% - 34px,1160px)}.hero{padding-top:48px}.hero-actions .btn{width:100%}.section-heading{display:block}.section-heading .subtext{margin-top:12px}.service-grid,.project-grid,.steps{grid-template-columns:1fr}.project-visual{height:200px}.hero-card{padding:18px}.ticker .container{gap:12px}.ticker strong{font-size:.8rem}.section{padding:62px 0}.contact-details{padding:18px}.about-box{padding:25px}.hero-meta{align-items:start;flex-direction:column;gap:8px}h1{font-size:clamp(2.65rem,12vw,4.1rem)}}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;transition-duration:.001ms!important}.reveal{opacity:1!important;transform:none!important}}
   </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Ventso Rajaomanjato","url":"https://ventso.netlify.app/","jobTitle":"Développeur web Full-Stack junior","knowsAbout":["React","Node.js","Express","Développement web","Assistance applicative"],"sameAs":["https://github.com/ventso00","https://www.linkedin.com/in/ventso-rajaomanjato-216663339"]}</script>
 </head>
 <body>
-
-  <div id="pageLoader"><div class="loader-ring"></div></div>
-  <div class="bg-grid-pattern"></div>
-  <div class="bg-blob blob-1"></div>
-  <div class="bg-blob blob-2"></div>
-
-  <aside class="social-dock" aria-label="Liens rapides">
-    <a href="https://wa.me/261385890907" target="_blank" rel="noopener" data-tip="WhatsApp" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
-    <a href="tel:+261385890907" data-tip="Appeler" aria-label="Téléphone"><i class="bi bi-telephone"></i></a>
-    <a href="mailto:rajaomanjatoventso@gmail.com" data-tip="Email" aria-label="Email"><i class="bi bi-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" data-tip="LinkedIn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-    <a href="https://github.com/ventso00" target="_blank" rel="noopener" data-tip="GitHub" aria-label="GitHub"><i class="bi bi-github"></i></a>
-    <a href="#" data-bs-toggle="modal" data-bs-target="#qrModal" data-tip="QR Code vCard" aria-label="QR Code"><i class="bi bi-qr-code"></i></a>
-    <a href="/cv/RAJAOMANJATO_VENTSO_CV.pdf" download data-tip="CV PDF" aria-label="CV PDF"><i class="bi bi-file-earmark-pdf"></i></a>
-  </aside>
-
-  <nav class="navbar navbar-expand-lg navbar-custom fixed-top py-3" id="mainNav">
-    <div class="container">
-      <a class="navbar-brand" href="#hero">
-        <span class="brand-name">RAJAOMANJATO VENTSO</span>
-      </a>
-      <button class="navbar-toggler border-0 d-lg-none" type="button" id="menuToggle" aria-label="Menu">
-        <i class="bi bi-list text-white fs-3"></i>
-      </button>
-      <div class="collapse navbar-collapse d-none d-lg-flex" id="navMenu">
-        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3 font-mono-code">
-          <li class="nav-item"><a class="nav-link" href="#about"><span class="num">01.</span> <span data-i18n="nav.about">À propos</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#services"><span class="num">02.</span> <span data-i18n="nav.services">Services</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience"><span class="num">03.</span> <span data-i18n="nav.exp">Parcours</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#projets"><span class="num">04.</span> <span data-i18n="nav.projects">Projets</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#competences"><span class="num">05.</span> <span data-i18n="nav.skills">Compétences</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#formation"><span class="num">06.</span> <span data-i18n="nav.edu">Formation</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact"><span class="num">07.</span> <span data-i18n="nav.contact">Contact</span></a></li>
-          <li class="nav-item">
-            <div class="lang-switch" role="group" aria-label="Langue">
-              <button data-lang="fr" class="active">FR</button>
-              <button data-lang="en">EN</button>
-              <button data-lang="mg">MG</button>
-            </div>
-          </li>
-          <li class="nav-item">
-            <button id="themeToggle" class="btn btn-outline-cyan btn-sm rounded-3" aria-label="Thème">
-              <i class="bi bi-sun-fill d-none" id="iconSun"></i>
-              <i class="bi bi-moon-stars-fill" id="iconMoon"></i>
-            </button>
-          </li>
-        </ul>
+  <a class="skip" href="#main">Aller au contenu principal</a>
+  <header id="top">
+    <nav class="container nav" aria-label="Navigation principale">
+      <a class="brand" href="#top" aria-label="Ventso Rajaomanjato, retour à l'accueil"><span class="brand-mark" aria-hidden="true">V/</span><span>Ventso Rajaomanjato<small>Développeur Web Junior</small></span></a>
+      <button class="mobile-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links" id="menu-toggle">☰</button>
+      <div class="nav-links" id="nav-links">
+        <a href="#expertises">Expertises</a>
+        <a href="#projets">Projets</a>
+        <a href="#methode">Ma méthode</a>
+        <a href="#parcours">Parcours</a>
+        <a class="btn btn-primary" href="#contact">Me contacter <span aria-hidden="true">↗</span></a>
       </div>
-    </div>
-  </nav>
-
-  <div class="mobile-menu-overlay" id="mobileMenu">
-    <button class="close-btn" id="closeMenu" aria-label="Fermer"><i class="bi bi-x-lg"></i></button>
-    <a href="#about"><span class="num">01.</span> <span data-i18n="nav.about">À propos</span></a>
-    <a href="#services"><span class="num">02.</span> <span data-i18n="nav.services">Services</span></a>
-    <a href="#experience"><span class="num">03.</span> <span data-i18n="nav.exp">Parcours</span></a>
-    <a href="#projets"><span class="num">04.</span> <span data-i18n="nav.projects">Projets</span></a>
-    <a href="#competences"><span class="num">05.</span> <span data-i18n="nav.skills">Compétences</span></a>
-    <a href="#formation"><span class="num">06.</span> <span data-i18n="nav.edu">Formation</span></a>
-    <a href="#contact"><span class="num">07.</span> <span data-i18n="nav.contact">Contact</span></a>
-    <div class="lang-switch mt-3" role="group">
-      <button data-lang="fr" class="active">FR</button>
-      <button data-lang="en">EN</button>
-      <button data-lang="mg">MG</button>
-    </div>
-  </div>
-
-  <main class="position-relative" style="z-index:1;">
-
-    <!-- HERO -->
-    <section id="hero" class="d-flex align-items-center" style="min-height:100vh;padding-top:100px;">
-      <div class="container py-5">
-        <div class="row align-items-center g-5">
-          <div class="col-lg-7" data-aos="fade-right">
-            <div class="badge-status mb-4"><span class="pulse-dot"></span><span data-i18n="hero.badge">DISPONIBLE — Opportunités IT</span></div>
-            <h1 class="hero-title mb-3">RAJAOMANJATO<br /><span class="text-cyan">VENTSO</span></h1>
-            <p class="typewriter-wrap mb-4" aria-live="polite"><span id="typewriter"></span><span class="typewriter-cursor"></span></p>
-            <p class="text-dim mb-4 lh-lg" style="max-width:600px;font-size:clamp(0.9rem,1.5vw,1rem);" data-i18n="hero.desc">
-               Technicien Support IT & Systèmes/Réseaux Junior - Spécialisé en Windows Server 2022, environnements Linux, maquettage réseau Cisco / GNS3, virtualisation et support N1/N2.
-            </p>
-            <div class="d-flex flex-wrap gap-3 font-mono-code" style="font-size:0.83rem;">
-              <a href="#projets" class="btn btn-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2"><i class="bi bi-folder-symlink"></i> <span data-i18n="hero.cta1">Voir les projets</span></a>
-              <a href="/cv.pdf" download="cv.pdf" class="btn btn-outline-cyan px-4 py-2 rounded-3 d-flex align-items-center gap-2"><i class="bi bi-download"></i><span data-i18n="hero.cta2">Télécharger CV</span></a>
-              <a href="https://wa.me/261385890907" target="_blank" rel="noopener" class="btn btn-whatsapp px-4 py-2 rounded-3 d-flex align-items-center gap-2"><i class="bi bi-whatsapp"></i> WhatsApp</a>
-            </div>
+    </nav>
+  </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Développement web · Madagascar</span>
+          <h1 id="hero-title">Des solutions web, pensées pour <span style="color:var(--accent)">être utiles.</span></h1>
+          <p class="lead">Je suis <strong style="color:var(--ink)">Ventso Rajaomanjato</strong>, développeur web Full-Stack junior. Je construis des interfaces React et des applications Node.js/Express, avec une approche pragmatique, documentée et assistée par l'IA lorsque c'est pertinent.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projets">Découvrir mes projets <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-outline" href="#contact">Discuter d'un besoin <span aria-hidden="true">↗</span></a>
           </div>
-          <div class="col-lg-5" data-aos="fade-left" data-aos-delay="150">
-            <div class="terminal-window">
-              <div class="terminal-header d-flex align-items-center justify-content-between">
-                <div class="d-flex gap-2">
-                  <span class="rounded-circle d-inline-block" style="width:11px;height:11px;background:rgba(239,68,68,0.8);"></span>
-                  <span class="rounded-circle d-inline-block" style="width:11px;height:11px;background:rgba(234,179,8,0.8);"></span>
-                  <span class="rounded-circle d-inline-block" style="width:11px;height:11px;background:rgba(34,197,94,0.8);"></span>
-                </div>
-                <span class="font-mono-code text-dim" style="font-size:11px;">bash — ventso@ispm:~</span>
-                <i class="bi bi-terminal text-cyan"></i>
-              </div>
-              <div class="terminal-body" id="terminalBody">
-                <div style="color:var(--emerald);">Connexion établie au terminal de VENTSO.</div>
-                <div class="text-dim">Tapez <span class="text-cyan fw-bold">help</span> pour la liste des commandes.</div>
-                <div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span class="text-cyan">whoami</span></div>
-                <div class="text-dim ps-3 mt-1" style="border-left:2px solid var(--border);">
-                  Nom : RAJAOMANJATO VENTSO<br/>
-                  Rôle :  Technicien Support IT & Systèmes/Réseaux Junior<br/>
-                  Statut : Disponible pour opportunités IT
-                </div>
-              </div>
-              <form id="terminalForm" class="d-flex align-items-center gap-2 px-3 py-2" style="border-top:1px solid var(--border);background:var(--bg-elev-2);font-family:'JetBrains Mono',monospace;font-size:0.73rem;">
-                <span style="color:var(--amber);">guest@portfolio:~$</span>
-                <input id="terminalInput" type="text" placeholder="Entrez une commande..." autocomplete="off" spellcheck="false" class="flex-grow-1 bg-transparent border-0" style="outline:none;color:var(--cyan);" />
-              </form>
-            </div>
+          <div class="hero-meta"><span><i class="status-dot" aria-hidden="true"></i>Ouvert aux opportunités francophones</span><span>À distance · Missions adaptées à mon niveau</span></div>
+        </div>
+        <div class="hero-card" aria-label="Illustration graphique des compétences en développement web">
+          <div class="window-top"><div class="dots" aria-hidden="true"><i></i><i></i><i></i></div><span>ventso / expertise</span><span>● en cours</span></div>
+          <p class="window-label">Ce que je développe</p>
+          <div class="window-title">Du besoin à <em>l'application web.</em></div>
+          <div class="stack-list">
+            <div class="stack-line"><b class="symbol">01</b> Interface React <span>Front-end</span></div>
+            <div class="stack-line"><b class="symbol">02</b> API Node.js / Express <span>Back-end</span></div>
+            <div class="stack-line"><b class="symbol">03</b> Tests & documentation <span>Qualité</span></div>
+            <div class="stack-line"><b class="symbol">04</b> Assistance applicative <span>Support</span></div>
           </div>
+          <div class="card-bottom"><span>Créer · Comprendre · Améliorer</span><b>FR / Remote</b></div>
         </div>
       </div>
     </section>
-
-    <!-- À PROPOS -->
-    <section id="about" class="py-5">
-      <div class="container py-5">
-        <div class="section-title" data-aos="fade-up"><span class="num">01.</span><h2 data-i18n="about.title">Profil Professionnel</h2><span class="line d-none d-sm-block"></span></div>
-        <div class="row g-4">
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <div class="text-dim lh-lg mb-4" style="font-size:clamp(0.9rem,1.5vw,1rem);">
-              <p data-i18n="about.p1">
-                Titulaire d'un <strong style="color:var(--text);">Diplôme de Spécialisation Technicien (DST)</strong> et d'une <strong style="color:var(--text);">Licence ESIIA</strong> de l'ISPM Antsobolo, je recherche une opportunité en tant que Technicien Support IT, Technicien Systèmes et Réseaux ou Administrateur Junior.
-              </p>
-              <p data-i18n="about.p2">
-                Mon stage chez <strong style="color:var(--text);">FTM / SaryTany</strong> m'a permis d'acquérir une solide expérience : administration Windows Server 2022 (AD DS, DNS, DHCP, GPO), support N1/N2, virtualisation VMware/Hyper-V et simulation d'infrastructures avec GNS3 &amp; Cisco Packet Tracer.
-              </p>
-            </div>
-            <div class="row g-3 font-mono-code" style="font-size:0.78rem;">
-              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-geo-alt text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> Antananarivo, Madagascar</div></div>
-              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-mortarboard text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> DST + Licence ESIIA obtenue</div></div>
-              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-translate text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> FR · EN · Malagasy</div></div>
-              <div class="col-sm-6"><div class="p-3 rounded-3" style="background:var(--bg-elev);border:1px solid var(--border);"><i class="bi bi-telephone text-cyan me-1"></i> <span class="text-cyan fw-semibold">›</span> 038 58 909 07</div></div>
-            </div>
-          </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-custom text-center">
-              <div class="d-inline-flex align-items-center justify-content-center mb-3" style="width:130px;height:130px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--purple));padding:3px;">
-                <div style="width:100%;height:100%;border-radius:50%;background:var(--bg-elev-2);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:2.6rem;color:var(--cyan);">V</div>
-              </div>
-              <h3 class="font-heading fw-semibold mb-1">RAJAOMANJATO VENTSO</h3>
-              <p class="font-mono-code mb-4" style="color:var(--amber);font-size:0.72rem;">IT SUPPORT &amp; CLOUD CONSULTANT</p>
-              <div class="d-flex justify-content-center gap-3 font-mono-code" style="border-top:1px solid var(--border);padding-top:14px;font-size:0.75rem;">
-                <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-1"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-1"><i class="bi bi-github"></i> GitHub</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="services" class="py-5">
-      <div class="container py-5">
-        <div class="section-title" data-aos="fade-up"><span class="num">02.</span><h2 data-i18n="services.title">Services proposés</h2><span class="line d-none d-sm-block"></span></div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-headset"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Support IT N1 / N2</h3><p class="text-dim mb-0" style="font-size:0.83rem;">Diagnostic, résolution d'incidents matériels &amp; logiciels, maintenance du parc informatique.</p></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-hdd-network"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Admin Systèmes</h3><p class="text-dim mb-0" style="font-size:0.83rem;">Windows Server 2022 (AD DS, DNS, DHCP, GPO), Linux Debian/Ubuntu, gestion des utilisateurs et politiques.</p></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-router"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Admin Réseau</h3><p class="text-dim mb-0" style="font-size:0.83rem;">TCP/IP, VLAN, OSPF, ACL, NAT/PAT — conception &amp; simulation Cisco Packet Tracer / GNS3.</p></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-boxes"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Virtualisation</h3><p class="text-dim mb-0" style="font-size:0.83rem;">VMware Workstation, Hyper-V, VirtualBox — création et gestion d'environnements virtualisés.</p></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-code-square"></i></div><h3 class="font-heading fw-semibold h6 mb-2">Développement Web</h3><p class="text-dim mb-0" style="font-size:0.83rem;">Applications PHP/MySQL, dashboards, API REST, e-commerce (WordPress/WooCommerce).</p></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><div class="card-custom h-100"><div class="icon-box mb-3"><i class="bi bi-cpu"></i></div><h3 class="font-heading fw-semibold h6 mb-2">IoT &amp; Embarqué</h3><p class="text-dim mb-0" style="font-size:0.83rem;">ESP32, capteurs, protocoles de communication, intégration dashboard temps réel.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXPÉRIENCE -->
-    <section id="experience" class="py-5">
-      <div class="container py-5">
-        <div class="section-title" data-aos="fade-up"><span class="num">03.</span><h2 data-i18n="exp.title">Parcours &amp; Expérience</h2><span class="line d-none d-sm-block"></span></div>
-        <div class="row g-4">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="timeline-item">
-              <div class="card-custom">
-                <div class="d-flex flex-wrap justify-content-between align-items-start gap-2 mb-3">
-                  <div>
-                    <h3 class="font-heading fw-semibold h6 mb-1">Stagiaire Admin Systèmes &amp; Réseaux</h3>
-                    <div class="font-mono-code text-cyan" style="font-size:0.72rem;">FTM — SaryTany, Antananarivo</div>
-                  </div>
-                  <span class="font-mono-code px-3 py-1 rounded-2" style="color:var(--amber);background:var(--bg-elev-2);border:1px solid var(--border);font-size:0.68rem;">Nov 2024 — Jan 2025</span>
-                </div>
-                <ul class="text-dim ps-3 mb-0" style="font-size:0.83rem;line-height:1.8;">
-                  <li>Déploiement et administration Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation VMware / Hyper-V.</li>
-                  <li>Support technique N1/N2 : diagnostic, résolution d'incidents et maintenance du parc.</li>
-                  <li>Simulation d'infrastructures réseau avec GNS3 &amp; Cisco Packet Tracer.</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="d-flex flex-column gap-4">
-              <div data-aos="fade-up" data-aos-delay="200">
-                <div class="card-custom">
-                  <div class="d-flex align-items-center gap-3 mb-2">
-                    <div class="icon-box"><i class="bi bi-code-slash"></i></div>
-                    <div class="flex-grow-1"><h4 class="font-heading fw-semibold h6 mb-0">Formation Codage (Python &amp; Java)</h4><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre Madagascar</div></div>
-                    <span class="font-mono-code" style="color:var(--amber);font-size:0.7rem;">Juil 2025</span>
-                  </div>
-                  <p class="text-dim mb-0" style="font-size:0.8rem;">Programmation orientée objet, algorithmes et scripts d'automatisation.</p>
-                </div>
-              </div>
-              <div data-aos="fade-up" data-aos-delay="300">
-                <div class="card-custom">
-                  <div class="d-flex align-items-center gap-3 mb-2">
-                    <div class="icon-box"><i class="bi bi-cpu"></i></div>
-                    <div class="flex-grow-1"><h4 class="font-heading fw-semibold h6 mb-0">Formation Protocoles IoT</h4><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre Madagascar</div></div>
-                    <span class="font-mono-code" style="color:var(--amber);font-size:0.7rem;">Fév 2025</span>
-                  </div>
-                  <p class="text-dim mb-0" style="font-size:0.8rem;">Protocoles IoT, interfaçage capteurs et sécurisation des flux de données.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROJETS ================= -->
-    <section id="projets" class="py-5">
-      <div class="container py-5">
-        <div class="d-flex flex-wrap justify-content-between align-items-baseline mb-4" data-aos="fade-up">
-          <div class="section-title mb-0"><span class="num">04.</span><h2 data-i18n="projects.title">Projets &amp; Réalisations</h2><span class="line d-none d-sm-block"></span></div>
-          <a href="https://github.com/ventso00?tab=repositories" target="_blank" rel="noopener" class="font-mono-code text-dim text-decoration-none d-flex align-items-center gap-2" style="font-size:0.72rem;"><i class="bi bi-github"></i> Voir tous les repos</a>
-        </div>
-
-        <div class="row g-4">
-
-          <!-- SMARTWATER -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
-            <div class="card-custom project-card h-100 d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                <span style="color:var(--amber);">IoT · Eau · ISPM</span>
-                <span class="px-2 py-1 rounded-2" style="background:rgba(79,216,232,0.12);color:var(--cyan);">Vedette</span>
-              </div>
-              <h3 class="font-heading fw-semibold h6 mb-1">SmartWater</h3>
-              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Analyser. Décider. Filtrer.</p>
-              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
-                Système intelligent de <strong style="color:var(--text);">détection et filtration de l'eau</strong> : dashboard PHP, API capteurs temps réel et présentation immersive (15 scènes).
-              </p>
-              <div class="project-actions">
-                <a href="https://smartwatermdg.getenjoyment.net/" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo web</a>
-                <a href="https://smart-water-presentation-immersive--ranprincy45.replit.app/" target="_blank" rel="noopener" class="action-link demo"><i class="bi bi-play-circle"></i> Présentation</a>
-                <a href="https://github.com/ventso00/SmartWater_project" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code</a>
-                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalSmartWater"><i class="bi bi-book"></i> Lire la description</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- SYSTÈME GAZ -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom project-card h-100 d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                <span style="color:var(--amber);">IoT · Sécurité</span>
-              </div>
-              <h3 class="font-heading fw-semibold h6 mb-1">Système de détection de gaz</h3>
-              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Supervision &amp; commande à distance</p>
-              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
-                Détection gaz en temps réel, <strong style="color:var(--text);">alerte automatique</strong>, commande à distance (vanne) et gestion multi-utilisateurs (CRUD + auth).
-              </p>
-              <div class="project-actions">
-                <a href="https://gazsystem.getenjoyment.net/index.php" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo live</a>
-                <a href="https://github.com/ventso00/systeme-gaz" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code</a>
-                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalGaz"><i class="bi bi-book"></i> Lire la description</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- IKALY -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-            <div class="card-custom project-card h-100 d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                <span style="color:var(--amber);">E-commerce · Web</span>
-                <span class="px-2 py-1 rounded-2" style="background:rgba(52,211,153,0.12);color:var(--emerald);">Client réel</span>
-              </div>
-              <h3 class="font-heading fw-semibold h6 mb-1">iKaly — Restaurant en ligne</h3>
-              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Boutique &amp; commande en ligne</p>
-              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
-                Site e-commerce pour un <strong style="color:var(--text);">restaurant malgache</strong> : catalogue (burgers, pizzas, boissons), panier, commande en ligne, carte interactive et page parking.
-              </p>
-              <div class="project-actions">
-                <a href="https://ikaly.web-sans-frontiere.com" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Voir le site</a>
-                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalIkaly"><i class="bi bi-book"></i> Lire la description</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- BOÎTE NOIRE AUTO -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50">
-            <div class="card-custom project-card h-100 d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                <span style="color:var(--amber);">Embarqué · Perso</span>
-              </div>
-              <h3 class="font-heading fw-semibold h6 mb-1">Boîte noire automobile</h3>
-              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Depuis 2023</p>
-              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
-                Enregistreur de télémétrie et de données de conduite à base d'ESP32 : stockage SD et capteurs multiples.
-              </p>
-              <div class="project-actions">
-                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Profil GitHub</a>
-                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalBoiteNoire"><i class="bi bi-book"></i> Lire la description</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- WIFIKO -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom project-card h-100 d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                <span style="color:var(--amber);">Web App · Réseaux</span>
-              </div>
-              <h3 class="font-heading fw-semibold h6 mb-1">WIFIKO</h3>
-              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Gestion d'accès WiFi</p>
-              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
-                Plateforme de gestion d'accès WiFi : authentification, suivi des connexions et administration centralisée.
-              </p>
-              <div class="project-actions">
-                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Profil GitHub</a>
-                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalWifiko"><i class="bi bi-book"></i> Lire la description</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- SIMULATION SARYTANY -->
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150">
-            <div class="card-custom project-card h-100 d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-center mb-3 font-mono-code" style="font-size:0.68rem;">
-                <span style="color:var(--amber);">Réseaux · Cisco</span>
-              </div>
-              <h3 class="font-heading fw-semibold h6 mb-1">Simulation SaryTany</h3>
-              <p class="font-mono-code text-cyan mb-3" style="font-size:0.7rem;">Cisco Packet Tracer</p>
-              <p class="text-dim flex-grow-1 mb-0" style="font-size:0.82rem;line-height:1.7;">
-                Reproduction de l'infrastructure réseau de l'entreprise SaryTany : VLANs, routage inter-VLAN, ACL et services réseau.
-              </p>
-              <div class="project-actions">
-                <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Profil GitHub</a>
-                <button class="action-link read" data-bs-toggle="modal" data-bs-target="#modalSaryTany"><i class="bi bi-book"></i> Lire la description</button>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- COMPÉTENCES -->
-    <section id="competences" class="py-5">
-      <div class="container py-5">
-        <div class="section-title" data-aos="fade-up"><span class="num">05.</span><h2 data-i18n="skills.title">Compétences Techniques</h2><span class="line d-none d-sm-block"></span></div>
-        <div class="row g-4">
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom">
-              <div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-hdd-network"></i></div><h3 class="font-heading fw-semibold h6 mb-0">Systèmes &amp; Réseaux</h3></div>
-              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Windows Server 2022</span><span class="text-cyan">90%</span></div><div class="skill-bar"><div class="skill-fill" data-width="90"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Linux (Debian / Ubuntu)</span><span class="text-cyan">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Cisco Packet Tracer / GNS3</span><span class="text-cyan">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
-              <div><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>VMware / Hyper-V / VirtualBox</span><span class="text-cyan">78%</span></div><div class="skill-bar"><div class="skill-fill" data-width="78"></div></div></div>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-custom">
-              <div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-code-square"></i></div><h3 class="font-heading fw-semibold h6 mb-0">Développement &amp; Outils</h3></div>
-              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>PHP / MySQL</span><span class="text-cyan">85%</span></div><div class="skill-bar"><div class="skill-fill" data-width="85"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>Python</span><span class="text-cyan">80%</span></div><div class="skill-bar"><div class="skill-fill" data-width="80"></div></div></div>
-              <div class="mb-3"><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>C / C++ / ESP32</span><span class="text-cyan">75%</span></div><div class="skill-bar"><div class="skill-fill" data-width="75"></div></div></div>
-              <div><div class="d-flex justify-content-between font-mono-code" style="font-size:0.75rem;"><span>WordPress / WooCommerce</span><span class="text-cyan">70%</span></div><div class="skill-bar"><div class="skill-fill" data-width="70"></div></div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FORMATION -->
-    <section id="formation" class="py-5">
-      <div class="container py-5">
-        <div class="section-title" data-aos="fade-up"><span class="num">06.</span><h2 data-i18n="edu.title">Formation, Langues &amp; Certifs</h2><span class="line d-none d-sm-block"></span></div>
-        <div class="row g-4">
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="50"><div class="card-custom h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-mortarboard"></i></div><div><h3 class="font-heading fw-semibold h6 mb-0">Licence 3 ESIIA</h3><div class="font-mono-code text-cyan" style="font-size:0.68rem;">ISPM Antsobolo</div></div></div><p class="text-dim mb-2" style="font-size:0.83rem;">Électronique, Systèmes Informatiques et Intelligence Artificielle — diplôme obtenu.</p><span class="font-mono-code text-amber" style="font-size:0.68rem;">Licence obtenue</span></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100"><div class="card-custom h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-award"></i></div><div><h3 class="font-heading fw-semibold h6 mb-0">Baccalauréat Général</h3><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Lycée A. Sabotsy Namehana</div></div></div><p class="text-dim mb-2" style="font-size:0.83rem;">Série scientifique — LASN.</p><span class="font-mono-code text-amber" style="font-size:0.68rem;">2023 — 2024</span></div></div>
-          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="150"><div class="card-custom h-100"><div class="d-flex align-items-center gap-3 mb-3"><div class="icon-box"><i class="bi bi-patch-check"></i></div><div><h3 class="font-heading fw-semibold h6 mb-0">Certificats ODC</h3><div class="font-mono-code text-cyan" style="font-size:0.68rem;">Orange Digital Centre</div></div></div><ul class="text-dim mb-2 ps-3" style="font-size:0.8rem;line-height:1.7;"><li>Codage Python &amp; Java</li><li>Protocoles IoT</li></ul><span class="font-mono-code text-amber" style="font-size:0.68rem;">2025</span></div></div>
-          <div class="col-12" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-custom">
-              <div class="d-flex align-items-center gap-3 mb-4"><div class="icon-box"><i class="bi bi-translate"></i></div><h3 class="font-heading fw-semibold h6 mb-0" data-i18n="lang.title">Langues</h3></div>
-              <div class="row g-3">
-                <div class="col-md-4"><div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;"><span>Français</span><span class="text-cyan">Excellente maîtrise</span></div><div class="skill-bar"><div class="skill-fill" data-width="95"></div></div><div class="text-dim mt-1" style="font-size:0.7rem;">Excellente maîtrise</div></div>
-                <div class="col-md-4"><div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;"><span>Anglais</span><span class="text-cyan">Intermédiaire</span></div><div class="skill-bar"><div class="skill-fill" data-width="60"></div></div><div class="text-dim mt-1" style="font-size:0.7rem;">Intermédiaire</div></div>
-                <div class="col-md-4"><div class="font-mono-code d-flex justify-content-between mb-1" style="font-size:0.78rem;"><span>Malagasy</span><span class="text-cyan">Natif</span></div><div class="skill-bar"><div class="skill-fill" data-width="100"></div></div><div class="text-dim mt-1" style="font-size:0.7rem;">Langue maternelle</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="py-4">
+    <div class="ticker" aria-label="Technologies et activités"><div class="container"><span>Mon environnement</span><strong>React</strong><strong>Node.js</strong><strong>Express</strong><strong>TypeScript</strong><strong>MySQL</strong><strong>Git / GitHub</strong></div></div>
+    <section id="expertises" class="section surface" aria-labelledby="expertises-title">
       <div class="container">
-        <div class="row g-4 text-center">
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="50"><div class="card-custom"><div class="stat-number" data-count="6">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.projects">PROJETS</div></div></div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="card-custom"><div class="stat-number" data-count="2">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.certs">CERTIFICATS</div></div></div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="150"><div class="card-custom"><div class="stat-number" data-count="3">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.langs">LANGUES</div></div></div>
-          <div class="col-6 col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="card-custom"><div class="stat-number" data-count="1">0</div><div class="text-dim font-mono-code mt-2" style="font-size:0.72rem;" data-i18n="stats.intern">STAGE PRO</div></div></div>
+        <div class="section-heading"><div><span class="eyebrow">01 / Ce que je propose</span><h2 id="expertises-title">Des compétences concrètes.<br>Des besoins précis.</h2></div><p class="subtext">Je privilégie des missions au périmètre clair, adaptées à mon niveau junior et accompagnées de vérifications.</p></div>
+        <div class="service-grid">
+          <article class="service-card reveal"><div class="icon-box" aria-hidden="true">⌘</div><h3>Interfaces web</h3><p>Intégration de pages, composants React, tableaux de bord, adaptation mobile et amélioration de l'expérience utilisateur.</p></article>
+          <article class="service-card reveal"><div class="icon-box" aria-hidden="true">{ }</div><h3>API & fonctionnalités</h3><p>Développement de fonctionnalités ciblées avec Node.js/Express, connexion à des API et traitement de données.</p></article>
+          <article class="service-card reveal"><div class="icon-box" aria-hidden="true">↗</div><h3>Support applicatif</h3><p>Diagnostic d'incidents web, documentation utilisateur, vérification fonctionnelle et assistance technique en français.</p></article>
+        </div>
+        <p class="disclaimer">Intégration IA : utilisation d'outils d'IA dans mon processus de développement. Les intégrations proposées à un client nécessitent un cadrage et une validation technique spécifiques.</p>
+      </div>
+    </section>
+    <section id="projets" class="section projects" aria-labelledby="projets-title">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">02 / Réalisations</span><h2 id="projets-title">Des projets à explorer.<br>Du code à consulter.</h2></div><p class="subtext">Projets personnels et académiques présentés avec leurs technologies et leurs limites réelles, sans les décrire comme des missions clients.</p></div>
+        <div class="project-grid">
+          <article class="project-card reveal">
+            <div class="project-visual visual-uptime" aria-label="Illustration stylisée, non capture réelle, d'un tableau de supervision">
+              <div class="preview"><div class="preview-bar"><b>UPTIMEPULSE</b><span>Illustration · Monitoring</span></div><div class="preview-line"></div><div class="preview-numbers"><div><small>Disponibilité</small><br><b>HTTP</b></div><div><small>Suivi</small><br><b>24/7</b></div></div><div class="preview-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            </div>
+            <div class="project-body"><div class="project-tags"><span>React</span><span>TypeScript</span><span>Express</span><span>MySQL</span></div><h3>UptimePulse V2</h3><p>Application de surveillance de sites HTTP/HTTPS : historique, incidents, pages de statut et notifications. Le dépôt décrit les fonctionnalités, les prérequis et les limites connues.</p><a class="project-link" href="https://github.com/ventso00/uptilmepulseV2" target="_blank" rel="noopener noreferrer">Voir le dépôt et la documentation <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-visual visual-ff" aria-label="Illustration stylisée, non capture réelle, d'une carte de profil joueur">
+              <div class="preview"><div class="preview-bar"><b>FF CV / SCOUTMETRICS</b><span>Illustration · Profil</span></div><div class="preview-line"></div><div class="preview-numbers"><div><small>Fiche joueur</small><br><b>UID</b></div><div><small>Présentation</small><br><b>CV</b></div></div><div class="preview-chips"><span>Frontend</span><span>Backend</span><span>Tests</span><span>API</span></div></div>
+            </div>
+            <div class="project-body"><div class="project-tags"><span>JavaScript</span><span>API HTTP</span><span>Netlify</span></div><h3>FF CV / ScoutMetrics</h3><p>Prototype de présentation de profils de joueurs avec frontend, backend et tests. L'accès à certaines données réelles dépend d'un fournisseur externe non activé.</p><a class="project-link" href="https://github.com/ventso00/ffCV" target="_blank" rel="noopener noreferrer">Voir le dépôt et ses limites <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-visual visual-water" aria-label="Illustration stylisée, non capture réelle, de mesures de qualité de l'eau">
+              <div class="preview"><div class="preview-bar"><b>SMARTWATER</b><span>Illustration · IoT</span></div><div class="preview-line"></div><div class="preview-water"><b>pH<small>Mesure</small></b><b>TDS<small>Qualité</small></b><b>°C<small>Température</small></b></div></div>
+            </div>
+            <div class="project-body"><div class="project-tags"><span>PHP</span><span>IoT</span><span>Dashboard web</span></div><h3>SmartWater</h3><p>Partie web d'un projet universitaire de suivi de la qualité de l'eau. Le dépôt contient des pages PHP et des traitements côté serveur pour les données mesurées.</p><a class="project-link" href="https://github.com/ventso00/SmartWater_project" target="_blank" rel="noopener noreferrer">Explorer les sources du projet <span aria-hidden="true">↗</span></a></div>
+          </article>
+          <article class="project-card reveal">
+            <div class="project-visual visual-gpo" aria-label="Illustration stylisée, non capture réelle, d'une console d'administration">
+              <div class="preview"><div class="preview-bar"><b>ADOPS GPO MANAGER</b><span>Illustration · Desktop</span></div><div class="preview-line"></div><div class="preview-numbers"><div><small>Administration Windows</small><br><b>GPO</b></div><div><small>Interface</small><br><b>.NET</b></div></div><div class="preview-chips"><span>C#</span><span>PowerShell</span><span>WPF</span></div></div>
+            </div>
+            <div class="project-body"><div class="project-tags"><span>C# / WPF</span><span>PowerShell</span><span>Active Directory</span></div><h3>ADOps GPO Manager</h3><p>Réalisation complémentaire : application Windows de gestion des stratégies de groupe et d'administration Active Directory. Distincte du parcours principal de développement web.</p><a class="project-link" href="https://github.com/ventso00/gpoAPK" target="_blank" rel="noopener noreferrer">Voir le projet logiciel <span aria-hidden="true">↗</span></a></div>
+          </article>
+        </div>
+        <p class="disclaimer">Les visuels des projets sont des illustrations conçues pour ce portfolio, et non des captures du logiciel en fonctionnement. Les mises en production et les tests de bout en bout ne sont pas revendiqués ici.</p>
+      </div>
+    </section>
+    <section id="methode" class="section surface" aria-labelledby="methode-title">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">03 / Collaboration</span><h2 id="methode-title">Une méthode claire,<br>du début à la livraison.</h2></div><p class="subtext">Un projet réussi commence par un besoin compris, un périmètre réaliste et un résultat vérifiable.</p></div>
+        <div class="steps">
+          <article class="step reveal"><h3>Comprendre le besoin</h3><p>Définition des objectifs, des fonctionnalités attendues et des contraintes avant toute réalisation.</p></article>
+          <article class="step reveal"><h3>Construire & documenter</h3><p>Développement progressif, recours raisonné à l'IA, explication des choix et documentation utile.</p></article>
+          <article class="step reveal"><h3>Vérifier & améliorer</h3><p>Tests proportionnés à la mission, correction des anomalies et communication transparente sur les limites.</p></article>
         </div>
       </div>
     </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="py-5">
-      <div class="container py-5">
-        <div class="section-title" data-aos="fade-up"><span class="num">07.</span><h2 data-i18n="contact.title">Prendre Contact</h2><span class="line d-none d-sm-block"></span></div>
-        <div class="row g-4 justify-content-center">
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-            <div class="card-custom">
-              <p class="text-dim mb-4 text-center" style="font-size:0.88rem;" data-i18n="contact.intro">Disponible pour des opportunités IT, stages ou collaborations.</p>
-              <form id="contactForm" class="row g-3" action="https://api.web3forms.com/submit" method="POST">
-                <input type="hidden" name="access_key" value="ccc291cb-70d7-4a7b-a962-6554033e75bf" />
-                <input type="hidden" name="subject" value="Nouveau message depuis le portfolio" />
-                <input type="hidden" name="from_name" value="Portfolio RAJAOMANJATO VENTSO" />
-                <input type="checkbox" name="botcheck" class="d-none" style="display:none" />
-                <div class="col-md-6"><input type="text" name="name" class="form-control form-control-custom" placeholder="Votre nom" required /></div>
-                <div class="col-md-6"><input type="email" name="email" class="form-control form-control-custom" placeholder="Votre email" required /></div>
-                <div class="col-12"><input type="text" name="subject_user" class="form-control form-control-custom" placeholder="Sujet" required /></div>
-                <div class="col-12"><textarea name="message" class="form-control form-control-custom" rows="5" placeholder="Votre message..." required></textarea></div>
-                <div class="col-12 text-center"><button type="submit" class="btn btn-cyan px-5 py-2 rounded-3 font-mono-code d-inline-flex align-items-center gap-2"><i class="bi bi-send"></i> <span data-i18n="contact.send">Envoyer le message</span></button></div>
-              </form>
-              <div id="formStatus" class="text-center mt-3 font-mono-code" style="font-size:0.8rem;display:none;"></div>
-            </div>
-            <div class="d-flex flex-wrap justify-content-center gap-4 mt-4 font-mono-code" style="font-size:0.78rem;">
-              <a href="mailto:rajaomanjatoventso@gmail.com" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-envelope text-cyan"></i> rajaomanjatoventso@gmail.com</a>
-              <a href="https://wa.me/261385890907" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-whatsapp text-cyan"></i> 038 58 909 07</a>
-              <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-linkedin text-cyan"></i> LinkedIn</a>
-              <a href="https://github.com/ventso00" target="_blank" rel="noopener" class="text-dim text-decoration-none d-flex align-items-center gap-2"><i class="bi bi-github text-cyan"></i> GitHub</a>
-            </div>
-          </div>
+    <section id="parcours" class="section" aria-labelledby="parcours-title">
+      <div class="container about-grid">
+        <div>
+          <span class="eyebrow">04 / Mon parcours</span>
+          <h2 id="parcours-title">Un profil web,<br>des bases IT solides.</h2>
+          <p class="lead">Titulaire d'une Licence ESIIA à l'ISPM, j'ai travaillé sur des projets de développement web, d'IoT et d'applications d'administration.</p>
+          <p class="muted">Mes expériences en systèmes et réseaux m'ont familiarisé avec les environnements techniques, le diagnostic et la documentation. Je réoriente aujourd'hui cette polyvalence vers le développement web junior et les missions numériques à distance.</p>
+          <ul class="about-list">
+            <li>Développement avec React, Node.js et Express</li>
+            <li>Code source et documentation de projets consultables</li>
+            <li>Communication professionnelle en français</li>
+            <li>Travail avec assistance IA et validation du code</li>
+          </ul>
+          <a class="btn btn-outline" href="https://github.com/ventso00" target="_blank" rel="noopener noreferrer">Consulter mon GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="about-box">
+          <span class="eyebrow">En bref</span>
+          <h3>Curieux, rigoureux et orienté solutions.</h3>
+          <p>Mon objectif : apporter une contribution mesurable sur des missions à distance, tout en continuant à progresser comme développeur.</p>
+          <div class="about-row"><span>Formation</span><strong>Licence ESIIA · ISPM</strong></div>
+          <div class="about-row"><span>Spécialité</span><strong>Développement Web Junior</strong></div>
+          <div class="about-row"><span>Localisation</span><strong>Madagascar</strong></div>
+          <div class="about-row"><span>Langue de travail</span><strong>Français</strong></div>
+          <div class="about-row"><span>Collaboration</span><strong>Remote / missions ciblées</strong></div>
         </div>
       </div>
     </section>
-
-    <footer class="py-4 text-center font-mono-code" style="border-top:1px solid var(--border);font-size:0.72rem;">
-      <div class="container d-flex flex-wrap justify-content-between align-items-center gap-3">
-        <span class="text-dim">© 2025 <span class="text-cyan">RAJAOMANJATO VENTSO</span></span>
-        <span class="text-dim no-print">Built with <i class="bi bi-heart-fill" style="color:var(--pink);"></i> &amp; <i class="bi bi-bootstrap-fill" style="color:var(--purple);"></i></span>
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div><span class="eyebrow">05 / Contact</span><h2 id="contact-title">Un projet ou une opportunité ? Parlons-en.</h2><p>Pour une interface web, une fonctionnalité Node.js, un besoin d'assistance applicative ou une collaboration francophone à distance, décrivez-moi votre besoin par email.</p>
+          <div class="hero-actions"><a class="btn btn-light" href="mailto:rajaomanjatoventso@gmail.com?subject=Proposition%20de%20collaboration%20-%20Portfolio">Écrire un email <span aria-hidden="true">↗</span></a><a class="btn btn-outline" href="https://github.com/ventso00" target="_blank" rel="noopener noreferrer">Voir mon travail <span aria-hidden="true">↗</span></a></div>
+        </div>
+        <div class="contact-details" aria-label="Liens de contact">
+          <a href="mailto:rajaomanjatoventso@gmail.com"><span>Email</span><strong>rajaomanjatoventso@gmail.com</strong></a>
+          <a href="https://www.linkedin.com/in/ventso-rajaomanjato-216663339" target="_blank" rel="noopener noreferrer"><span>LinkedIn</span><strong>Profil professionnel ↗</strong></a>
+          <a href="https://github.com/ventso00" target="_blank" rel="noopener noreferrer"><span>GitHub</span><strong>github.com/ventso00 ↗</strong></a>
+        </div>
       </div>
-    </footer>
-
+    </section>
   </main>
-
-  <button id="scrollTop" aria-label="Retour en haut"><i class="bi bi-arrow-up fs-5"></i></button>
-  <div id="toast" class="toast-custom" role="status" aria-live="polite"></div>
-
-  <!-- MODALS PROJETS (Lire la description) -->
-  <div class="modal fade" id="modalSmartWater" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-droplet-fill text-cyan me-2"></i>SmartWater — Système intelligent de gestion de l'eau</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
-    <p><strong style="color:var(--amber);">Contexte :</strong> Projet scolaire &amp; personnel mené à l'ISPM Antsobolo (Licence 3 ESIIA), dans le cadre de la spécialisation IoT et systèmes embarqués. L'objectif était de concevoir un système intelligent capable d'<strong style="color:var(--text);">analyser la qualité de l'eau en temps réel</strong>, de <strong style="color:var(--text);">décider automatiquement</strong> des actions à mener (alerte, filtration) et de <strong style="color:var(--text);">filtrer</strong> l'eau selon les seuils définis.</p>
-    <h4>🎯 Objectifs du projet</h4>
-    <ul><li>Mesurer en continu les paramètres physico-chimiques de l'eau (capteurs IoT)</li><li>Transmettre les données vers un serveur PHP/MySQL via API REST</li><li>Afficher un dashboard temps réel avec historique et statistiques</li><li>Automatiser la décision : déclencher la filtration si seuil critique dépassé</li></ul>
-    <h4>🛠️ Architecture technique</h4>
-    <ul><li><strong style="color:var(--text);">Frontend / Backend :</strong> PHP 8, HTML5, CSS3, JavaScript (dashboard responsive)</li><li><strong style="color:var(--text);">Base de données :</strong> MySQL (mesures, historique, utilisateurs)</li><li><strong style="color:var(--text);">API REST :</strong> <code>insert.php</code>, <code>get_status.php</code> pour la communication capteurs ↔ serveur</li><li><strong style="color:var(--text);">IoT :</strong> capteurs connectés (ESP32 / Arduino), protocoles de communication</li><li><strong style="color:var(--text);">Présentation :</strong> 15 scènes immersives pour vulgariser le projet devant un jury</li></ul>
-    <h4>💼 Compétences professionnelles démontrées</h4>
-    <ul><li><strong style="color:var(--text);">Full-stack :</strong> développement PHP/MySQL complet (front + back + API)</li><li><strong style="color:var(--text);">IoT &amp; embarqué :</strong> interfaçage capteurs, protocoles de communication</li><li><strong style="color:var(--text);">Data visualisation :</strong> dashboard avec graphiques statistiques et historique</li><li><strong style="color:var(--text);">Gestion de projet :</strong> conception, développement, déploiement, présentation jury</li></ul>
-    <h4>🔗 Liens du projet</h4>
-    <div class="d-flex flex-wrap gap-2 mt-2">
-      <a href="https://smartwatermdg.getenjoyment.net/" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo web</a>
-      <a href="https://smart-water-presentation-immersive--ranprincy45.replit.app/" target="_blank" rel="noopener" class="action-link demo"><i class="bi bi-play-circle"></i> Présentation immersive</a>
-      <a href="https://github.com/ventso00/SmartWater_project" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code source</a>
-    </div>
-  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
-
-  <div class="modal fade" id="modalGaz" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-fire text-amber me-2"></i>Système de détection de gaz</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
-    <p><strong style="color:var(--amber);">Contexte :</strong> Projet de détection et supervision de gaz à distance, avec <strong style="color:var(--text);">commande automatique et manuelle d'une vanne</strong> pour couper l'alimentation en cas de fuite détectée. Conçu pour un environnement domestique ou industriel.</p>
-    <h4>🎯 Fonctionnalités clés</h4>
-    <ul><li>Détection en temps réel du taux de gaz (capteur MQ-x)</li><li>Alerte automatique en cas de dépassement de seuil</li><li>Commande à distance de la vanne de coupure (via dashboard)</li><li>Gestion multi-utilisateurs avec authentification (CRUD complet)</li><li>Historique des mesures et tableau de bord administrateur</li></ul>
-    <h4>🛠️ Stack technique</h4>
-    <ul><li><strong style="color:var(--text);">Backend :</strong> PHP 8, architecture MVC légère</li><li><strong style="color:var(--text);">Base de données :</strong> MySQL (utilisateurs, mesures, logs)</li><li><strong style="color:var(--text);">Sécurité :</strong> authentification, sessions, gestion des droits utilisateurs</li><li><strong style="color:var(--text);">API :</strong> <code>insert.php</code> (capteurs), <code>get_last_data.php</code> (temps réel), <code>commande_gaz.php</code> (actionneur)</li></ul>
-    <h4>💼 Compétences professionnelles démontrées</h4>
-    <ul><li><strong style="color:var(--text);">Développement sécurisé :</strong> auth, sessions, CRUD utilisateurs</li><li><strong style="color:var(--text);">IoT temps réel :</strong> capteurs + actionneurs + communication bidirectionnelle</li><li><strong style="color:var(--text);">Sécurité industrielle :</strong> détection + coupure automatique (fail-safe)</li></ul>
-    <div class="d-flex flex-wrap gap-2 mt-2"><a href="https://gazsystem.getenjoyment.net/index.php" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Démo live</a><a href="https://github.com/ventso00/systeme-gaz" target="_blank" rel="noopener" class="action-link"><i class="bi bi-github"></i> Code source</a></div>
-  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
-
-  <div class="modal fade" id="modalIkaly" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-shop text-emerald me-2"></i>iKaly — Restaurant en ligne</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
-    <p><strong style="color:var(--amber);">Contexte :</strong> Réalisation d'un <strong style="color:var(--text);">site e-commerce client réel</strong> pour un restaurant malgache. Objectif : digitaliser la carte du restaurant, permettre les commandes en ligne et améliorer la visibilité locale.</p>
-    <h4>🎯 Fonctionnalités livrées</h4>
-    <ul><li>Catalogue produits par catégories (Burgers, Pizzas, Boissons, Bières, Jus)</li><li>Fiches produits avec prix (Ar), promotions et "vue rapide"</li><li>Système de commande en ligne (panier + checkout)</li><li>Page "Parking iKALY" avec informations pratiques</li><li>Carte interactive / localisation (iKALY Maps)</li><li>Design responsive adapté au mobile</li></ul>
-    <h4>🛠️ Stack technique</h4>
-    <ul><li><strong style="color:var(--text);">CMS :</strong> WordPress + WooCommerce</li><li><strong style="color:var(--text);">Frontend :</strong> thème personnalisé, responsive design</li><li><strong style="color:var(--text);">Backend :</strong> PHP, MySQL (via WordPress)</li><li><strong style="color:var(--text);">Hébergement :</strong> Web Sans Frontière (web-sans-frontiere.com)</li></ul>
-    <h4>💼 Compétences professionnelles démontrées</h4>
-    <ul><li><strong style="color:var(--text);">Gestion de projet client :</strong> recueil du besoin, livraison, mise en production</li><li><strong style="color:var(--text);">E-commerce :</strong> catalogue, panier, gestion des prix (Ariary)</li><li><strong style="color:var(--text);">CMS :</strong> personnalisation WordPress / WooCommerce</li><li><strong style="color:var(--text);">UX/UI :</strong> navigation fluide, catégories claires, responsive</li></ul>
-    <div class="d-flex flex-wrap gap-2 mt-2"><a href="https://ikaly.web-sans-frontiere.com" target="_blank" rel="noopener" class="action-link live"><i class="bi bi-globe2"></i> Voir le site</a></div>
-  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
-
-  <div class="modal fade" id="modalBoiteNoire" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-car-front-fill text-purple me-2"></i>Boîte noire automobile</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
-    <p><strong style="color:var(--amber);">Contexte :</strong> Projet personnel démarré en 2023, visant à concevoir un système embarqué type <strong style="color:var(--text);">"boîte noire"</strong> pour enregistrer la télémétrie et les données de conduite d'un véhicule, à l'image des systèmes professionnels mais à coût réduit.</p>
-    <h4>🎯 Fonctionnalités</h4>
-    <ul><li>Acquisition de données via capteurs (accélération, vitesse, température...)</li><li>Enregistrement continu sur carte SD (format exploitable)</li><li>Microcontrôleur ESP32 pour la gestion des entrées/sorties</li><li>Restitution des données pour analyse post-trajet</li></ul>
-    <h4>🛠️ Stack technique</h4>
-    <ul><li><strong style="color:var(--text);">Microcontrôleur :</strong> ESP32 (Wi-Fi / Bluetooth intégrés)</li><li><strong style="color:var(--text);">Stockage :</strong> module SD Card</li><li><strong style="color:var(--text);">Capteurs :</strong> accéléromètre, gyroscope, température</li><li><strong style="color:var(--text);">Langage :</strong> C/C++ (Arduino framework)</li></ul>
-    <h4>💼 Compétences démontrées</h4>
-    <ul><li>Conception de système embarqué complet (hardware + firmware)</li><li>Gestion de capteurs multiples et communication série</li><li>Gestion du stockage de données et intégrité des enregistrements</li></ul>
-  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
-
-  <div class="modal fade" id="modalWifiko" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-wifi text-cyan me-2"></i>WIFIKO — Gestion d'accès WiFi</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
-    <p><strong style="color:var(--amber);">Contexte :</strong> Développement d'une plateforme web de gestion d'accès WiFi, destinée à administrer les utilisateurs, tracer les connexions et contrôler les accès à un réseau partagé.</p>
-    <h4>🎯 Fonctionnalités</h4>
-    <ul><li>Authentification et identification des utilisateurs WiFi</li><li>Suivi des sessions et des connexions</li><li>Administration centralisée (users, logs, quotas)</li><li>Interface web légère et accessible</li></ul>
-    <h4>🛠️ Stack technique</h4>
-    <ul><li>PHP · MySQL · Apache · SQL</li><li>Architecture web classique (LAMP)</li></ul>
-    <h4>💼 Compétences démontrées</h4>
-    <ul><li>Développement web back-end PHP/MySQL</li><li>Conception de base de données relationnelle</li><li>Gestion d'authentification et de sessions</li></ul>
-  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
-
-  <div class="modal fade" id="modalSaryTany" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"><div class="modal-content project-modal-content"><div class="modal-header"><h5 class="modal-title font-heading"><i class="bi bi-diagram-3-fill text-amber me-2"></i>Simulation réseau SaryTany</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body">
-    <p><strong style="color:var(--amber);">Contexte :</strong> Dans le cadre du stage chez FTM / SaryTany, réalisation d'une <strong style="color:var(--text);">simulation complète de l'infrastructure réseau</strong> de l'entreprise sous Cisco Packet Tracer, pour valider l'architecture et préparer le déploiement.</p>
-    <h4>🎯 Contenu de la maquette</h4>
-    <ul><li>Segmentation en VLANs par service (administration, production, invités)</li><li>Routage inter-VLAN avec switchs L3 et routeurs</li><li>Configuration des ACL pour la sécurité entre segments</li><li>Services réseau : DHCP, DNS, NAT/PAT</li><li>Tests de connectivité et validation des flux</li></ul>
-    <h4>🛠️ Outils utilisés</h4>
-    <ul><li>Cisco Packet Tracer · GNS3</li><li>Protocoles : TCP/IP, VLAN, STP, OSPF, ACL, NAT</li></ul>
-    <h4>💼 Compétences démontrées</h4>
-    <ul><li>Conception d'architecture réseau d'entreprise</li><li>Configuration avancée de routeurs et switchs Cisco</li><li>Application des bonnes pratiques de segmentation &amp; sécurité</li><li>Documentation et validation de maquette réseau</li></ul>
-  </div><div class="modal-footer"><button class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code" data-bs-dismiss="modal">Fermer</button></div></div></div></div>
-
-  <!-- QR Modal -->
-  <div class="modal fade" id="qrModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content qr-modal-content"><div class="modal-header"><h5 class="modal-title font-heading">Ma carte de visite</h5><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button></div><div class="modal-body text-center"><p class="text-dim" style="font-size:0.82rem;">Scannez ce QR code pour ajouter mon contact à votre téléphone.</p><img id="qrImage" src="" alt="QR Code vCard" class="img-fluid rounded-3" style="max-width:260px;background:#fff;padding:12px;" /></div><div class="modal-footer justify-content-center"><button onclick="shareProfile()" class="btn btn-outline-cyan btn-sm rounded-3 font-mono-code"><i class="bi bi-share"></i> Partager cette page</button></div></div></div></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <footer><div class="container"><span>© <span id="year">2026</span> Ventso Rajaomanjato · Réalisations et parcours professionnels</span><div><a href="#top">Retour en haut ↑</a></div></div></footer>
+  <button class="back-top" id="back-top" type="button" aria-label="Retour en haut">↑</button>
   <script>
-    AOS.init({ duration: 700, easing: 'ease-out-cubic', once: true, offset: 50, disable: false });
-    window.addEventListener('load', () => setTimeout(() => document.getElementById('pageLoader').classList.add('hidden'), 300));
-
-    const nav = document.getElementById('mainNav');
-    const scrollTopBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); scrollTopBtn.classList.toggle('visible', window.scrollY > 400); }, { passive: true });
-    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const closeMenu = document.getElementById('closeMenu');
-    menuToggle?.addEventListener('click', () => { mobileMenu.classList.add('show'); document.body.style.overflow = 'hidden'; });
-    closeMenu?.addEventListener('click', closeMobile);
-    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
-    function closeMobile() { mobileMenu.classList.remove('show'); document.body.style.overflow = ''; }
-
-    const themeToggle = document.getElementById('themeToggle');
-    const iconSun = document.getElementById('iconSun');
-    const iconMoon = document.getElementById('iconMoon');
-    function applyTheme(theme) { document.documentElement.setAttribute('data-bs-theme', theme); localStorage.setItem('theme', theme); iconSun.classList.toggle('d-none', theme !== 'light'); iconMoon.classList.toggle('d-none', theme === 'light'); }
-    themeToggle?.addEventListener('click', () => { const c = document.documentElement.getAttribute('data-bs-theme'); applyTheme(c === 'dark' ? 'light' : 'dark'); });
-    const savedTheme = localStorage.getItem('theme');
-    const systemLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-    applyTheme(savedTheme || (systemLight ? 'light' : 'dark'));
-
-    const tw = document.getElementById('typewriter');
-    const twText = "> Technicien Support IT & Systèmes/Réseaux Junior — Antananarivo, Madagascar";
-    let twIndex = 0;
-    function typeWriter() { if (twIndex < twText.length) { tw.textContent += twText.charAt(twIndex); twIndex++; setTimeout(typeWriter, 45); } }
-    setTimeout(typeWriter, 700);
-
-    const terminalBody = document.getElementById('terminalBody');
-    const terminalForm = document.getElementById('terminalForm');
-    const terminalInput = document.getElementById('terminalInput');
-    const commands = {
-      help: () => `<div class="text-cyan fw-bold">Commandes :</div><div class="text-dim ps-3">• <span class="text-cyan">whoami</span> — Infos<br/>• <span class="text-cyan">projets</span> — Liste<br/>• <span class="text-cyan">contact</span> — Coordonnées<br/>• <span class="text-cyan">skills</span> — Compétences<br/>• <span class="text-cyan">cv</span> — CV PDF<br/>• <span class="text-cyan">clear</span> — Effacer</div>`,
-      whoami: () => `<div class="text-dim ps-3" style="border-left:2px solid var(--border);">Nom : RAJAOMANJATO VENTSO<br/>Rôle : IT Support &amp; Admin Systèmes/Réseaux<br/>Formation : DST + Licence ESIIA obtenue<br/>Statut : Disponible</div>`,
-      projets: () => `<div class="text-dim ps-3">[1] <span class="text-cyan">SmartWater</span> — PHP/MySQL · IoT eau<br/>[2] <span class="text-cyan">Système Gaz</span> — PHP/MySQL · détection + commande distante<br/>[3] <span class="text-cyan">iKaly</span> — E-commerce WordPress<br/>[4] <span class="text-cyan">Boîte noire auto</span> — ESP32<br/>[5] <span class="text-cyan">WIFIKO</span> — Gestion WiFi<br/>[6] <span class="text-cyan">Simulation SaryTany</span> — Cisco<br/>→ <span class="text-cyan">github.com/ventso00</span></div>`,
-      contact: () => `<div class="text-dim ps-3">Email : rajaomanjatoventso@gmail.com<br/>Tel / WhatsApp : 038 58 909 07<br/>LinkedIn : /in/ventso-rajaomanjato<br/>GitHub : /ventso00</div>`,
-      skills: () => `<div class="text-dim ps-3">Systèmes : Windows Server 2022 · Linux<br/>Réseaux : VLAN · OSPF · ACL · Cisco · GNS3<br/>Virtualisation : VMware · Hyper-V · VirtualBox<br/>Dev : PHP · Python · MySQL · C/C++<br/>Outils : Git · Wireshark · WordPress</div>`,
-      cv: () => { window.open('/cv/RAJAOMANJATO_VENTSO_CV.pdf', '_blank'); return '<div class="text-emerald">→ Ouverture du CV...</div>'; },
-      clear: () => { terminalBody.innerHTML = ''; return ''; }
-    };
-    terminalForm?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const cmd = terminalInput.value.trim().toLowerCase();
-      if (!cmd) return;
-      terminalBody.insertAdjacentHTML('beforeend', `<div class="mt-2"><span style="color:var(--amber);">guest@portfolio:~$</span> <span style="color:var(--text);">${escapeHtml(cmd)}</span></div>`);
-      if (commands[cmd]) { const output = commands[cmd](); if (output) terminalBody.insertAdjacentHTML('beforeend', output); }
-      else { terminalBody.insertAdjacentHTML('beforeend', `<div style="color:#ef4444;">Commande inconnue : ${escapeHtml(cmd)}. Tapez <span class="text-cyan">help</span>.</div>`); }
-      terminalInput.value = '';
-      terminalBody.scrollTop = terminalBody.scrollHeight;
-    });
-    function escapeHtml(str) { return str.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
-
-    function showToast(message) { const toast = document.getElementById('toast'); toast.textContent = message; toast.classList.add('show'); clearTimeout(toast._timeout); toast._timeout = setTimeout(() => toast.classList.remove('show'), 3200); }
-
-    const skillObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.querySelectorAll('.skill-fill').forEach((fill, i) => setTimeout(() => fill.style.width = fill.dataset.width + '%', i * 120)); skillObserver.unobserve(entry.target); } });
-    }, { threshold: 0.25 });
-    document.querySelectorAll('#competences .card-custom, #formation .card-custom').forEach(c => skillObserver.observe(c));
-
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => { if (entry.isIntersecting) { const el = entry.target; const target = parseInt(el.dataset.count, 10); let current = 0; const step = Math.max(1, Math.floor(target / (1400 / 30))); const interval = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(interval); } el.textContent = current + (target >= 3 ? '+' : ''); }, 30); statObserver.unobserve(el); } });
-    }, { threshold: 0.4 });
-    document.querySelectorAll('.stat-number').forEach(el => statObserver.observe(el));
-
-    function shareProfile() {
-      const data = { title: 'RAJAOMANJATO VENTSO | Portfolio', text: 'Découvrez le portfolio de RAJAOMANJATO VENTSO', url: window.location.href };
-      if (navigator.share) navigator.share(data).catch(() => {});
-      else { navigator.clipboard.writeText(window.location.href); showToast('🔗 Lien copié'); }
-    }
-
-    (function initQR() {
-      const vcard = ['BEGIN:VCARD','VERSION:3.0','N:RAJAOMANJATO;VENTSO;;;','FN:RAJAOMANJATO VENTSO','TITLE:Technicien Support IT & Systèmes/Réseaux Junior','EMAIL:rajaomanjatoventso@gmail.com','TEL:+261385890907','URL:https://www.linkedin.com/in/ventso-rajaomanjato-216663339','ADR:;;Antananarivo;;;Madagascar','END:VCARD'].join('\n');
-      const img = document.getElementById('qrImage');
-      if (img) img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=260x260&data=' + encodeURIComponent(vcard);
+    (() => {
+      "use strict";
+      const toggle = document.getElementById("menu-toggle");
+      const links = document.getElementById("nav-links");
+      const close = () => { links.classList.remove("open"); toggle.setAttribute("aria-expanded","false"); toggle.setAttribute("aria-label","Ouvrir le menu"); toggle.textContent="☰"; document.body.classList.remove("menu-open"); };
+      toggle.addEventListener("click", () => { const open = !links.classList.contains("open"); if(open){links.classList.add("open");toggle.setAttribute("aria-expanded","true");toggle.setAttribute("aria-label","Fermer le menu");toggle.textContent="✕";document.body.classList.add("menu-open");}else close();});
+      links.querySelectorAll("a").forEach(a => a.addEventListener("click",close));
+      document.addEventListener("keydown", e => { if(e.key==="Escape")close(); });
+      window.addEventListener("resize", () => { if(window.innerWidth>900)close(); });
+      const top = document.getElementById("back-top");
+      const onScroll = () => top.classList.toggle("show",window.scrollY>500);
+      window.addEventListener("scroll",onScroll,{passive:true});onScroll();
+      top.addEventListener("click", () => window.scrollTo({top:0,behavior:window.matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}));
+      document.getElementById("year").textContent=String(new Date().getFullYear());
+      const targets = document.querySelectorAll(".reveal");
+      if("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:.08});
+        targets.forEach(item=>observer.observe(item));
+      }else targets.forEach(item=>item.classList.add("visible"));
     })();
-
-    const contactForm = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    contactForm?.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = contactForm.querySelector('button[type="submit"]');
-      const original = btn.innerHTML;
-      btn.disabled = true;
-      btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Envoi...';
-      try {
-        const formData = new FormData(contactForm);
-        const response = await fetch(contactForm.action, { method: 'POST', body: formData });
-        const result = await response.json();
-        if (result.success) {
-          formStatus.style.display = 'block';
-          formStatus.innerHTML = '<span class="text-emerald">✅ Message envoyé ! Je vous répondrai bientôt.</span>';
-          showToast('✅ Message envoyé');
-          contactForm.reset();
-        } else throw new Error(result.message || 'Erreur');
-      } catch (err) {
-        formStatus.style.display = 'block';
-        formStatus.innerHTML = '<span style="color:#ef4444;">❌ Erreur : ' + err.message + '</span>';
-        showToast('❌ Échec de l\'envoi.');
-      } finally {
-        btn.disabled = false; btn.innerHTML = original;
-        setTimeout(() => { formStatus.style.display = 'none'; }, 6000);
-      }
-    });
-
-    const translations = {
-      fr: { 'nav.about': 'À propos','nav.services': 'Services','nav.exp': 'Parcours','nav.projects': 'Projets','nav.skills': 'Compétences','nav.edu': 'Formation','nav.contact': 'Contact','hero.badge': 'DISPONIBLE — Opportunités IT','hero.desc': 'Technicien Support IT & Systèmes/Réseaux Junior. Spécialisé en Windows Server 2022, Linux, Cisco / GNS3, virtualisation et support N1/N2.','hero.cta1': 'Voir les projets','hero.cta2': 'Télécharger CV','about.title': 'Profil Professionnel','services.title': 'Services proposés','exp.title': 'Parcours & Expérience','projects.title': 'Projets & Réalisations','skills.title': 'Compétences Techniques','edu.title': 'Formation, Langues & Certifs','lang.title': 'Langues','stats.projects': 'PROJETS','stats.certs': 'CERTIFICATS','stats.langs': 'LANGUES','stats.intern': 'STAGE PRO','contact.title': 'Prendre Contact','contact.intro': 'Disponible pour des opportunités IT, stages ou collaborations.','contact.send': 'Envoyer le message' },
-      en: { 'nav.about': 'About','nav.services': 'Services','nav.exp': 'Experience','nav.projects': 'Projects','nav.skills': 'Skills','nav.edu': 'Education','nav.contact': 'Contact','hero.badge': 'AVAILABLE — IT Opportunities','hero.desc': 'IT Support Technician & Systems/Network Administrator. Specialized in Windows Server 2022, Linux, Cisco / GNS3, virtualization and N1/N2 support.','hero.cta1': 'View projects','hero.cta2': 'Download CV','about.title': 'Professional Profile','services.title': 'Services offered','exp.title': 'Experience & Training','projects.title': 'Projects & Achievements','skills.title': 'Technical Skills','edu.title': 'Education, Languages & Certificates','lang.title': 'Languages','stats.projects': 'PROJECTS','stats.certs': 'CERTIFICATES','stats.langs': 'LANGUAGES','stats.intern': 'INTERNSHIP','contact.title': 'Get in Touch','contact.intro': 'Available for IT opportunities, internships or collaborations.','contact.send': 'Send message' },
-      mg: { 'nav.about': 'Mombamomba','nav.services': 'Tolotra','nav.exp': 'Traikefa','nav.projects': 'Tetikasa','nav.skills': 'Fahaizana','nav.edu': 'Fianarana','nav.contact': 'Fifandraisana','hero.badge': 'MISY — Fotoana IT','hero.desc': 'Teknisianina Support IT & Mpitantana Rafitra sy Tambajotra. Manampahaizana Windows Server 2022, Linux, Cisco / GNS3, virtualization ary fanohanana N1/N2.','hero.cta1': 'Hijery tetikasa','hero.cta2': 'Alaina ny CV','about.title': 'Mombamomba ahy','services.title': 'Tolotra','exp.title': 'Traikefa & Fiofanana','projects.title': 'Tetikasa','skills.title': 'Fahaizana Teknika','edu.title': 'Fianarana, Fiteny & Certificat','lang.title': 'Fiteny','stats.projects': 'TETIKASA','stats.certs': 'CERTIFICAT','stats.langs': 'FITENY','stats.intern': 'STAGE','contact.title': 'Ifandraisana','contact.intro': 'Misy ho an\'ny fotoana IT, stage na fiaraha-miasa.','contact.send': 'Alefaso ny hafatra' }
-    };
-    function applyLang(lang) { localStorage.setItem('lang', lang); document.documentElement.setAttribute('lang', lang); document.querySelectorAll('[data-i18n]').forEach(el => { const key = el.dataset.i18n; if (translations[lang] && translations[lang][key]) el.textContent = translations[lang][key]; }); document.querySelectorAll('.lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === lang)); }
-    document.querySelectorAll('.lang-switch button').forEach(btn => btn.addEventListener('click', () => applyLang(btn.dataset.lang)));
-    applyLang(localStorage.getItem('lang') || 'fr');
-
-    if (window.matchMedia('(hover: hover) and (min-width: 992px)').matches) {
-      document.querySelectorAll('.card-custom').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-          const rect = card.getBoundingClientRect();
-          const x = e.clientX - rect.left, y = e.clientY - rect.top;
-          const rx = ((y - rect.height / 2) / rect.height) * -4, ry = ((x - rect.width / 2) / rect.width) * 4;
-          card.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-6px)`;
-        });
-        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
-      });
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) { e.preventDefault(); const targetPos = target.getBoundingClientRect().top + window.pageYOffset - 80; window.scrollTo({ top: targetPos, behavior: 'smooth' }); }
-      });
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
-        e.preventDefault(); terminalInput?.focus(); terminalInput?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    });
   </script>
 </body>
 </html>

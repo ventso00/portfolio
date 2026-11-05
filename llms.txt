@@ -1,44 +1,22 @@
-# Portfolio de Rajaomanjato Ventson'Iavo Tsiarovana
+# Portfolio — Ventso Rajaomanjato
+> Développeur web Full-Stack junior basé à Madagascar. Recherche des collaborations francophones à distance en développement web et assistance applicative.
 
-> Technicien Support IT & Administrateur Systèmes et Réseaux Junior (travail de nuit local ou opportunités à l'international) basé à Antananarivo, Madagascar.
+Site : https://ventso.netlify.app/
+GitHub : https://github.com/ventso00
+LinkedIn : https://www.linkedin.com/in/ventso-rajaomanjato-216663339
+Contact : rajaomanjatoventso@gmail.com
 
-## Identité & Contact
-- **Nom complet** : Rajaomanjato Ventson'Iavo Tsiarovana
-- **Nom d'usage** : Ventson'Iavo Tsiarovana / Ventso Rajaomanjato
-- **Localisation** : Antananarivo, Madagascar
-- **Email** : rajaomanjatoventso@gmail.com
-- **Téléphone** : +261 38 58 909 07
-- **GitHub** : https://github.com/ventso00
-- **Portfolio Web** : https://ventso.netlify.app/
+## Formation et positionnement
+Licence ESIIA — ISPM. Développement junior avec React, Node.js et Express. Travail assisté par l'intelligence artificielle avec compréhension et vérification du code. Les projets sont personnels ou académiques, pas des prestations clients.
 
-## Profil & Objectifs
-Titulaire d'un Diplôme de Spécialisation Technicien (DST) et titulaire d'une Licence ESIIA (Électronique, Systèmes Informatiques et Intelligence Artificielle) à l'ISPM Antsobolo.
-Recherche activement une opportunité professionnelle ou un stage en tant que :
-- Technicien Support IT (Niveau 1 & 2)
-- Technicien Systèmes et Réseaux
-- Administrateur Systèmes et Réseaux Junior
+## Projets attestés par la présence de sources
+- UptimePulse V2 : https://github.com/ventso00/uptilmepulseV2 — React/TypeScript, Express, MySQL ; supervision de sites et incidents. Voir limites et prérequis du dépôt.
+- FF CV / ScoutMetrics : https://github.com/ventso00/ffCV — frontend/backend, tests, préparatifs Netlify ; données réelles limitées par les accès fournisseurs.
+- SmartWater : https://github.com/ventso00/SmartWater_project — pages PHP et traitements côté serveur d'un projet universitaire IoT.
+- ADOps GPO Manager : https://github.com/ventso00/gpoAPK — complément Windows/.NET/PowerShell pour administration Active Directory.
 
-## Compétences Clés
-- **Systèmes & Serveurs** : Windows Server 2022 (Active Directory AD DS, DNS, DHCP, GPO), Windows 10/11, Linux (Debian, Ubuntu), gestion des utilisateurs et droits d'accès.
-- **Réseaux & Protocoles** : TCP/IP, IPv4/IPv6, Subnetting (VLSM), VLAN, Inter-VLAN routing, STP, NAT/PAT, ACL, OSPF, Wireshark.
-- **Équipements & Simulation** : Cisco (routeurs & commutateurs), Cisco Packet Tracer, GNS3.
-- **Virtualisation** : VMware Workstation, Hyper-V, VirtualBox.
-- **Support IT** : Diagnostic matériel et logiciel, dépannage bureautique, maintenance préventive et curative, assistance utilisateur N1/N2.
-- **Développement & Scripting** : Python, Java, PHP, C/C++, MySQL/MariaDB, Git/GitHub.
-- **IoT & Électronique** : Microcontrôleurs ESP32, capteurs de télémétrie, protocoles IoT (Orange Digital Centre).
+## Compétences et services recherchés
+Interfaces React, fonctionnalités Node.js/Express, connexion API, maintenance corrective et support applicatif en français selon périmètre et niveau.
 
-## Expérience Professionnelle
-- **Novembre 2024 — Janvier 2025** : Stagiaire en Administration Systèmes et Réseaux — FTM, SaryTany
-  - Déploiement et administration Windows Server 2022 (AD DS, DNS, DHCP, GPO) et virtualisation (VMware / Hyper-V).
-  - Support technique N1 et N2 auprès des utilisateurs (incidents matériels/logiciels, maintenance du parc).
-
-## Formations & Diplômes
-- **Licence obtenue** : ESIIA — ISPM Antsobolo (Électronique, Systèmes Informatiques et Intelligence Artificielle).
-- **2025** : Formations Certifiantes — Orange Digital Centre Madagascar (Codage Python/Java, Protocoles IoT).
-- **2023 — 2024** : Baccalauréat Général Scientifique — Lycée Andriamanpoinimerina, Sabotsy Namehana.
-- **Diplôme obtenu** : Diplôme de Spécialisation Technicien (DST).
-
-## Langues
-- **Malagasy** : Langue maternelle
-- **Français** : Excellente maîtrise
-- **Anglais** : Niveau intermédiaire
+## Limites de vérification
+Aucune certification externe, mission client payée, chiffre commercial, disponibilité permanente ou déploiement actif de projet n'est revendiqué. Les visuels du portfolio sont des illustrations et non des captures de logiciels réels.

@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - draft/fullstack-remote-profile-2026
+      - redesign/assistant-technique-it-2026
   workflow_dispatch:
 
 permissions:

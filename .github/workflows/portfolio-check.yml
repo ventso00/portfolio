@@ -1,0 +1,23 @@
+name: Vérification statique du portfolio
+
+on:
+  push:
+    branches:
+      - draft/fullstack-remote-profile-2026
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les fichiers
+        uses: actions/checkout@v4
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Vérifier HTML et contenus
+        run: node tests/check-static.mjs
